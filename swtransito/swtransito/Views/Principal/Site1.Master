@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="swtransito.Views.Principal.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SWTRANSITO</title>
+     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Font Awesome -->
+    <link href="../../registro/assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- registro -->
+   
+
+    <!-- Preloader -->
+    <link rel="stylesheet" href="../../brandy/css/preloader.css" type="text/css" media="screen, print" />
+    <!-- Icon Font-->
+ 
+    <link href="../../lesser/css/login.css" rel="stylesheet" />
+  
+    <link rel="stylesheet" href="../../brandy/css/owl.carousel.css">
+    <link rel="stylesheet" href="../../brandy/css/owl.theme.default.css">
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="../../brandy/css/animate.css">
+    <!-- Bootstrap -->
+    <link href="../../brandy/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Style -->
+   <%-- <link href="../../brandy/css/style.css" rel="stylesheet">--%>
+    <link href="../../lesser/css/style.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="../../brandy/css/responsive.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/lte-ie7.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    
+
+
+
+
+   <header id="HOME" style="background-position: 50% -125px;">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                        <%--<img src="../../brandy/images/logo.png" />--%>
+                             <a class="navbar-brand" href="Inicio.aspx">SWTRANSITO.</a>
+                        
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                             <li><a class="active" href="Inicio.aspx">Inicio</a></li>
+                            <li><a href="Acerca_de.aspx">Acerca de</a></li>
+                            <li><a href="Contacto.aspx">Contacto</a></li>
+                            <li><a href="Registro.aspx">Registro</a></li>
+                            <li><a href="Login.aspx">Iniciar Sesión </a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        </header>
+
+           
+    <hr />
+   
+
+    
+
+  
+
+   
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      
+        
+
+
+
+    <footer>
+        <div class="container">
+           
+           
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="copyright_text   wow fadeInUp animated">
+                            &copy; Todos los Derechos Reservados |  SWTRANSITO | Florencia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =========================
+     SCRIPTS 
+============================== -->
+
+
+    <script src="../../brandy/js/jquery.min.js"></script> 
+    <script src="../../brandy/js/bootstrap.min.js"></script>
+    <script src="../../brandy/js/jquery.nicescroll.js"></script>
+    <script src="../../brandy/js/owl.carousel.js"></script>
+    <script src="../../brandy/js/wow.js"></script>
+    <script src="../../brandy/js/script.js"></script>
+    <!--   Core JS Files REGISTRO  -->
+    <%--<script src="../../registro/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>--%>
+   
+    <script src="../../registro/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../registro/assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+    <!--  Plugin for the Wizard  REGISTRO-->
+    <script src="../../registro/assets/js/material-bootstrap-wizard.js"></script>
+
+    <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 REGISTRO -->
+    <script src="../../registro/assets/js/jquery.validate.min.js"></script>
+
+
+
+
+
+</body>
+
+</html>

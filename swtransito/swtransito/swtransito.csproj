@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44FF6157-0005-4C51-A8F7-6B3690E4673E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>swtransito</RootNamespace>
+    <AssemblyName>swtransito</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity.EF5, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Fabric.Plugin, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Theme\assets\css\bootstrap.css" />
+    <Content Include="Admin\Theme\assets\css\style-responsive.css" />
+    <Content Include="Admin\Theme\assets\css\style.css" />
+    <Content Include="Admin\Theme\assets\css\table-responsive.css" />
+    <Content Include="Admin\Theme\assets\css\to-do.css" />
+    <Content Include="Admin\Theme\assets\css\zabuto_calendar.css" />
+    <Content Include="Admin\Theme\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\Theme\assets\img\blog-bg.jpg" />
+    <Content Include="Admin\Theme\assets\img\checkbox-gray.png" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-01.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-02.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-03.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-04.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-05.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-06.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-07.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-08.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-09.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-10.jpg" />
+    <Content Include="Admin\Theme\assets\img\friends\fr-11.jpg" />
+    <Content Include="Admin\Theme\assets\img\instagram.jpg" />
+    <Content Include="Admin\Theme\assets\img\login-bg.jpg" />
+    <Content Include="Admin\Theme\assets\img\lorde.jpg" />
+    <Content Include="Admin\Theme\assets\img\mask.png" />
+    <Content Include="Admin\Theme\assets\img\ny.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port01.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port02.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port03.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port04.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port05.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port06.jpg" />
+    <Content Include="Admin\Theme\assets\img\product.jpg" />
+    <Content Include="Admin\Theme\assets\img\product.png" />
+    <Content Include="Admin\Theme\assets\img\profile-01.jpg" />
+    <Content Include="Admin\Theme\assets\img\profile-02.jpg" />
+    <Content Include="Admin\Theme\assets\img\radio-gray.png" />
+    <Content Include="Admin\Theme\assets\img\ui-danro.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-divya.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-sam.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-sherman.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-zac.jpg" />
+    <Content Include="Admin\Theme\assets\img\weather.jpg" />
+    <Content Include="Admin\Theme\assets\img\zoom.png" />
+    <Content Include="Admin\Theme\assets\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Admin\Theme\assets\js\bootstrap-switch.js" />
+    <Content Include="Admin\Theme\assets\js\bootstrap.min.js" />
+    <Content Include="Admin\Theme\assets\js\calendar-conf-events.js" />
+    <Content Include="Admin\Theme\assets\js\chart-master\Chart.js" />
+    <Content Include="Admin\Theme\assets\js\chartjs-conf.js" />
+    <Content Include="Admin\Theme\assets\js\common-scripts.js" />
+    <Content Include="Admin\Theme\assets\js\easy-pie-chart.js" />
+    <Content Include="Admin\Theme\assets\js\fancybox\jquery.fancybox.css" />
+    <Content Include="Admin\Theme\assets\js\fancybox\jquery.fancybox.js" />
+    <Content Include="Admin\Theme\assets\js\form-component.js" />
+    <Content Include="Admin\Theme\assets\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Admin\Theme\assets\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Admin\Theme\assets\js\gritter-conf.js" />
+    <Content Include="Admin\Theme\assets\js\gritter\css\jquery.gritter.css" />
+    <Content Include="Admin\Theme\assets\js\gritter\css\jquery.gritter0.css" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\gritter-light.png" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\gritter-long.png" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\gritter.png" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\ie-spacer.gif" />
+    <Content Include="Admin\Theme\assets\js\gritter\js\jquery.gritter.js" />
+    <Content Include="Admin\Theme\assets\js\jquery-1.8.3.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Admin\Theme\assets\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.backstretch.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.nicescroll.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.scrollTo.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.sparkline.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.tagsinput.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Admin\Theme\assets\js\morris-conf.js" />
+    <Content Include="Admin\Theme\assets\js\sparkline-chart.js" />
+    <Content Include="Admin\Theme\assets\js\tasks.js" />
+    <Content Include="Admin\Theme\assets\js\zabuto_calendar.js" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.svg" />
+    <Content Include="Admin\Theme\assets\lineicons\index.html" />
+    <Content Include="Admin\Theme\assets\lineicons\lte-ie7.js" />
+    <Content Include="Admin\Theme\assets\lineicons\style.css" />
+    <Content Include="Admin\Theme\basic_table.html" />
+    <Content Include="Admin\Theme\blank.html" />
+    <Content Include="Admin\Theme\buttons.html" />
+    <Content Include="Admin\Theme\calendar.html" />
+    <Content Include="Admin\Theme\chartjs.html" />
+    <Content Include="Admin\Theme\form_component.html" />
+    <Content Include="Admin\Theme\gallery.html" />
+    <Content Include="Admin\Theme\general.html" />
+    <Content Include="Admin\Theme\index.html" />
+    <Content Include="Admin\Theme\lock_screen.html" />
+    <Content Include="Admin\Theme\login.html" />
+    <Content Include="Admin\Theme\morris.html" />
+    <Content Include="Admin\Theme\panels.html" />
+    <Content Include="Admin\Theme\responsive_table.html" />
+    <Content Include="Admin\Theme\todo_list.html" />
+    <Content Include="Admin\__MACOSX\._Premium Dashgum.txt" />
+    <Content Include="Admin\__MACOSX\._Thanks.txt" />
+    <Content Include="Admin\__MACOSX\Theme\._basic_table.html" />
+    <Content Include="Admin\__MACOSX\Theme\._blank.html" />
+    <Content Include="Admin\__MACOSX\Theme\._buttons.html" />
+    <Content Include="Admin\__MACOSX\Theme\._calendar.html" />
+    <Content Include="Admin\__MACOSX\Theme\._chartjs.html" />
+    <Content Include="Admin\__MACOSX\Theme\._form_component.html" />
+    <Content Include="Admin\__MACOSX\Theme\._gallery.html" />
+    <Content Include="Admin\__MACOSX\Theme\._general.html" />
+    <Content Include="Admin\__MACOSX\Theme\._index.html" />
+    <Content Include="Admin\__MACOSX\Theme\._lock_screen.html" />
+    <Content Include="Admin\__MACOSX\Theme\._login.html" />
+    <Content Include="Admin\__MACOSX\Theme\._morris.html" />
+    <Content Include="Admin\__MACOSX\Theme\._panels.html" />
+    <Content Include="Admin\__MACOSX\Theme\._responsive_table.html" />
+    <Content Include="Admin\__MACOSX\Theme\._todo_list.html" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._bootstrap.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._style-responsive.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._style.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._table-responsive.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._to-do.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._zabuto_calendar.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\css\._font-awesome.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\fonts\._fontawesome-webfont.svg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\fonts\._glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._blog-bg.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._checkbox-gray.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._instagram.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._login-bg.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._lorde.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._mask.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._ny.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._product.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._product.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._profile-01.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._profile-02.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._radio-gray.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._ui-danro.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._ui-divya.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._ui-sam.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._ui-sherman.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._ui-zac.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._weather.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._zoom.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-01.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-02.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-03.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-04.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-05.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-06.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-07.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-08.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-09.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-10.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._fr-11.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._port01.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._port02.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._port03.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._port04.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._port05.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._port06.jpg" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._bootstrap-switch.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._bootstrap.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._calendar-conf-events.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._chartjs-conf.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._common-scripts.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._easy-pie-chart.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._form-component.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._gritter-conf.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery-1.8.3.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.backstretch.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.nicescroll.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.scrollTo.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.sparkline.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.tagsinput.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._jquery.ui.touch-punch.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._morris-conf.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._sparkline-chart.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._tasks.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._zabuto_calendar.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\bootstrap-inputmask\._bootstrap-inputmask.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\chart-master\._Chart.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\fancybox\._jquery.fancybox.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\fancybox\._jquery.fancybox.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\fullcalendar\._bootstrap-fullcalendar.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\fullcalendar\._fullcalendar.min.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\css\._jquery.gritter.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\css\._jquery.gritter0.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\images\._gritter-light.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\images\._gritter-long.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\images\._gritter.png" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\images\._ie-spacer.gif" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\js\._jquery.gritter.js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\jquery-easy-pie-chart\._jquery.easy-pie-chart.css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\jquery-easy-pie-chart\._jquery.easy-pie-chart.js" />
+    <Content Include="brandy\css\animate.css" />
+    <Content Include="brandy\css\bootstrap.min.css" />
+    <Content Include="brandy\css\owl.carousel.css" />
+    <Content Include="brandy\css\owl.theme.default.css" />
+    <Content Include="brandy\css\preloader.css" />
+    <Content Include="brandy\css\responsive.css" />
+    <Content Include="brandy\css\style.css" />
+    <Content Include="brandy\fonts\et-line.svg" />
+    <Content Include="brandy\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="brandy\images\1.png" />
+    <Content Include="brandy\images\bg.jpg" />
+    <Content Include="brandy\images\header_bg.jpg" />
+    <Content Include="brandy\images\imac.png" />
+    <Content Include="brandy\images\logo.png" />
+    <Content Include="brandy\images\q.png" />
+    <Content Include="brandy\images\quote.png" />
+    <Content Include="brandy\images\scroll.png" />
+    <Content Include="brandy\images\shape.png" />
+    <Content Include="brandy\images\status.gif" />
+    <Content Include="brandy\images\testimonial_bg.jpg" />
+    <Content Include="brandy\images\w1.jpg" />
+    <Content Include="brandy\images\w2.jpg" />
+    <Content Include="brandy\images\w3.jpg" />
+    <Content Include="brandy\images\w4.jpg" />
+    <Content Include="brandy\images\w5.jpg" />
+    <Content Include="brandy\images\w6.jpg" />
+    <Content Include="brandy\index.html" />
+    <Content Include="brandy\js\bootstrap.bundle.min.js" />
+    <Content Include="brandy\js\bootstrap.min.js" />
+    <Content Include="brandy\js\jquery.min.js" />
+    <Content Include="brandy\js\jquery.nicescroll.js" />
+    <Content Include="brandy\js\lte-ie7.js" />
+    <Content Include="brandy\js\owl.carousel.js" />
+    <Content Include="brandy\js\script.js" />
+    <Content Include="brandy\js\wow.js" />
+    <Content Include="brandy\preview.jpg" />
+    <Content Include="brandy\style.css" />
+    <Content Include="brandy\__MACOSX\._index.html" />
+    <Content Include="brandy\__MACOSX\._preview.jpg" />
+    <Content Include="brandy\__MACOSX\._style.css" />
+    <Content Include="brandy\__MACOSX\css\._animate.css" />
+    <Content Include="brandy\__MACOSX\css\._bootstrap.min.css" />
+    <Content Include="brandy\__MACOSX\css\._owl.carousel.css" />
+    <Content Include="brandy\__MACOSX\css\._owl.theme.default.css" />
+    <Content Include="brandy\__MACOSX\css\._preloader.css" />
+    <Content Include="brandy\__MACOSX\css\._responsive.css" />
+    <Content Include="brandy\__MACOSX\css\._style.css" />
+    <Content Include="brandy\__MACOSX\fonts\._et-line.svg" />
+    <Content Include="brandy\__MACOSX\fonts\._glyphicons-halflings-regular.svg" />
+    <Content Include="brandy\__MACOSX\images\._1.png" />
+    <Content Include="brandy\__MACOSX\images\._bg.jpg" />
+    <Content Include="brandy\__MACOSX\images\._header_bg.jpg" />
+    <Content Include="brandy\__MACOSX\images\._imac.png" />
+    <Content Include="brandy\__MACOSX\images\._logo.png" />
+    <Content Include="brandy\__MACOSX\images\._q.png" />
+    <Content Include="brandy\__MACOSX\images\._quote.png" />
+    <Content Include="brandy\__MACOSX\images\._scroll.png" />
+    <Content Include="brandy\__MACOSX\images\._shape.png" />
+    <Content Include="brandy\__MACOSX\images\._status.gif" />
+    <Content Include="brandy\__MACOSX\images\._testimonial_bg.jpg" />
+    <Content Include="brandy\__MACOSX\images\._w1.jpg" />
+    <Content Include="brandy\__MACOSX\images\._w2.jpg" />
+    <Content Include="brandy\__MACOSX\images\._w3.jpg" />
+    <Content Include="brandy\__MACOSX\images\._w4.jpg" />
+    <Content Include="brandy\__MACOSX\images\._w5.jpg" />
+    <Content Include="brandy\__MACOSX\images\._w6.jpg" />
+    <Content Include="brandy\__MACOSX\js\._bootstrap.min.js" />
+    <Content Include="brandy\__MACOSX\js\._jquery.min.js" />
+    <Content Include="brandy\__MACOSX\js\._jquery.nicescroll.js" />
+    <Content Include="brandy\__MACOSX\js\._lte-ie7.js" />
+    <Content Include="brandy\__MACOSX\js\._owl.carousel.js" />
+    <Content Include="brandy\__MACOSX\js\._script.js" />
+    <Content Include="brandy\__MACOSX\js\._wow.js" />
+    <Content Include="Global.asax" />
+    <Content Include="imagenes\f.png" />
+    <Content Include="imagenes\g.jpg" />
+    <Content Include="imagenes\h.jpg" />
+    <Content Include="imagenes\juego1.png" />
+    <Content Include="imagenes\juego3.png" />
+    <Content Include="imagenes\OpenCV_Logo_with_text.png" />
+    <Content Include="imagenes\Sin título.png" />
+    <Content Include="imagenes\t.jpg" />
+    <Content Include="imagenes\tematica.png" />
+    <Content Include="imagenes\tematica1.png" />
+    <Content Include="imagenes\tematica2.png" />
+    <Content Include="imagenes\tematica4.png" />
+    <Content Include="imagenes\tensorflow-3-638.jpg" />
+    <Content Include="imagenes\viaa.jpg" />
+    <Content Include="lesser\about.html" />
+    <Content Include="lesser\blog.html" />
+    <Content Include="lesser\contact.html" />
+    <Content Include="lesser\css\animate.css" />
+    <Content Include="lesser\css\bootstrap.css" />
+    <Content Include="lesser\css\icomoon.css" />
+    <Content Include="lesser\css\index.html" />
+    <Content Include="lesser\css\login.css" />
+    <Content Include="lesser\css\simple-line-icons.css" />
+    <Content Include="lesser\css\style.css" />
+    <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="lesser\fonts\bootstrap\index.html" />
+    <Content Include="lesser\fonts\icomoon\icomoon.svg" />
+    <Content Include="lesser\fonts\icomoon\index.html" />
+    <Content Include="lesser\fonts\index.html" />
+    <Content Include="lesser\fonts\simple-line-icons\Simple-Line-Icons.svg" />
+    <Content Include="lesser\images\Flor.jpg" />
+    <Content Include="lesser\images\fofa.jpg" />
+    <Content Include="lesser\images\icono.png" />
+    <Content Include="lesser\images\ima.jpg" />
+    <Content Include="lesser\images\loc.png" />
+    <Content Include="lesser\images\logg.png" />
+    <Content Include="lesser\images\mateo.jpg" />
+    <Content Include="lesser\images\mural.jpg" />
+    <Content Include="lesser\images\sena.jpg" />
+    <Content Include="lesser\images\senal.jpg" />
+    <Content Include="lesser\index.html" />
+    <Content Include="lesser\js\bootstrap.min.js" />
+    <Content Include="lesser\js\google_map.js" />
+    <Content Include="lesser\js\index.html" />
+    <Content Include="lesser\js\jquery-1.11.3.min.js" />
+    <Content Include="lesser\js\jquery.easing.1.3.js" />
+    <Content Include="lesser\js\jquery.min.js" />
+    <Content Include="lesser\js\jquery.waypoints.min.js" />
+    <Content Include="lesser\js\main.js" />
+    <Content Include="lesser\js\modernizr-2.6.2.min.js" />
+    <Content Include="lesser\js\respond.min.js" />
+    <Content Include="lesser\portfolio.html" />
+    <Content Include="lesser\README.txt" />
+    <Content Include="lesser\sass\bootstrap\index.html" />
+    <Content Include="lesser\sass\bootstrap\mixins\index.html" />
+    <Content Include="lesser\sass\index.html" />
+    <Content Include="lesser\services.html" />
+    <Content Include="registro\assets\css\bootstrap.min.css" />
+    <Content Include="registro\assets\css\demo.css" />
+    <Content Include="registro\assets\css\login.css" />
+    <Content Include="registro\assets\css\material-bootstrap-wizard.css" />
+    <Content Include="registro\assets\img\apple-icon.png" />
+    <Content Include="registro\assets\img\default-avatar.png" />
+    <Content Include="registro\assets\img\favicon.png" />
+    <Content Include="registro\assets\img\new_logo.png" />
+    <Content Include="registro\assets\img\thumb_list_boat.png" />
+    <Content Include="registro\assets\img\thumb_list_place.png" />
+    <Content Include="registro\assets\img\thumb_register.png" />
+    <Content Include="registro\assets\img\tim_80x80.png" />
+    <Content Include="registro\assets\img\wizard-book.jpg" />
+    <Content Include="registro\assets\img\wizard-city.jpg" />
+    <Content Include="registro\assets\img\wizard-profile.jpg" />
+    <Content Include="registro\assets\js\bootstrap.min.js" />
+    <Content Include="registro\assets\js\jquery-2.2.4.min.js" />
+    <Content Include="registro\assets\js\jquery.bootstrap.js" />
+    <Content Include="registro\assets\js\jquery.validate.min.js" />
+    <Content Include="registro\assets\js\material-bootstrap-wizard.js" />
+    <Content Include="registro\documentation\components-documentation.html" />
+    <Content Include="registro\wizard-build-profile.html" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Views\Administrador\inicio.aspx" />
+    <Content Include="Views\Administrador\Modulos.aspx" />
+    <Content Include="Views\Administrador\Prueba.aspx" />
+    <Content Include="Views\Estudiante\Modulos_estudiante.aspx" />
+    <Content Include="Views\Principal\Acerca_de.aspx" />
+    <Content Include="Views\Principal\Contacto.aspx" />
+    <Content Include="Views\Principal\Inicio.aspx" />
+    <Content Include="Views\Principal\Login.aspx" />
+    <Content Include="Views\Principal\Registro.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Conexion\BdComun.cs" />
+    <Compile Include="Conexion\Parameter.cs" />
+    <Compile Include="Conexion\Transaction.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ModuloController.cs" />
+    <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Modulo.cs" />
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Administrador\Administrador.Master.cs">
+      <DependentUpon>Administrador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Administrador.Master.designer.cs">
+      <DependentUpon>Administrador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\inicio.aspx.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\inicio.aspx.designer.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Modulos.aspx.cs">
+      <DependentUpon>Modulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Modulos.aspx.designer.cs">
+      <DependentUpon>Modulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\Modulos_estudiante.aspx.cs">
+      <DependentUpon>Modulos_estudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\Modulos_estudiante.aspx.designer.cs">
+      <DependentUpon>Modulos_estudiante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal\Acerca_de.aspx.cs">
+      <DependentUpon>Acerca_de.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal\Acerca_de.aspx.designer.cs">
+      <DependentUpon>Acerca_de.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal\Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal\Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="brandy\fonts\et-line.eot" />
+    <Content Include="brandy\fonts\et-line.ttf" />
+    <Content Include="brandy\fonts\et-line.woff" />
+    <Content Include="brandy\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="brandy\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="brandy\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="brandy\images\Thumbs.db" />
+    <Content Include="brandy\__MACOSX\._css" />
+    <Content Include="brandy\__MACOSX\._fonts" />
+    <Content Include="brandy\__MACOSX\._images" />
+    <Content Include="brandy\__MACOSX\._js" />
+    <Content Include="brandy\__MACOSX\fonts\._et-line.eot" />
+    <Content Include="brandy\__MACOSX\fonts\._et-line.ttf" />
+    <Content Include="brandy\__MACOSX\fonts\._et-line.woff" />
+    <Content Include="brandy\__MACOSX\fonts\._glyphicons-halflings-regular.eot" />
+    <Content Include="brandy\__MACOSX\fonts\._glyphicons-halflings-regular.ttf" />
+    <Content Include="brandy\__MACOSX\fonts\._glyphicons-halflings-regular.woff" />
+    <Content Include="brandy\__MACOSX\images\._Thumbs.db" />
+    <Content Include="Views\Principal\Site1.Master" />
+    <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="lesser\fonts\icomoon\icomoon.eot" />
+    <Content Include="lesser\fonts\icomoon\icomoon.ttf" />
+    <Content Include="lesser\fonts\icomoon\icomoon.woff" />
+    <Content Include="lesser\fonts\simple-line-icons\Simple-Line-Icons.eot" />
+    <Content Include="lesser\fonts\simple-line-icons\Simple-Line-Icons.ttf" />
+    <Content Include="lesser\fonts\simple-line-icons\Simple-Line-Icons.woff" />
+    <Content Include="lesser\fonts\simple-line-icons\Simple-Line-Icons.woff2" />
+    <Content Include="lesser\sass\bootstrap.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_image.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_size.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="lesser\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="lesser\sass\bootstrap\_alerts.scss" />
+    <Content Include="lesser\sass\bootstrap\_badges.scss" />
+    <Content Include="lesser\sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="lesser\sass\bootstrap\_button-groups.scss" />
+    <Content Include="lesser\sass\bootstrap\_buttons.scss" />
+    <Content Include="lesser\sass\bootstrap\_carousel.scss" />
+    <Content Include="lesser\sass\bootstrap\_close.scss" />
+    <Content Include="lesser\sass\bootstrap\_code.scss" />
+    <Content Include="lesser\sass\bootstrap\_component-animations.scss" />
+    <Content Include="lesser\sass\bootstrap\_dropdowns.scss" />
+    <Content Include="lesser\sass\bootstrap\_forms.scss" />
+    <Content Include="lesser\sass\bootstrap\_glyphicons.scss" />
+    <Content Include="lesser\sass\bootstrap\_grid.scss" />
+    <Content Include="lesser\sass\bootstrap\_input-groups.scss" />
+    <Content Include="lesser\sass\bootstrap\_jumbotron.scss" />
+    <Content Include="lesser\sass\bootstrap\_labels.scss" />
+    <Content Include="lesser\sass\bootstrap\_list-group.scss" />
+    <Content Include="lesser\sass\bootstrap\_media.scss" />
+    <Content Include="lesser\sass\bootstrap\_mixins.scss" />
+    <Content Include="lesser\sass\bootstrap\_modals.scss" />
+    <Content Include="lesser\sass\bootstrap\_navbar.scss" />
+    <Content Include="lesser\sass\bootstrap\_navs.scss" />
+    <Content Include="lesser\sass\bootstrap\_normalize.scss" />
+    <Content Include="lesser\sass\bootstrap\_pager.scss" />
+    <Content Include="lesser\sass\bootstrap\_pagination.scss" />
+    <Content Include="lesser\sass\bootstrap\_panels.scss" />
+    <Content Include="lesser\sass\bootstrap\_popovers.scss" />
+    <Content Include="lesser\sass\bootstrap\_print.scss" />
+    <Content Include="lesser\sass\bootstrap\_progress-bars.scss" />
+    <Content Include="lesser\sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="lesser\sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="lesser\sass\bootstrap\_scaffolding.scss" />
+    <Content Include="lesser\sass\bootstrap\_tables.scss" />
+    <Content Include="lesser\sass\bootstrap\_theme.scss" />
+    <Content Include="lesser\sass\bootstrap\_thumbnails.scss" />
+    <Content Include="lesser\sass\bootstrap\_tooltip.scss" />
+    <Content Include="lesser\sass\bootstrap\_type.scss" />
+    <Content Include="lesser\sass\bootstrap\_utilities.scss" />
+    <Content Include="lesser\sass\bootstrap\_variables.scss" />
+    <Content Include="lesser\sass\bootstrap\_wells.scss" />
+    <Content Include="lesser\sass\style.scss" />
+    <Content Include="lesser\sass\_bootstrap-compass.scss" />
+    <Content Include="lesser\sass\_bootstrap-mincer.scss" />
+    <Content Include="lesser\sass\_bootstrap-sprockets.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\mixins\_buttons.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\mixins\_inputs.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\mixins\_vendor-prefixes.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_buttons.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_card.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_checkboxes.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_colors.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_footers.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_inputs-size.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_inputs.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_misc.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_mixins.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_navs-pagination.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_radios.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_responsive.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_ripples.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_shadows.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_tooltips.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_typography.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_variables.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_variables_bootstrap.scss" />
+    <Content Include="registro\assets\scss\material-bootstrap-wizard\_wizard-card.scss" />
+    <Content Include="Admin\Theme\.DS_Store" />
+    <Content Include="Admin\Theme\assets\.DS_Store" />
+    <Content Include="Admin\Theme\assets\css\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\css\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Admin\Theme\assets\fonts\.DS_Store" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Admin\Theme\assets\img\.DS_Store" />
+    <Content Include="Admin\Theme\assets\img\friends\.DS_Store" />
+    <Content Include="Admin\Theme\assets\img\portfolio\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\bootstrap-inputmask\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\chart-master\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\fancybox\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\fullcalendar\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\css\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\js\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\.DS_Store" />
+    <Content Include="Admin\Theme\assets\lineicons\.DS_Store" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\.DS_Store" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.eot" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.ttf" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.woff" />
+    <Content Include="Admin\__MACOSX\Theme\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\._css" />
+    <Content Include="Admin\__MACOSX\Theme\assets\._fonts" />
+    <Content Include="Admin\__MACOSX\Theme\assets\._js" />
+    <Content Include="Admin\__MACOSX\Theme\assets\css\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\css\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\fonts\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\fonts\._fontawesome-webfont.eot" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\fonts\._fontawesome-webfont.woff" />
+    <Content Include="Admin\__MACOSX\Theme\assets\font-awesome\fonts\._FontAwesome.otf" />
+    <Content Include="Admin\__MACOSX\Theme\assets\fonts\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\fonts\._glyphicons-halflings-regular.eot" />
+    <Content Include="Admin\__MACOSX\Theme\assets\fonts\._glyphicons-halflings-regular.ttf" />
+    <Content Include="Admin\__MACOSX\Theme\assets\fonts\._glyphicons-halflings-regular.woff" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\friends\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\img\portfolio\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\bootstrap-inputmask\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\chart-master\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\fancybox\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\fullcalendar\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\._images" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\css\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\images\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\gritter\js\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\js\jquery-easy-pie-chart\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\lineicons\._.DS_Store" />
+    <Content Include="Admin\__MACOSX\Theme\assets\lineicons\fonts\._.DS_Store" />
+    <Content Include="Views\Administrador\Administrador.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53630</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53630/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
