@@ -469,6 +469,8 @@
     <Content Include="registro\wizard-build-profile.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Views\Administrador\Agregar_tematica.aspx" />
+    <Content Include="Views\Administrador\Ver_modulos_adm.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
     <Content Include="Views\Administrador\Modulos.aspx" />
     <Content Include="Views\Administrador\Prueba.aspx" />
@@ -500,6 +502,20 @@
     </Compile>
     <Compile Include="Views\Administrador\Administrador.Master.designer.cs">
       <DependentUpon>Administrador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Agregar_tematica.aspx.cs">
+      <DependentUpon>Agregar_tematica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Agregar_tematica.aspx.designer.cs">
+      <DependentUpon>Agregar_tematica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Ver_modulos_adm.aspx.cs">
+      <DependentUpon>Ver_modulos_adm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Ver_modulos_adm.aspx.designer.cs">
+      <DependentUpon>Ver_modulos_adm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\inicio.aspx.cs">
       <DependentUpon>inicio.aspx</DependentUpon>

@@ -37,6 +37,16 @@ namespace swtransito.Controllers
             return mod.consultar_modulos();
         }
 
+        public DataTable Traer_modulos_admin()
+        {
+            return mod.consultar_modulos_admin();
+        }
+
+        public string Traer_nombre_monulo(string id_modulo)
+        {
+            return mod.traer_nombre_modulo(id_modulo);
+        }
+
 
 
     }

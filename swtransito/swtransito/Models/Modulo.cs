@@ -50,7 +50,27 @@ namespace swtransito.Models
         }
 
 
+        public DataTable consultar_modulos_admin()
+        {
+            string sql = @" select Nombre,Numero,idModulo from modulo where modulo.estado='A' ; ";
+
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
+
+
        
+
+
+        public string traer_nombre_modulo(string idmodulo)
+        {
+            string sql = @" select Nombre from modulo where  idModulo='" + idmodulo + "' AND modulo.estado='A' ; ";
+            DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
+            return data.Rows[0]["Nombre"].ToString();
+        }
+
+
+
 
 
 

@@ -13,7 +13,7 @@
                     <table class="table table-striped table-advance table-hover">
                         <h4><i class="fa fa-angle-right"></i>Modulos Registrados</h4>
                         <hr>
-                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" style="border-left-width: 1px; margin-left: 5px;">Registrar Usuario</a>
+                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" style="border-left-width: 1px; margin-left: 5px;">Registrar Modulo</a>
                         <thead>
 
                             <tr>
