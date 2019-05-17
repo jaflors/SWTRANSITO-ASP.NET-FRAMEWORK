@@ -10,7 +10,7 @@ namespace swtransito.Views.Administrador
 {
     public partial class Agregar_tematica : System.Web.UI.Page
     {
-        ModuloController mod = new ModuloController();
+      
         TematicaController tem = new TematicaController();
         protected void Page_Load(object sender, EventArgs e)
         {

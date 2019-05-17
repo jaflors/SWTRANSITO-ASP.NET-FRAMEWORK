@@ -40,19 +40,11 @@
                                             <asp:LinkButton CommandArgument='<%#Eval("idTematica")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
                                                     Actualizar</asp:LinkButton>
 
-                                            <%-- data-toggle="modal" data-target="#myModal"--%>
+                                           
                                         </td>
 
 
-                                        <%-- <td><a href="basic_table.html#">Company Ltd</a></td>
-                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                  <td>12000.00$ </td>
-                                  <td><span class="label label-info label-mini">Due</span></td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>--%>
+                                       
                                     </tr>
 
                                 </ItemTemplate>

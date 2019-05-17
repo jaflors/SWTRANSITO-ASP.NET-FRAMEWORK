@@ -52,6 +52,11 @@ namespace swtransito.Controllers
             return tem.consultar_tematica_admin();
         }
 
+        public bool Insertar_imagen( string imagen,string id_tematica)
+        {
+            return tem.insert_imagen(imagen,id_tematica);
+        }
+
 
         public DataTable Traer_modulos_estudiante()
         {

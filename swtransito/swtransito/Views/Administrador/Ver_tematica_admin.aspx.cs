@@ -34,10 +34,16 @@ namespace swtransito.Views.Administrador
                 string nombre = tem.Traer_nombre_tematica(idtematia);
                 Session["nombre_tematica"] = nombre;
 
-                Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
+                Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
             }
 
         }
+
+
+
+
+
+
 
 
 

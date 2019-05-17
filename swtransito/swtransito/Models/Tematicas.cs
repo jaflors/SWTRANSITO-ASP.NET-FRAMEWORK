@@ -33,6 +33,22 @@ namespace swtransito.Models
 
         }
 
+        public bool insert_imagen(string imagen,string id_tematica)
+        {
+            Parameter[] para = new Parameter[2];
+
+            para[0] = new Parameter("p_imagen", imagen);
+            para[1] = new Parameter("p_id_tematica",id_tematica);
+            
+
+
+            Transaction[] trans = new Transaction[1];
+            trans[0] = new Transaction("insert_imagen", para);
+            return conn.Transaction(trans);
+
+        }
+
+
 
         public DataTable consultar_tematica_admin()
         {
