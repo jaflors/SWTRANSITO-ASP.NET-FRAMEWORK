@@ -470,11 +470,10 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Administrador\Agregar_tematica.aspx" />
-    <Content Include="Views\Administrador\Ver_modulos_adm.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
-    <Content Include="Views\Administrador\Modulos.aspx" />
     <Content Include="Views\Administrador\Prueba.aspx" />
-    <Content Include="Views\Estudiante\Modulos_estudiante.aspx" />
+    <Content Include="Views\Administrador\Ver_tematica_admin.aspx" />
+    <Content Include="Views\Estudiante\Tematicas_estudiantes.aspx" />
     <Content Include="Views\Principal\Acerca_de.aspx" />
     <Content Include="Views\Principal\Contacto.aspx" />
     <Content Include="Views\Principal\Inicio.aspx" />
@@ -488,13 +487,13 @@
     <Compile Include="Conexion\Parameter.cs" />
     <Compile Include="Conexion\Transaction.cs" />
     <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\ModuloController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Controllers\TematicaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Modulo.cs" />
     <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Tematicas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Administrador\Administrador.Master.cs">
       <DependentUpon>Administrador.Master</DependentUpon>
@@ -510,26 +509,12 @@
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.designer.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administrador\Ver_modulos_adm.aspx.cs">
-      <DependentUpon>Ver_modulos_adm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Administrador\Ver_modulos_adm.aspx.designer.cs">
-      <DependentUpon>Ver_modulos_adm.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Administrador\inicio.aspx.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Administrador\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrador\Modulos.aspx.cs">
-      <DependentUpon>Modulos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Administrador\Modulos.aspx.designer.cs">
-      <DependentUpon>Modulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Prueba.aspx.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
@@ -538,12 +523,19 @@
     <Compile Include="Views\Administrador\Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Estudiante\Modulos_estudiante.aspx.cs">
-      <DependentUpon>Modulos_estudiante.aspx</DependentUpon>
+    <Compile Include="Views\Administrador\Ver_tematica_admin.aspx.cs">
+      <DependentUpon>Ver_tematica_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Estudiante\Modulos_estudiante.aspx.designer.cs">
-      <DependentUpon>Modulos_estudiante.aspx</DependentUpon>
+    <Compile Include="Views\Administrador\Ver_tematica_admin.aspx.designer.cs">
+      <DependentUpon>Ver_tematica_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\Tematicas_estudiantes.aspx.cs">
+      <DependentUpon>Tematicas_estudiantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\Tematicas_estudiantes.aspx.designer.cs">
+      <DependentUpon>Tematicas_estudiantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Principal\Acerca_de.aspx.cs">
       <DependentUpon>Acerca_de.aspx</DependentUpon>

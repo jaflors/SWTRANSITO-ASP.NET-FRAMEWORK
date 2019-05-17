@@ -8,15 +8,13 @@ using System.Web.UI.WebControls;
 
 namespace swtransito.Views.Administrador
 {
-    public partial class Agregar_Tematica : System.Web.UI.Page
+    public partial class Ver_tematica_admin : System.Web.UI.Page
     {
-       
-
-        ModuloController mod = new ModuloController();
+        TematicaController tem = new TematicaController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            list_modulos.DataSource = mod.Traer_modulos_admin();
-            list_modulos.DataBind();
+            list_tematicas.DataSource = tem.Traer_tematica_admin();
+            list_tematicas.DataBind();
 
 
 
@@ -27,19 +25,24 @@ namespace swtransito.Views.Administrador
         {
             if (e.CommandName.Equals("traer"))
             {
-                string idmodulo = (e.CommandArgument.ToString());
+                string idtematia = (e.CommandArgument.ToString());
 
-                
 
-                Session["id_modulo_admin"] = idmodulo;
 
-                string nombre = mod.Traer_nombre_monulo(idmodulo);
-                Session["nombre_modulo"] = nombre;
+                Session["id_tematica_admin"] = idtematia;
+
+                string nombre = tem.Traer_nombre_tematica(idtematia);
+                Session["nombre_tematica"] = nombre;
 
                 Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
             }
 
         }
+
+
+
+
+
 
 
 

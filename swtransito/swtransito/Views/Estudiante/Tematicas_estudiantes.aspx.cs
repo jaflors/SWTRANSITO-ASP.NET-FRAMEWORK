@@ -8,21 +8,15 @@ using System.Web.UI.WebControls;
 
 namespace swtransito.Views.Estudiante
 {
-    public partial class Modulos : System.Web.UI.Page
+    public partial class Tematicas_estudiantes : System.Web.UI.Page
     {
-        ModuloController mod = new ModuloController();
+        TematicaController tem = new TematicaController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            list_modulos.DataSource = mod.Traer_modulos();
-            list_modulos.DataBind();
-
+            list_tematicas.DataSource = tem.Traer_modulos_estudiante();
+            list_tematicas.DataBind();
 
 
         }
-
-        
-
-
-
     }
 }

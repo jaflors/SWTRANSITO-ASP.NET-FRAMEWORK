@@ -10,15 +10,15 @@
 namespace swtransito.Views.Administrador {
     
     
-    public partial class Agregar_Tematica {
+    public partial class Ver_tematica_admin {
         
         /// <summary>
-        /// Control list_modulos.
+        /// Control list_tematicas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView list_modulos;
+        protected global::System.Web.UI.WebControls.ListView list_tematicas;
     }
 }

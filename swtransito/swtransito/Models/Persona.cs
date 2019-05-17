@@ -70,27 +70,7 @@ namespace swtransito.Models
 
 
 
-        //     public DataTable Mis_eventos_iscrito( string pk_usuario)
-        //     {
-        //         string sql = @"select concat(usuario.nombres,' ',usuario.apellidos) Participante, 
-        //evento.Nombre as 'Nombre evento', evento.idEvento,
-        //         DATE_FORMAT(evento.Fecha_creacion,'%d/%m/%Y') as'Fecha inicio',
-        //         DATE_FORMAT(evento.Fecha_fin,'%d/%m/%Y')  as 'Fecha fin' from evento
-        //         inner join registro_event on registro_event.FK_idEvento=evento.idEvento
-        //         inner join usuario on registro_event.FK_idusuario=usuario.idusuario where usuario.idusuario='" + pk_usuario +"';";
-        //         return conn.EjecutarConsulta(sql, CommandType.Text);
-        //     }
-
-
-        //     public DataTable ConsultarDatosPersonas()
-        //     {
-        //         string sql = @"SELECT usu.idusuario as idusuario,usu.nombres as Nombres,usu.apellidos as Apellidos,usu.correo as Correo,R.Nombre_Rol as Rol FROM usuario usu 
-        //         inner join usuario_rol as ur on usu.idusuario = ur.Usuario_idUsuario
-        //         inner join rol as R on R.idRol = ur.Rol_idRol
-        //where usu.estado='A'order by usu.nombres; ";
-        //         return conn.EjecutarConsulta(sql, CommandType.Text);
-        //     }
-
+      
 
 
         public DataTable ConsultarUsuarios()
