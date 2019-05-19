@@ -18,5 +18,18 @@ namespace swtransito.Views.Estudiante
 
 
         }
+
+
+        public void ver_contenido(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName.Equals("ingresar"))
+            {
+
+
+               
+            }
+
+        }
+
     }
 }

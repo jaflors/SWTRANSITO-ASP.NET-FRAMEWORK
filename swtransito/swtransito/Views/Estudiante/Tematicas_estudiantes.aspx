@@ -38,6 +38,14 @@
                                     ];
                                     var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
                                 </script>
+                                <div class=" footer">
+
+                                    <asp:LinkButton runat="server" OnCommand="ver_contenido"  CssClass="btn btn-primary btn-xs" CommandName="ingresar"> Ingresar </asp:LinkButton>
+
+                                </div>
+                                 
+
+
                             </div>
                             <! --/grey-panel -->
                         </div>
