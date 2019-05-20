@@ -104,6 +104,14 @@ namespace swtransito.Models
         }
 
 
+        public DataTable ConsultarImagenBanner()
+        {
+            string sql = @"select idImagen,Foto,tematica_idTematica from imagen;";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+        }
+
+
+
 
     }
 }

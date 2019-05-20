@@ -63,6 +63,12 @@ namespace swtransito.Controllers
             return tem.consultar_tematicas_estudiante();
         }
 
+
+        public DataTable Traer_Imagen_Banner()
+        {
+            return tem.ConsultarImagenBanner();
+        }
+
         public string Traer_nombre_tematica(string id_tematica)
         {
             return tem.traer_nombre_tematica(id_tematica);
