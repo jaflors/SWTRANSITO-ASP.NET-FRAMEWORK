@@ -23,7 +23,7 @@ namespace swtransito.Views.Estudiante
             {
                 
 
-                dtimagen = tem.Traer_Imagen_Banner();
+                dtimagen = tem.Traer_Imagen_Banner(Session["id_tematica_estudiante"].ToString());
 
 
 
@@ -32,20 +32,20 @@ namespace swtransito.Views.Estudiante
                 {
                     drimagen = dtimagen.Rows[i];
                     HtmlGenericControl div = new HtmlGenericControl("div");
-                    HtmlGenericControl div2 = new HtmlGenericControl("div");
+                   
                     div.InnerHtml = "<img src = '" + drimagen["foto"] + "'/>";
-                    div2.Attributes.Add("class", "carousel-caption");
-                    div2.InnerHtml = "<p>'" + drimagen["Nombre"] + "</p>";
+                   
+                   
 
                     if (i == 0)
                     {
                         div.Attributes.Add("class", "item active");
-                        div.Controls.Add(div2);
+                       
                     }
                     else
                     {
                         div.Attributes.Add("class", "item");
-                        div.Controls.Add(div2);
+                        
                     }
 
                     //HtmlGenericControl div2 = new HtmlGenericControl("div");

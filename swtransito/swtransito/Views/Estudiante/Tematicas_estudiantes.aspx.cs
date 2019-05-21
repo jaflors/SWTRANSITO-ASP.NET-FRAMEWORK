@@ -24,9 +24,23 @@ namespace swtransito.Views.Estudiante
         {
             if (e.CommandName.Equals("ingresar"))
             {
+                string idtematia = (e.CommandArgument.ToString());
 
 
-               
+
+                Session["id_tematica_estudiante"] = idtematia;
+
+                //string nombre = tem.Traer_nombre_tematica(idtematia);
+                //Session["nombre_tematica"] = nombre;
+
+                Response.Redirect("~/Views/Estudiante/Imagen.aspx");
+
+
+
+
+
+
+
             }
 
         }

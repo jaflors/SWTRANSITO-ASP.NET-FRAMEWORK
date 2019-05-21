@@ -64,9 +64,9 @@ namespace swtransito.Controllers
         }
 
 
-        public DataTable Traer_Imagen_Banner()
+        public DataTable Traer_Imagen_Banner(string id)
         {
-            return tem.ConsultarImagenBanner();
+            return tem.ConsultarImagenBanner(id);
         }
 
         public string Traer_nombre_tematica(string id_tematica)
