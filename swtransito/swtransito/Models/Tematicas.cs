@@ -16,7 +16,21 @@ namespace swtransito.Models
         public string p_numero { get; set; }
 
 
-        public bool insert_tematica(Tematicas obj,string tipo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //tematicas
+        public bool insert_tematica(Tematicas obj, string tipo)
         {
             Conexion.Parameter[] para = new Conexion.Parameter[3];
 
@@ -33,23 +47,6 @@ namespace swtransito.Models
 
         }
 
-        public bool insert_imagen(string imagen,string id_tematica)
-        {
-            Parameter[] para = new Parameter[2];
-
-            para[0] = new Parameter("p_imagen", imagen);
-            para[1] = new Parameter("p_id_tematica",id_tematica);
-            
-
-
-            Transaction[] trans = new Transaction[1];
-            trans[0] = new Transaction("insert_imagen", para);
-            return conn.Transaction(trans);
-
-        }
-
-
-
         public DataTable consultar_tematica_admin()
         {
             string sql = @" select Nombre,Numero,idTematica from tematica where tematica.estado='A' ; ";
@@ -58,13 +55,13 @@ namespace swtransito.Models
 
         }
 
-
         public string traer_nombre_tematica(string idtematica)
         {
             string sql = @" select Nombre from tematica where  idTematica='" + idtematica + "' AND tematica.estado='A' ; ";
             DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
             return data.Rows[0]["Nombre"].ToString();
         }
+
 
         public DataTable consultar_tematicas_estudiante()
         {
@@ -73,19 +70,6 @@ namespace swtransito.Models
             return conn.EjecutarConsulta(sql, CommandType.Text);
 
         }
-
-
-
-
-
-        public DataTable traer_tipo()
-        {
-
-            string sql = @"select idTipo, Nombre from  tipo ;";
-            return conn.EjecutarConsulta(sql, CommandType.Text);
-
-        }
-
 
         public DataTable consultar_tematicas()
         {
@@ -96,6 +80,7 @@ namespace swtransito.Models
         }
 
 
+
         public bool Cambiar_estado_tematica(string pk)
         {
             string[] sql = new string[1];
@@ -104,11 +89,91 @@ namespace swtransito.Models
         }
 
 
+        //imagen
+
+
+        public bool insert_imagen(string imagen, string id_tematica)
+        {
+            Parameter[] para = new Parameter[2];
+
+            para[0] = new Parameter("p_imagen", imagen);
+            para[1] = new Parameter("p_id_tematica", id_tematica);
+
+
+
+            Transaction[] trans = new Transaction[1];
+            trans[0] = new Transaction("insert_imagen", para);
+            return conn.Transaction(trans);
+
+        }
+
+
         public DataTable ConsultarImagenBanner(string id__ima)
         {
-            string sql = @"select idImagen,Foto,tematica_idTematica from imagen where tematica_idTematica='"+id__ima+"';";
+            string sql = @"select idImagen,Foto,tematica_idTematica from imagen where tematica_idTematica='" + id__ima + "';";
             return conn.EjecutarConsulta(sql, CommandType.Text);
         }
+        public DataTable traer_imagen_contenido(string id_temmatica)
+        {
+
+            string sql = @"select Foto,idImagen from imagen where tematica_idTematica='" + id_temmatica + "'  ;";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
+
+        //eliminar imagen 
+        public bool eliminar_imagen_admin(string pk)
+        {
+            string[] sql = new string[1];
+            sql[0] = "DELETE FROM `imagen` WHERE `idImagen`='" + pk + "'; ";
+            return conn.RealizarTransaccion(sql);
+        }
+
+
+        //tipo
+
+        public DataTable traer_tipo()
+        {
+
+            string sql = @"select idTipo, Nombre from  tipo ;";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
+
+        //traer tipo de tematica segun el id de la tematica 
+        public string traer_tipo_idtem(string id_tematica)
+        {
+
+            string sql = @"select tipo_idTipo from tematica where tematica.idTematica='" + id_tematica + "'; ";
+            DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
+            return data.Rows[0]["tipo_idTipo"].ToString();
+
+
+            
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        // Gauardar video 
+
+        public bool insert_video( string url,string fk_tematicca)
+        {
+            string[] sql = new string[1];
+            sql[0] = "insert into video( ubicacion,tematica_idTematica )values('"+url+"','"+fk_tematicca+"'); ";
+            return conn.RealizarTransaccion(sql);
+
+        }
+
 
 
 

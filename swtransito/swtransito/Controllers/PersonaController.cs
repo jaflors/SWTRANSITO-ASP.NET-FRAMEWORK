@@ -50,11 +50,7 @@ namespace swtransito.Controllers
         }
 
 
-        public DataTable traer_dias_evento(string id_evento, string idusuario)
-        {
-            return usu.consultar_dias_por_evento(id_evento, idusuario);
-        }
-
+       
         public bool Insertar(Persona obj)
         {
             return usu.insertusu(obj);
@@ -65,10 +61,7 @@ namespace swtransito.Controllers
             return usu.insertusu_Admin(obj, pk_Rol, ruta);
         }
 
-        public DataTable consul_ponenet()
-        {
-            return usu.consultar_ponente();
-        }
+       
 
 
         //public DataTable mis_eventos_inscrito(string pk_usuario)

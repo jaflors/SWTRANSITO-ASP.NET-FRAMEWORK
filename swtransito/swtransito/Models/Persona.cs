@@ -106,30 +106,10 @@ namespace swtransito.Models
 
 
 
-        public DataTable consultar_ponente()
-        {
-            string sql = @"select usu.nombres, usu.apellidos, usu.idusuario from usuario as usu
-            inner join usuario_rol as ur on ur.Usuario_idUsuario= usu.idusuario 
-            where usu.estado='A' and ur.Rol_idRol=3 ; ";
-            return conn.EjecutarConsulta(sql, CommandType.Text);
-        }
-
-        public DataTable consultar_dias_por_evento(string id_event, string id_usuario)
-        {
-            string sql = @"select count(usuario.idusuario) as 'dias asistido',DATEDIFF( evento.Fecha_fin ,evento.Fecha_creacion)+1 as dias from usuario
-            inner join asis on usuario.idusuario = asis.fk_usuario
-            inner join evento  on evento.idEvento =asis.Evento_idEvento
-            where asis.Evento_idEvento='" + id_event + "'and usuario.idusuario= '" + id_usuario + "'; ";
-            return conn.EjecutarConsulta(sql, CommandType.Text);
-        }
+      
+       
 
 
-        //public bool RealizarUpdate_Participante(string nombre, string apellido, string correo, string contrasena, string pk)
-        //{
-        //    //string[] sql = new string[1];
-        //    //sql[0] = String.Format("CALL `InsertarPersona`('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", nombre,apellido,correo,);
-        //    //return conn.RealizarTransaccion(sql);
-        //}
 
 
         public bool Cambiar_estado_usu(string pk)

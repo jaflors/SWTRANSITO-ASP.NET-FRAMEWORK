@@ -11,9 +11,9 @@
             <div class="content-panel">
                 <form runat="server" class="form-horizontal form-label-left">
                     <table class="table table-striped table-advance table-hover">
-                        <h4><i class="fa fa-angle-right"></i>Modulos Registrados</h4>
+                        <h4><i class="fa fa-angle-right"></i> Temáticas Registradas</h4>
                         <hr>
-                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" style="border-left-width: 1px; margin-left: 5px;">Registrar Modulo</a>
+                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" style="border-left-width: 1px; margin-left: 5px;">Registrar Temáticas </a>
                         <thead>
 
                             <tr>

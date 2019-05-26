@@ -743,6 +743,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Administrador\Agregar_Contenido_Imagen.aspx" />
+    <Content Include="Views\Administrador\Agregar_Contenido_video.aspx" />
     <Content Include="Views\Administrador\Agregar_tematica.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
     <Content Include="Views\Administrador\Prueba.aspx" />
@@ -783,6 +784,13 @@
     </Compile>
     <Compile Include="Views\Administrador\Agregar_Contenido_Imagen.aspx.designer.cs">
       <DependentUpon>Agregar_Contenido_Imagen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Agregar_Contenido_video.aspx.cs">
+      <DependentUpon>Agregar_Contenido_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Agregar_Contenido_video.aspx.designer.cs">
+      <DependentUpon>Agregar_Contenido_video.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>

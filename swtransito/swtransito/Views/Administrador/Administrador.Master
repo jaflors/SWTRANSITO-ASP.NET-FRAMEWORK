@@ -172,7 +172,7 @@
     <script src="../../Admin/Theme/assets/js/sparkline-chart.js"></script>    
 	<script src="../../Admin/Theme/assets/js/zabuto_calendar.js"></script>	
 	
-	<script type="text/javascript">
+	<%--<script type="text/javascript">
         $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
@@ -191,7 +191,10 @@
 
         return false;
         });
-	</script>
+	</script>--%>
+
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                        </asp:ContentPlaceHolder>
 	
 	<script type="application/javascript">
         $(document).ready(function () {

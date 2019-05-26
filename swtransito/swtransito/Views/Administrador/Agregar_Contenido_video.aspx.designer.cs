@@ -10,16 +10,16 @@
 namespace swtransito.Views.Administrador {
     
     
-    public partial class Agregar_Contenido_Imagen {
+    public partial class Agregar_Contenido_video {
         
         /// <summary>
-        /// Control file_contenido.
+        /// Control txt_url.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file_contenido;
+        protected global::System.Web.UI.WebControls.TextBox txt_url;
         
         /// <summary>
         /// Control list_imagen.

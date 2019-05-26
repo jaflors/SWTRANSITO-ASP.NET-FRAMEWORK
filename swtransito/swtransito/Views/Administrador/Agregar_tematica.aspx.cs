@@ -48,7 +48,7 @@ namespace swtransito.Views.Administrador
                 if (tem.cambiar_estado_tem(idusu) == true)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('seguro de eliminar ');", true);
-                    Response.Redirect("~/Views/Administrador/Agregar_-tematica.aspx");
+                    Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
 
                 }
 
@@ -87,8 +87,8 @@ namespace swtransito.Views.Administrador
             }
             else
             {
-                Response.Write("<script> alert('Algo salio mal' ); </script>");
-                Response.Redirect("~/Views/Administrador/Modulos.aspx");
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Algo salio mal');", true);
+                Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
             }
 
 

@@ -36,9 +36,27 @@ namespace swtransito.Controllers
 
         }
 
+
+        public string traer_tipo_idtem(string id_tema)
+        {
+            return tem.traer_tipo_idtem(id_tema);
+
+
+        }
+
+
+
+
+
         public DataTable Traer_tematicas()
         {
             return tem.consultar_tematicas();
+        }
+
+
+        public DataTable Traer_imagen_admin(string id)
+        {
+            return tem.traer_imagen_contenido(id);
         }
 
         public bool cambiar_estado_tem(string pk)
@@ -46,6 +64,21 @@ namespace swtransito.Controllers
             return tem.Cambiar_estado_tematica(pk);
 
         }
+        //eliminar imagen 
+        public bool eliminar_imagen_admin(string pk)
+        {
+            return tem.eliminar_imagen_admin(pk);
+
+        }
+        //eliminar video  admin 
+        public bool inster_video(string url,string fk_tematica)
+        {
+            return tem.insert_video(url,fk_tematica);
+
+        }
+
+
+
 
         public DataTable Traer_tematica_admin()
         {
