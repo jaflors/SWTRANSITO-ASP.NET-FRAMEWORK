@@ -26,14 +26,31 @@ namespace swtransito.Views.Estudiante
             {
                 string idtematia = (e.CommandArgument.ToString());
 
-
-
                 Session["id_tematica_estudiante"] = idtematia;
 
-                //string nombre = tem.Traer_nombre_tematica(idtematia);
-                //Session["nombre_tematica"] = nombre;
+                Session["url_video"] = tem.traer_url(idtematia);
 
-                Response.Redirect("~/Views/Estudiante/Imagen.aspx");
+                string tipo_tematica = tem.traer_tipo_idtem(idtematia);
+                int tipo = Convert.ToInt32(tipo_tematica.ToString());
+
+                if (tipo == 1)
+                {
+                    Response.Redirect("~/Views/Estudiante/Imagen.aspx");
+                }
+                else if (tipo == 2)
+                {
+
+                    Response.Redirect("~/Views/Estudiante/contenido_video.aspx");
+
+                }
+
+
+
+
+
+
+
+               
 
 
 

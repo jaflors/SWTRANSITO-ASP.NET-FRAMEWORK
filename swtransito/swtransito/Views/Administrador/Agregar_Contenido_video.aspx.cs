@@ -29,6 +29,11 @@ namespace swtransito.Views.Administrador
                     Response.Redirect("~/Views/Administrador/Agregar_Contenido_video.aspx");
 
                 }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('algo salio mal');", true);
+
+                }
 
             }
 

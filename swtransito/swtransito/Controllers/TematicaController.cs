@@ -37,6 +37,14 @@ namespace swtransito.Controllers
         }
 
 
+        public string traer_url(string id)
+        {
+            return tem.traer_url(id);
+
+
+        }
+
+
         public string traer_tipo_idtem(string id_tema)
         {
             return tem.traer_tipo_idtem(id_tema);
@@ -70,7 +78,7 @@ namespace swtransito.Controllers
             return tem.eliminar_imagen_admin(pk);
 
         }
-        //eliminar video  admin 
+        //agregar video  admin 
         public bool inster_video(string url,string fk_tematica)
         {
             return tem.insert_video(url,fk_tematica);

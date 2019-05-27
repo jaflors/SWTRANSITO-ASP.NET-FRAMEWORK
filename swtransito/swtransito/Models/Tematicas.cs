@@ -164,15 +164,42 @@ namespace swtransito.Models
 
 
 
-        // Gauardar video 
+        // Guardar video 
 
-        public bool insert_video( string url,string fk_tematicca)
+       
+
+        public bool insert_video(string url, string fk_tematicca)
         {
-            string[] sql = new string[1];
-            sql[0] = "insert into video( ubicacion,tematica_idTematica )values('"+url+"','"+fk_tematicca+"'); ";
-            return conn.RealizarTransaccion(sql);
+            Conexion.Parameter[] para = new Conexion.Parameter[2];
+
+            para[0] = new Conexion.Parameter("p_ubicacion", url);
+            para[1] = new Conexion.Parameter("P_id_temamtia", fk_tematicca);
+            
+
+
+
+            Transaction[] trans = new Transaction[1];
+            trans[0] = new Transaction("insert_video", para);
+            return conn.Transaction(trans);
+
 
         }
+
+
+        public string traer_url(string id_tematica)
+        {
+
+            string sql = @"select ubicacion from video where video.tematica_idTematica='"+ id_tematica + "'; ";
+            DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
+            return data.Rows[0]["ubicacion"].ToString();
+
+
+
+
+        }
+
+
+
 
 
 

@@ -11,28 +11,38 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="content-panel">
 
-                <form runat="server" class="form-horizontal form-label-left">
+                <form runat="server" class="form-horizontal style-form">
                     <h4><i class="fa fa-angle-right"></i><%= Session["nombre_tematica"].ToString() %></h4>
                     <hr>
+                    <label class="control-label col-lg-offset-2">Selecciona el código después del signo =   del link de YOUTUBE y da la opción pegar en el campo de texto.</label>
+
+                    <div class="col-sm-10 col-lg-offset-2">
+                        <img style="padding-left: 50px;"
+                            src="../../imagenes/link.png" />
+                    </div>
                     <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Ingresa la URL del video (YOUTUBE)</label>
+
+
+
+                        <label class="col-sm-2 col-sm-2 control-label" style="width: 80px; margin-left: 7px;">
+                            URL</label>
                         <div class="col-sm-10">
 
-                            
-                             <asp:TextBox ID="txt_url" class="form-control round-form" runat="server" required="required"></asp:TextBox>
+
+                            <asp:TextBox ID="txt_url" class="form-control round-form" runat="server" required="required"></asp:TextBox>
 
                         </div>
                     </div>
-                      
-                        <asp:LinkButton runat="server" OnCommand="Guardar_video" style="border-left-width: 1px; margin-left: 5px;" CssClass="btn btn-primary btn-xs" CommandName="guardar"> Guardar </asp:LinkButton>
+
+                    <asp:LinkButton runat="server" OnCommand="Guardar_video" Style="border-left-width: 1px; margin-left: 5px;" CssClass="btn btn-primary btn-xs" CommandName="guardar"> Guardar </asp:LinkButton>
                     <table class="table table-striped table-advance table-hover">
 
-                     
+
                         <thead>
 
                             <tr>
                                 <th><i class="fa fa-bullhorn"></i>Ruta</th>
-                               
+
                                 <th><i class=" fa fa-edit"></i>Acción</th>
 
                             </tr>
