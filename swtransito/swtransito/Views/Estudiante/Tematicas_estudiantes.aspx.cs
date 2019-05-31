@@ -39,8 +39,19 @@ namespace swtransito.Views.Estudiante
                 }
                 else if (tipo == 2)
                 {
-                    Session["url_video"] = tem.traer_url(idtematia);
-                    Response.Redirect("~/Views/Estudiante/contenido_video.aspx");
+
+                    if (tem.traer_url(idtematia)!=null)
+                    {
+                        Session["url_video"] = tem.traer_url(idtematia);
+                        Response.Redirect("~/Views/Estudiante/contenido_video.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("~/Views/Estudiante/contenido_video.aspx");
+                    }
+
+                   
+                    
 
                 }
 

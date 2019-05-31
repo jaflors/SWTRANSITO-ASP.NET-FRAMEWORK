@@ -29,7 +29,7 @@
                         <div class="col-sm-10">
 
 
-                          <%--  <asp:TextBox ID="txt_url" class="form-control round-form" runat="server" required="required"></asp:TextBox>--%>
+                            <asp:TextBox ID="txt_url" class="form-control round-form" runat="server" required="required"></asp:TextBox>
 
                         </div>
                     </div>
@@ -56,16 +56,15 @@
                                     <tr>
 
                                         
-                                        <%--<td><%#Eval("Foto")%> </td>--%>
+                                        <td><%#Eval("ubicacion")%> </td>
                                         <td style="width: 216px">
 
 
-                                             <%--<asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idImagen")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
+                                         <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idvideo")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
                                                     Eliminar </asp:LinkButton>
 
-                                             <asp:LinkButton CommandArgument='<%#Eval("idImagen")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
-                                                    Actualizar</asp:LinkButton>--%>
-
+                                            <asp:LinkButton CommandArgument='<%#Eval("idvideo")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
+                                                    Actualizar</asp:LinkButton>
                                            
                                         </td>
 
@@ -100,13 +99,13 @@
 
                                                     <div class="row">
                                                        
-                                                       <%-- <div class="col-md-12 ">
+                                                        <div class="col-md-12 ">
                                                             <div class="form-group">
                                                                 <label>Ingresa PDF</label>
 
                                                                  <asp:FileUpload ID="file_PDF" class="form-control round-form " runat="server" required="required" />
                                                             </div>
-                                                        </div>--%>
+                                                        </div>
                                                         
 
 
@@ -124,7 +123,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Registrar" Text="Registrar" />
+                                    <asp:LinkButton ID="subir2" runat="server" OnCommand="Guardar_pdf" class="btn btn-primary" CommandName="guardar"> Registrar </asp:LinkButton>
 
                                 </div>
                             </div>

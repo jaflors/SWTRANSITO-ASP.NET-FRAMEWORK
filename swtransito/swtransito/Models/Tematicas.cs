@@ -190,6 +190,22 @@ namespace swtransito.Models
         }
 
 
+        public DataTable traer_video_admin(string id_tematica)
+        {
+
+            string sql = @"select idvideo,ubicacion from video where video.tematica_idTematica='" + id_tematica + "'; ";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
+
+        public bool eliminar_video_admin(string pk)
+        {
+            string[] sql = new string[1];
+            sql[0] = "DELETE FROM `video` WHERE `idvideo`='" + pk + "'; ";
+            return conn.RealizarTransaccion(sql);
+        }
+
+
         // PDF///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -211,9 +227,9 @@ namespace swtransito.Models
         }
 
 
-        public DataTable consultar_nombre_pdf()
+        public DataTable consultar_nombre_pdf(string id)
         {
-            string sql = @"select idpdf,substring(ubicacion,11) as nombre  from pdf ;";
+            string sql = @"select idpdf,substring(ubicacion,11) as nombre  from pdf where tematica_idTematica='"+id+"' ;";
 
             return conn.EjecutarConsulta(sql, CommandType.Text);
 

@@ -15,29 +15,13 @@
                 <asp:ListView runat="server" ID="list_tematicas">
                     <ItemTemplate>
                         <div class="col-md-4 col-sm-4 mb">
-                            <div class="white-panel pn donut-chart">
-                                <div class="white-header">
+                            <div class="grey-panel pn donut-chart">
+                                <div class="grey-header">
                                     <h5>No.<%#Eval("Numero")%>  <%#Eval("Nombre")%></h5>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-6 col-xs-6 goleft">
-                                        <p><i class="fa fa-database"></i>70%</p>
-                                    </div>
-                                </div>
-                                <canvas id="serverstatus01" height="120" width="120"></canvas>
-                                <script>
-                                    var doughnutData = [
-                                            {
-                                                value: 70,
-                                                color: "#68dff0"
-                                            },
-                                            {
-                                                value: 30,
-                                                color: "#fdfdfd"
-                                            }
-                                    ];
-                                    var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-                                </script>
+                               
+                                <h1 class="mt"><i class="fa fa-folder-open fa-3x"></i></h1>
+                               
                                 <div class=" footer">
 
                                     <asp:LinkButton runat="server" OnCommand="ver_contenido"  CommandArgument='<%#Eval("idTematica")%>' CssClass="btn btn-primary btn-xs" CommandName="ingresar"> Ingresar </asp:LinkButton>

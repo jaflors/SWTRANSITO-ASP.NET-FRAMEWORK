@@ -23,7 +23,7 @@ namespace swtransito.Views.Estudiante
             if (!IsPostBack)
             {
 
-                list_pdf.DataSource = tem.Traer_nombrepdf();
+                list_pdf.DataSource = tem.Traer_nombrepdf(Session["id_tematica_estudiante"].ToString());
                 list_pdf.DataBind();
 
 

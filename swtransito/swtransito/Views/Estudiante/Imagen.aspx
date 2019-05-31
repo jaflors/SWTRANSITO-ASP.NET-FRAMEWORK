@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <%--<link href="../../carousel/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />--%>
+   
     <!-- Compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </asp:Content>
@@ -11,7 +11,7 @@
 
     <div class="col-lg-9 main-chart">
         <br />
-        <br />
+        
 
         <div id="myCarouselCustom" class="carousel slide" data-ride="carousel" data-interval="false">
 
@@ -84,12 +84,6 @@
             </ItemTemplate>
         </asp:ListView>
         </form>
-
-      
-        
-
-        
-
     </div>
     <!-- /col-lg-3 -->
 

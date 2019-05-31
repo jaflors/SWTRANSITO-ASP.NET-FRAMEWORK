@@ -45,6 +45,12 @@ namespace swtransito.Controllers
 
         }
 
+        public DataTable traer_video_admin(string id)
+        {
+            return tem.traer_video_admin(id);
+
+
+        }
 
         public string traer_tipo_idtem(string id_tema)
         {
@@ -85,7 +91,11 @@ namespace swtransito.Controllers
             return tem.insert_video(url,fk_tematica);
 
         }
+        public bool eliminar_video_admin(string pk)
+        {
+            return tem.eliminar_video_admin(pk);
 
+        }
 
 
 
@@ -107,9 +117,9 @@ namespace swtransito.Controllers
 
 
       
-        public DataTable Traer_nombrepdf()
+        public DataTable Traer_nombrepdf(string id)
         {
-            return tem.consultar_nombre_pdf();
+            return tem.consultar_nombre_pdf(id);
         }
 
         public string Traer_nombrepdf_id(string id)

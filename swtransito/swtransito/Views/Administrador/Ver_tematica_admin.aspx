@@ -27,7 +27,7 @@
 								<footer>
 									<div class="centered">
 										
-                                        <asp:LinkButton class="btn btn-small btn-theme04" runat="server" OnCommand="Unnamed_Command"  CommandArgument='<%#Eval("idTematica")%>' CommandName="traer">Agregar Tematica</asp:LinkButton>
+                                        <asp:LinkButton class="btn btn-small btn-theme04" runat="server" OnCommand="Unnamed_Command"  CommandArgument='<%#Eval("idTematica")%>' CommandName="traer">Agregar Contenido</asp:LinkButton>
 
 									</div>
 								</footer>
