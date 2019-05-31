@@ -79,52 +79,38 @@ namespace swtransito.Views.Administrador
 
 
 
-
-
-
-
-
-
-        public void Guardar_imagen(object sender, CommandEventArgs e)
+        public void Guardar_imagen(object sender, EventArgs e)
         {
-            if (e.CommandName.Equals("guardar"))
+            try
             {
-                
 
-                try
-            {
-                    
 
-                    if (file_contenido != null)
+                if (file_contenido != null)
+                {
+                    if (ModelState.IsValid)
                     {
-                        if (ModelState.IsValid)
+                        string img = Path.GetFileName(file_contenido.FileName);
+                        string ruta = "../../imagenes/" + img;
+
+                        string carpeta = Path.Combine(Server.MapPath("~/imagenes"), img);
+
+                        if (tem.Insertar_imagen(ruta, Session["id_tematica_admin"].ToString()) == true)
                         {
-                            string img = Path.GetFileName(file_contenido.FileName);
-                            string ruta = "../../imagenes/" + img;
+                            file_contenido.SaveAs(carpeta);
 
-                            string carpeta = Path.Combine(Server.MapPath("~/imagenes"), img);
+                          
 
-                            if (tem.Insertar_imagen( ruta, Session["id_tematica_admin"].ToString()) == true)
-                            {
-                                file_contenido.SaveAs(carpeta);
+                            Response.Write("<script> alert('imagen guardada' ); </script>");
+                            Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
 
-                                Response.Write("<script> alert('imagen guardada' ); </script>");
-                                //Response.Redirect("~/Views/Administrador/Registrar_barberia.aspx");
-
-                            }
-                            else
-                            {
-
-                                Response.Redirect("~/Views/Administrador/Registrar_barberia.aspx");
-                            }
 
                         }
                         else
                         {
+                            Response.Write("<script> alert('No se guardo en la base de datos' ); </script>");
 
-                            Response.Redirect("~/Views/Administrador/Registrar_barberia.aspx");
+                          
                         }
-
 
                     }
                     else
@@ -135,23 +121,96 @@ namespace swtransito.Views.Administrador
 
 
                 }
+                else
+                {
+
+                    Response.Write("<script> alert('No se ha cargado imagen' ); </script>");
+                }
+
+
+            }
             catch (Exception)
+            {
+                Response.Write("<script> alert('ERROR INESPERADO' ); </script>");
+            }
+
+
+
+
+
+
+        }
+
+
+
+        public void Guardar_pdf(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName.Equals("guardar"))
+            {
+                try
+                {
+
+                    if (file_PDF != null)
+                    {
+                        if (ModelState.IsValid)
+                        {
+                            string img = Path.GetFileName(file_PDF.FileName);
+                            string ruta = "../../pdf/" + img;
+
+                            string carpeta = Path.Combine(Server.MapPath("~/pdf"), img);
+
+
+                            if (file_PDF.PostedFile.ContentType == "application/pdf")
+                            {
+                                if (tem.Insertar_pdf(ruta, Session["id_tematica_admin"].ToString()) == true)
+                                {
+                                    file_PDF.SaveAs(carpeta);
+
+                                    Response.Write("<script> alert('pdf guardado' ); </script>");
+                                    Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
+
+                                }
+                                else
+                                {
+
+                                    Response.Write("<script> alert('no funciona procedimiento' ); </script>");
+                                }
+
+
+
+                            }
+                            else
+                            {
+
+                                Response.Write("<script> alert('El archivo no es compatible' ); </script>");
+
+                            }
+
+
+
+                        }
+                        else
+                        {
+                            Response.Write("<script> alert('selecciona archivo PDF' ); </script>");
+
+                        }
+
+
+                    }
+                    else
+                    {
+
+                        Response.Write("<script> alert('selecciona archivo PDF' ); </script>");
+                    }
+
+
+                }
+                catch (Exception)
                 {
                     Response.Write("<script> alert('ERROR INESPERADO' ); </script>");
                 }
 
 
-
-                //string idtematia = (e.CommandArgument.ToString());
-
-
-
-                //Session["id_tematica_admin"] = idtematia;
-
-                //string nombre = tem.Traer_nombre_tematica(idtematia);
-                //Session["nombre_tematica"] = nombre;
-
-                Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
             }
 
         }

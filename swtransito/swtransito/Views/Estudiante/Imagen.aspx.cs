@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,51 +18,70 @@ namespace swtransito.Views.Estudiante
         TematicaController tem = new TematicaController();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
 
             if (!IsPostBack)
             {
-                
+
+                list_pdf.DataSource = tem.Traer_nombrepdf();
+                list_pdf.DataBind();
+
+
+
 
                 dtimagen = tem.Traer_Imagen_Banner(Session["id_tematica_estudiante"].ToString());
-
-
-
-
                 for (int i = 0; i < dtimagen.Rows.Count; i++)
                 {
                     drimagen = dtimagen.Rows[i];
                     HtmlGenericControl div = new HtmlGenericControl("div");
-                   
-                    div.InnerHtml = "<img src = '" + drimagen["foto"] + "'/>";
-                   
-                   
 
-                    if (i == 0)
+                    div.InnerHtml = "<img src = '" + drimagen["foto"] + "'/>";
+
+                 if (i == 0)
                     {
                         div.Attributes.Add("class", "item active");
-                       
+
                     }
                     else
                     {
                         div.Attributes.Add("class", "item");
-                        
+
                     }
-
-                    //HtmlGenericControl div2 = new HtmlGenericControl("div");
-                    //div2.InnerHtml = "<img src = '../../Imagenes/icono.png' class='img - responsive' style='width: 100px !important; height: 320px !important' alt='' />";
-                    //div2.Attributes.Add("class", "item ");
-
-                    Baner.Controls.Add(div);
-                    //Baner.Controls.Add(div2);
+                      Baner.Controls.Add(div);
+                   
                 }
 
             }
+        }
+
+
+        public void descargar_pdf(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName.Equals("traer"))
+            {
+
+                string id = (e.CommandArgument.ToString());
+
+                string filename = tem.Traer_nombrepdf_id(id);
+
+                Response.Clear();
+
+                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", filename));
+                Response.ContentType = "application/pdf";
+
+                Response.WriteFile(Server.MapPath(Path.Combine("~/pdf", filename)));
+
+                Response.End();
 
 
 
-
+            }
 
         }
+
+
+
+
+
     }
 }

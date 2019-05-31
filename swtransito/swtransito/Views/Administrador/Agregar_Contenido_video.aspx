@@ -29,12 +29,13 @@
                         <div class="col-sm-10">
 
 
-                            <asp:TextBox ID="txt_url" class="form-control round-form" runat="server" required="required"></asp:TextBox>
+                          <%--  <asp:TextBox ID="txt_url" class="form-control round-form" runat="server" required="required"></asp:TextBox>--%>
 
                         </div>
                     </div>
 
                     <asp:LinkButton runat="server" OnCommand="Guardar_video" Style="border-left-width: 1px; margin-left: 5px;" CssClass="btn btn-primary btn-xs" CommandName="guardar"> Guardar </asp:LinkButton>
+                    <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" style="border-left-width: 1px; margin-left: 5px;">Subir PDF</a>
                     <table class="table table-striped table-advance table-hover">
 
 
@@ -78,6 +79,57 @@
 
                         </tbody>
                     </table>
+
+                     <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Registrar Material de Apoyo</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Modal- body-->
+                                    <div class="row">
+
+
+                                        <div class="col-lg-12">
+                                            <br />
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+
+                                                    <div class="row">
+                                                       
+                                                       <%-- <div class="col-md-12 ">
+                                                            <div class="form-group">
+                                                                <label>Ingresa PDF</label>
+
+                                                                 <asp:FileUpload ID="file_PDF" class="form-control round-form " runat="server" required="required" />
+                                                            </div>
+                                                        </div>--%>
+                                                        
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Registrar" Text="Registrar" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </form>
             </div>

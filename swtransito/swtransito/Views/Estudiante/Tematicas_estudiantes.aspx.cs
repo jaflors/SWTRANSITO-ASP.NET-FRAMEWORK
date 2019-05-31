@@ -28,7 +28,7 @@ namespace swtransito.Views.Estudiante
 
                 Session["id_tematica_estudiante"] = idtematia;
 
-                Session["url_video"] = tem.traer_url(idtematia);
+               
 
                 string tipo_tematica = tem.traer_tipo_idtem(idtematia);
                 int tipo = Convert.ToInt32(tipo_tematica.ToString());
@@ -39,7 +39,7 @@ namespace swtransito.Views.Estudiante
                 }
                 else if (tipo == 2)
                 {
-
+                    Session["url_video"] = tem.traer_url(idtematia);
                     Response.Redirect("~/Views/Estudiante/contenido_video.aspx");
 
                 }

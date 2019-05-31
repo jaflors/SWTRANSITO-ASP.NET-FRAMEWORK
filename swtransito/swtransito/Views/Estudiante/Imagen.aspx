@@ -9,10 +9,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
 
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-lg-9 main-chart">
         <br />
-         <br />
-         
+        <br />
+
         <div id="myCarouselCustom" class="carousel slide" data-ride="carousel" data-interval="false">
 
 
@@ -25,8 +25,8 @@
             </ol>
 
             <!-- Wrapper for slides -->
-             <div class="carousel-inner" runat="server" id="Baner">
-               <%-- <div class="item active">
+            <div class="carousel-inner" runat="server" id="Baner">
+                <%-- <div class="item active">
 
                     <img src="../../imagenes/tematica.png" />
                     
@@ -45,21 +45,57 @@
                 </div>--%>
             </div>
 
-           
+
         </div>
         <!-- Custom Controls -->
 
-        
+
         <br />
 
 
-            <a class="btn btn-primary btn-xs" href ="javascript:void(0);"  style="width: 62px;" id="prevBtn"><i class="fa fa-backward"></i></a>
-            <a class="btn btn-primary btn-xs" href ="javascript:void(0);" style="width: 62px;padding-left: 0px;margin-left: 800px;"  id="nextBtn"><i class="fa fa-forward"></i> </a>
+        <a class="btn btn-primary btn-xs" href="javascript:void(0);" style="width: 62px;" id="prevBtn"><i class="fa fa-backward"></i></a>
+        <a class="btn btn-primary btn-xs" href="javascript:void(0);" style="width: 62px; padding-left: 0px; margin-left: 800px;" id="nextBtn"><i class="fa fa-forward"></i></a>
 
-       
+
 
 
     </div>
+    <div class="col-lg-3 ds">
+        <!--COMPLETED ACTIONS DONUTS CHART-->
+        <h3>Material Apoyo</h3>
+
+        <!-- First Action -->
+         <form runat="server" class="form-horizontal form-label-left">
+        <asp:ListView runat="server" ID="list_pdf">
+            <ItemTemplate>
+                <div class="desc">
+                    <div class="thumb">
+                        <span class="badge bg-theme" style="background-color: #e21919"><i class="fa fa-file-pdf-o"></i></span>
+                    </div>
+                    <div class="details">
+                        <p>
+                            <muted><%#Eval("nombre")%></muted>
+                            <br />
+                         
+                             <asp:LinkButton CommandArgument='<%#Eval("idpdf")%>' CssClass="" OnCommand="descargar_pdf" runat="server" CommandName="traer">Descargar</asp:LinkButton>
+                        </p>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:ListView>
+        </form>
+
+      
+        
+
+        
+
+    </div>
+    <!-- /col-lg-3 -->
+
+
+
+
 
 </asp:Content>
 

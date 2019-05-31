@@ -77,8 +77,10 @@ namespace swtransito.Views.Administrador
         public void Registrar(object sender, EventArgs e)
         {
 
+            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
+
             TematicaController temati = new TematicaController(txt_Nombres.Text.ToString(), txt_Numero.Text.ToString());
-            if (tem.Insertar_tematicas(temati.tem,List_tipo.Text.ToString()) == true)
+            if (tem.Insertar_tematicas(temati.tem, List_tipo.Text.ToString()) == true)
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
                 Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");

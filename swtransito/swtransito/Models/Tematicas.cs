@@ -89,7 +89,7 @@ namespace swtransito.Models
         }
 
 
-        //imagen
+        //imagen///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         public bool insert_imagen(string imagen, string id_tematica)
@@ -130,7 +130,7 @@ namespace swtransito.Models
         }
 
 
-        //tipo
+        //tipo/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public DataTable traer_tipo()
         {
@@ -152,12 +152,6 @@ namespace swtransito.Models
             
 
         }
-
-
-
-
-
-
 
 
 
@@ -193,10 +187,47 @@ namespace swtransito.Models
             DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
             return data.Rows[0]["ubicacion"].ToString();
 
+        }
 
 
+        // PDF///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+        public bool insert_pdf(string ruta, string id_tematica)
+        {
+            Parameter[] para = new Parameter[2];
+
+            para[0] = new Parameter("p_pdf", ruta);
+            para[1] = new Parameter("p_id_tematica", id_tematica);
+
+
+
+            Transaction[] trans = new Transaction[1];
+            trans[0] = new Transaction("insert_pdf", para);
+            return conn.Transaction(trans);
 
         }
+
+
+        public DataTable consultar_nombre_pdf()
+        {
+            string sql = @"select idpdf,substring(ubicacion,11) as nombre  from pdf ;";
+
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
+
+
+        public string consultar_nombre_pdf_con_id( string id)
+        {
+            string sql = @"select substring(ubicacion,11) as nombre  from pdf where idpdf='"+id+"' ;";
+
+            DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
+            return data.Rows[0]["nombre"].ToString();
+        }
+
 
 
 

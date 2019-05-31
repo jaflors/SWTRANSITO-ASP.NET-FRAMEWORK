@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.IO;
 
 namespace swtransito.Controllers
 {
@@ -96,6 +97,24 @@ namespace swtransito.Controllers
         public bool Insertar_imagen( string imagen,string id_tematica)
         {
             return tem.insert_imagen(imagen,id_tematica);
+        }
+
+
+        public bool Insertar_pdf(string ruta, string id_tematica)
+        {
+            return tem.insert_pdf(ruta, id_tematica);
+        }
+
+
+      
+        public DataTable Traer_nombrepdf()
+        {
+            return tem.consultar_nombre_pdf();
+        }
+
+        public string Traer_nombrepdf_id(string id)
+        {
+            return tem.consultar_nombre_pdf_con_id(id);
         }
 
 
