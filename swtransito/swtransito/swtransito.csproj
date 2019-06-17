@@ -166,9 +166,11 @@
     <Content Include="Admin\Theme\assets\js\chart-master\Chart.js" />
     <Content Include="Admin\Theme\assets\js\chartjs-conf.js" />
     <Content Include="Admin\Theme\assets\js\common-scripts.js" />
+    <Content Include="Admin\Theme\assets\js\custom.min.js" />
     <Content Include="Admin\Theme\assets\js\easy-pie-chart.js" />
     <Content Include="Admin\Theme\assets\js\fancybox\jquery.fancybox.css" />
     <Content Include="Admin\Theme\assets\js\fancybox\jquery.fancybox.js" />
+    <Content Include="Admin\Theme\assets\js\fastclick.js" />
     <Content Include="Admin\Theme\assets\js\form-component.js" />
     <Content Include="Admin\Theme\assets\js\fullcalendar\bootstrap-fullcalendar.css" />
     <Content Include="Admin\Theme\assets\js\fullcalendar\fullcalendar.min.js" />
@@ -179,6 +181,7 @@
     <Content Include="Admin\Theme\assets\js\gritter\images\gritter-long.png" />
     <Content Include="Admin\Theme\assets\js\gritter\images\gritter.png" />
     <Content Include="Admin\Theme\assets\js\gritter\images\ie-spacer.gif" />
+    <Content Include="Admin\Theme\assets\js\gritter\js\bootstrap.min.js" />
     <Content Include="Admin\Theme\assets\js\gritter\js\jquery.gritter.js" />
     <Content Include="Admin\Theme\assets\js\jquery-1.8.3.min.js" />
     <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
@@ -187,12 +190,15 @@
     <Content Include="Admin\Theme\assets\js\jquery.backstretch.min.js" />
     <Content Include="Admin\Theme\assets\js\jquery.dcjqaccordion.2.7.js" />
     <Content Include="Admin\Theme\assets\js\jquery.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.min.js" />
     <Content Include="Admin\Theme\assets\js\jquery.nicescroll.js" />
     <Content Include="Admin\Theme\assets\js\jquery.scrollTo.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.smartWizard.js" />
     <Content Include="Admin\Theme\assets\js\jquery.sparkline.js" />
     <Content Include="Admin\Theme\assets\js\jquery.tagsinput.js" />
     <Content Include="Admin\Theme\assets\js\jquery.ui.touch-punch.min.js" />
     <Content Include="Admin\Theme\assets\js\morris-conf.js" />
+    <Content Include="Admin\Theme\assets\js\nprogress.js" />
     <Content Include="Admin\Theme\assets\js\sparkline-chart.js" />
     <Content Include="Admin\Theme\assets\js\tasks.js" />
     <Content Include="Admin\Theme\assets\js\zabuto_calendar.js" />
@@ -740,7 +746,9 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Administrador\Agregar_Contenido_Imagen.aspx" />
     <Content Include="Views\Administrador\Agregar_Contenido_video.aspx" />
+    <Content Include="Views\Administrador\Agregar_preguntas.aspx" />
     <Content Include="Views\Administrador\Agregar_tematica.aspx" />
+    <Content Include="Views\Administrador\examen.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
     <Content Include="Views\Administrador\Ver_tematica_admin.aspx" />
     <Content Include="Views\Estudiante\contenido_video.aspx" />
@@ -764,6 +772,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Examen.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Tematicas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -788,12 +797,26 @@
     <Compile Include="Views\Administrador\Agregar_Contenido_video.aspx.designer.cs">
       <DependentUpon>Agregar_Contenido_video.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\Agregar_preguntas.aspx.cs">
+      <DependentUpon>Agregar_preguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Agregar_preguntas.aspx.designer.cs">
+      <DependentUpon>Agregar_preguntas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.designer.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\examen.aspx.cs">
+      <DependentUpon>examen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\examen.aspx.designer.cs">
+      <DependentUpon>examen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\inicio.aspx.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
