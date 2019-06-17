@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `examen`
+--
+
+DROP TABLE IF EXISTS `examen`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `examen` (
+  `idexamen` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `numero_preguntas` bigint(20) DEFAULT NULL,
+  `tematica` int(11) DEFAULT NULL,
+  `aprueba_con` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idexamen`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `examen`
+--
+
+LOCK TABLES `examen` WRITE;
+/*!40000 ALTER TABLE `examen` DISABLE KEYS */;
+/*!40000 ALTER TABLE `examen` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `imagen`
 --
 
@@ -29,7 +57,7 @@ CREATE TABLE `imagen` (
   PRIMARY KEY (`idImagen`),
   KEY `fk_imagen_tematica_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_imagen_tematica` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +66,7 @@ CREATE TABLE `imagen` (
 
 LOCK TABLES `imagen` WRITE;
 /*!40000 ALTER TABLE `imagen` DISABLE KEYS */;
-INSERT INTO `imagen` VALUES (1,'../../imagenes/1.PNG',1),(2,'../../imagenes/2.PNG',1),(3,'../../imagenes/3.PNG',1),(16,'../../imagenes/4.PNG',1),(18,'../../imagenes/5.PNG',1),(21,'../../imagenes/6.PNG',1);
+INSERT INTO `imagen` VALUES (1,'../../imagenes/1.PNG',1),(2,'../../imagenes/2.PNG',1),(3,'../../imagenes/3.PNG',1),(16,'../../imagenes/4.PNG',1);
 /*!40000 ALTER TABLE `imagen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +82,7 @@ CREATE TABLE `menu` (
   `Titulo` varchar(45) NOT NULL,
   `Icono` varchar(45) NOT NULL,
   PRIMARY KEY (`idMenu`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +91,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
-INSERT INTO `menu` VALUES (1,'Gestionar Persona','fa fa-male'),(2,'Curso','fa fa-car'),(3,'Gestionar Tematica','fa fa-book'),(4,'Gestionar Evaluacion','fa fa-mortar-board'),(5,'Perfil','fa fa-male'),(6,'Resultados','fa fa-bar-chart'),(7,'Gestionar Juego','fa fa-cab');
+INSERT INTO `menu` VALUES (1,'Gestionar Persona','fa fa-male'),(2,'Curso','fa fa-car'),(3,'Gestionar Tematica','fa fa-book'),(4,'Gestionar Evaluacion','fa fa-mortar-board'),(5,'Perfil','fa fa-male'),(6,'Resultados','fa fa-bar-chart');
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +109,7 @@ CREATE TABLE `pdf` (
   PRIMARY KEY (`idpdf`),
   KEY `fk_pdf_tematica_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_pdf_tematica` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,6 +118,7 @@ CREATE TABLE `pdf` (
 
 LOCK TABLES `pdf` WRITE;
 /*!40000 ALTER TABLE `pdf` DISABLE KEYS */;
+INSERT INTO `pdf` VALUES (2,'../../pdf/03_Capitulo_2A-señales_preventivas.pdf',2);
 /*!40000 ALTER TABLE `pdf` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,6 +181,37 @@ INSERT INTO `persona_rol` VALUES (1,3,1),(2,4,2),(3,5,1),(4,6,2);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `preguntas`
+--
+
+DROP TABLE IF EXISTS `preguntas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `preguntas` (
+  `idpreguntas` int(11) NOT NULL AUTO_INCREMENT,
+  `enunciado` varchar(300) DEFAULT NULL,
+  `opc1` varchar(200) DEFAULT NULL,
+  `opc2` varchar(200) DEFAULT NULL,
+  `opc3` varchar(200) DEFAULT NULL,
+  `opc4` varchar(200) DEFAULT NULL,
+  `respuesta__correcta` int(11) DEFAULT NULL,
+  `examen_idexamen` int(11) NOT NULL,
+  PRIMARY KEY (`idpreguntas`),
+  KEY `fk_preguntas_examen_idx` (`examen_idexamen`),
+  CONSTRAINT `fk_preguntas_examen` FOREIGN KEY (`examen_idexamen`) REFERENCES `examen` (`idexamen`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `preguntas`
+--
+
+LOCK TABLES `preguntas` WRITE;
+/*!40000 ALTER TABLE `preguntas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `preguntas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `rol`
 --
 
@@ -191,7 +251,7 @@ CREATE TABLE `rol_vista` (
   KEY `fk_idVista_idx` (`Vista_idvista`),
   CONSTRAINT `fk_idRol` FOREIGN KEY (`rol_idrol`) REFERENCES `rol` (`idRol`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_idVista` FOREIGN KEY (`Vista_idvista`) REFERENCES `vista` (`idVista`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +260,7 @@ CREATE TABLE `rol_vista` (
 
 LOCK TABLES `rol_vista` WRITE;
 /*!40000 ALTER TABLE `rol_vista` DISABLE KEYS */;
-INSERT INTO `rol_vista` VALUES (1,1,1),(3,1,3),(5,1,5),(6,1,6),(8,1,8),(9,1,9),(11,2,11),(12,2,12),(13,2,13),(14,1,14),(15,1,15);
+INSERT INTO `rol_vista` VALUES (1,1,1),(3,1,3),(5,1,5),(6,1,6),(8,1,8),(9,1,9),(11,2,11),(12,2,12),(13,2,13);
 /*!40000 ALTER TABLE `rol_vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,7 +280,7 @@ CREATE TABLE `tematica` (
   PRIMARY KEY (`idTematica`),
   KEY `fk_tematica_ tipo1_idx` (`tipo_idTipo`),
   CONSTRAINT `fk_tematica_ tipo1` FOREIGN KEY (`tipo_idTipo`) REFERENCES `tipo` (`idTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,7 +289,7 @@ CREATE TABLE `tematica` (
 
 LOCK TABLES `tematica` WRITE;
 /*!40000 ALTER TABLE `tematica` DISABLE KEYS */;
-INSERT INTO `tematica` VALUES (1,'Convivencia Vial Ciclistas ','1','A',1),(2,'tipos de señales','2','A',2);
+INSERT INTO `tematica` VALUES (1,'Convivencia Vial Ciclistas ','1','A',1),(2,'tipos de señales','2','A',2),(3,'Señalamientos viales ','3','A',1);
 /*!40000 ALTER TABLE `tematica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +331,7 @@ CREATE TABLE `video` (
   PRIMARY KEY (`idvideo`),
   KEY `fk_video_tematica1_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_video_tematica1` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +340,6 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (5,'https://www.youtube.com/embed/cgeXXGVQTXU',2);
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -300,7 +359,7 @@ CREATE TABLE `vista` (
   PRIMARY KEY (`idVista`),
   KEY `fk_menu_idx` (`menu_idmenu`),
   CONSTRAINT `fk_menu` FOREIGN KEY (`menu_idmenu`) REFERENCES `menu` (`idMenu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -309,7 +368,7 @@ CREATE TABLE `vista` (
 
 LOCK TABLES `vista` WRITE;
 /*!40000 ALTER TABLE `vista` DISABLE KEYS */;
-INSERT INTO `vista` VALUES (1,'Registrar Usuario','../Usuario/RegistrarU.aspx','fa fa-pencil',1),(3,'Actualizar Usuario','../Usuario/ActualizarU.aspx','fa fa-edit',1),(5,'Registrar Tematica','../Administrador/Agregar_tematica.aspx','fa fa-pencil',3),(6,'Agregar Contenido','../Administrador/Ver_tematica_admin.aspx','fa fa-edit',3),(8,'Realizar Evaluacion ','../Evaluacion/RegistrarE.aspx','fa fa-line-chart',4),(9,'Modificar Evaluacion','../Evaluacion/ActualizarE.aspx','fa fa-edit',4),(10,'Eliminar Evaluacion ','e','fa fa-times',4),(11,'Actualizar Datos','a','fa fa-pencil',5),(12,'Ver  temáticas ','../Estudiante/Tematicas_estudiantes.aspx','fa fa-gamepad',2),(13,'Ver Resultados','b','fa fa-area-chart',6),(14,'Registar Contendio Juego','../Juego/RJuego.aspx','fa fa-gamepad',7),(15,'Modificar Contenido Juego','../Juego/ActualizarJ.aspx','fa fa-pencil-square',7);
+INSERT INTO `vista` VALUES (1,'Registrar Usuario','../Usuario/RegistrarU.aspx','fa fa-pencil',1),(3,'Actualizar Usuario','../Usuario/ActualizarU.aspx','fa fa-edit',1),(5,'Registrar Tematica','../Administrador/Agregar_tematica.aspx','fa fa-pencil',3),(6,'Agregar Contenido','../Administrador/Ver_tematica_admin.aspx','fa fa-edit',3),(8,'Realizar Evaluacion ','../Administrador/examen.aspx','fa fa-line-chart',4),(9,'Modificar Evaluacion','../Evaluacion/ActualizarE.aspx','fa fa-edit',4),(10,'Eliminar Evaluacion ','e','fa fa-times',4),(11,'Actualizar Datos','a','fa fa-pencil',5),(12,'Ver  temáticas ','../Estudiante/Tematicas_estudiantes.aspx','fa fa-gamepad',2),(13,'Ver Resultados','b','fa fa-area-chart',6);
 /*!40000 ALTER TABLE `vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -455,4 +514,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-30 22:59:14
+-- Dump completed on 2019-06-17  9:55:22
