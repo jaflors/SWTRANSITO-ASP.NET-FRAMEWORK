@@ -10,16 +10,7 @@
 namespace swtransito.Views.Administrador {
     
     
-    public partial class examen {
-        
-        /// <summary>
-        /// Control list_examen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView list_examen;
+    public partial class Actualizar_examen {
         
         /// <summary>
         /// Control List_tipo.

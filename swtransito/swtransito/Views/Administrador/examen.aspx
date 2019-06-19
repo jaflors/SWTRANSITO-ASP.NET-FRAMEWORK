@@ -13,29 +13,32 @@
                     <thead>
 
                         <tr>
-                            <th><i class="fa fa-bullhorn"></i>Nombre</th>
-                            <th><i class="fa fa-bookmark"></i>Numero</th>
-                            <th><i class=" fa fa-edit"></i>Acción</th>
-
+                            <th><i class="fa fa-bullhorn"></i>Temática</th>
+                            <th><i class="fa fa-bookmark"></i>Nombre Examen</th>
+                            <th><i class=" fa fa-edit"></i>Fecha</th>
+                            <th><i class=" fa fa-edit"></i>Opción</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <asp:ListView runat="server" ID="list_tematicas">
+                        <asp:ListView runat="server" ID="list_examen">
                             <ItemTemplate>
 
                                 <tr>
 
-                                    <td<%--><%#Eval("Nombre")%>--%> </td>
-                                    <td><%--<%#Eval("Numero")%>--%> </td>
-                                    <td style="width: 216px">
+                                    <td><%#Eval("tematica")%> </td>
+                                    <td><%#Eval("nombre")%> </td>
+                                    <td><%#Eval("fecha")%> </td>
+                                    <td style="width: 300px">
 
 
-                                        <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idTematica")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
-                                                    Eliminar </asp:LinkButton>
+                                        <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idexamen")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
+                                                    Eliminar</asp:LinkButton>
 
-                                        <asp:LinkButton CommandArgument='<%--<%#Eval("idTematica")%>--%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
+                                        <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
                                                     Actualizar</asp:LinkButton>
 
+                                           <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-success btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-info-circle"></i>
+                                                    Ver preguntas</asp:LinkButton>
 
                                     </td>
 

@@ -744,6 +744,7 @@
     <Content Include="registro\wizard-build-profile.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Views\Administrador\Actualizar_examen.aspx" />
     <Content Include="Views\Administrador\Agregar_Contenido_Imagen.aspx" />
     <Content Include="Views\Administrador\Agregar_Contenido_video.aspx" />
     <Content Include="Views\Administrador\Agregar_preguntas.aspx" />
@@ -766,6 +767,7 @@
     <Compile Include="Conexion\BdComun.cs" />
     <Compile Include="Conexion\Parameter.cs" />
     <Compile Include="Conexion\Transaction.cs" />
+    <Compile Include="Controllers\ExamenController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\TematicaController.cs" />
@@ -776,6 +778,13 @@
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Tematicas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Administrador\Actualizar_examen.aspx.cs">
+      <DependentUpon>Actualizar_examen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Actualizar_examen.aspx.designer.cs">
+      <DependentUpon>Actualizar_examen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\Administrador.Master.cs">
       <DependentUpon>Administrador.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

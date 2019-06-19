@@ -11,6 +11,7 @@ namespace swtransito.Views.Administrador
     public partial class examen : System.Web.UI.Page
     {
         TematicaController tem = new TematicaController();
+        ExamenController exa = new ExamenController();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,8 +19,8 @@ namespace swtransito.Views.Administrador
             {
 
                 traer_tematica();
-                list_tematicas.DataSource = tem.Traer_tematicas();
-                list_tematicas.DataBind();
+                list_examen.DataSource = exa.traer_examen();
+                list_examen.DataBind();
 
             }
 
@@ -44,10 +45,10 @@ namespace swtransito.Views.Administrador
             {
                 string idusu = (e.CommandArgument.ToString());
 
-                if (tem.cambiar_estado_tem(idusu) == true)
+                if (exa.eliminar_examen(idusu) == true)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('seguro de eliminar ');", true);
-                    Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
+                    Response.Redirect("~/Views/Administrador/examen.aspx");
 
                 }
 
@@ -76,21 +77,29 @@ namespace swtransito.Views.Administrador
         public void Registrar(object sender, EventArgs e)
         {
 
-            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
-
-            //TematicaController temati = new TematicaController(txt_Nombres.Text.ToString(), txt_Numero.Text.ToString());
-            //if (tem.Insertar_tematicas(/*temati.tem, List_tipo.Text.ToString()*/) == true)
-            //{
-            //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
-            //    Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
+          
 
 
-            //}
-            //else
-            //{
-            //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Algo salio mal');", true);
-            //    Response.Redirect("~/Views/Administrador/Agregar_tematica.aspx");
-            //}
+            try
+            {
+                if (exa.insert_exam(txt_examname.Text.ToString(), txt_examdis.Text.ToString(), txt_examdate.Text.ToString(), txt_examtotalpreguntas.Text.ToString(), List_tipo.Text.ToString(), txt_exammapasa.Text.ToString()) ==true)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
+                    Response.Redirect("~/Views/Administrador/examen.aspx");
+                }
+
+
+            }
+            catch
+            {
+
+
+            }
+
+
+
+
+           
 
 
         }
