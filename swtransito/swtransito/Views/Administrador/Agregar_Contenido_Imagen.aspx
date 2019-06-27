@@ -23,7 +23,13 @@
                     </div>
 
 
-                    <asp:Button ID="Button1" class="btn btn-primary btn-xs" AutoPostBack="true" runat="server" OnClick="Guardar_imagen" Text="Guardar" />
+                    
+                    <asp:LinkButton runat="server" OnCommand="Guardar_imagen" CssClass="btn btn-primary btn-xs" CommandName="guardar"><i class="fa fa-floppy-o"></i>
+                    Guardar</asp:LinkButton>
+
+                    
+
+
                     <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1" style="border-left-width: 1px; margin-left: 5px;">Subir PDF</a>
 
 
@@ -53,10 +59,6 @@
 
                                             <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idImagen")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
                                                     Eliminar </asp:LinkButton>
-
-                                            <asp:LinkButton CommandArgument='<%#Eval("idImagen")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
-                                                    Actualizar</asp:LinkButton>
-
 
                                         </td>
 

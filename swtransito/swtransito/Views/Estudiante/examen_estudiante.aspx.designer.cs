@@ -7,45 +7,36 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace swtransito.Views.Administrador {
+namespace swtransito.Views.Estudiante {
     
     
-    public partial class Agregar_Contenido_Imagen {
+    public partial class examen_estudiante {
         
         /// <summary>
-        /// Control file_contenido.
+        /// Control getstringuser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file_contenido;
+        protected global::System.Web.UI.WebControls.TextBox getstringuser;
         
         /// <summary>
-        /// Control list_imagen.
+        /// Control gridview_examquestion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView list_imagen;
+        protected global::System.Web.UI.WebControls.GridView gridview_examquestion;
         
         /// <summary>
-        /// Control file_PDF.
+        /// Control btn_submit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file_PDF;
-        
-        /// <summary>
-        /// Control subir2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton subir2;
+        protected global::System.Web.UI.WebControls.Button btn_submit;
     }
 }

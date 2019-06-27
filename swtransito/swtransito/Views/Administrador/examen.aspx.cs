@@ -57,36 +57,86 @@ namespace swtransito.Views.Administrador
 
         }
 
-        public void traer_usuario(object sender, CommandEventArgs e)
+        public void traer_examen(object sender, CommandEventArgs e)
         {
             //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('entro');", true);
 
-            //if (e.CommandName.Equals("traer"))
-            //{
-            //    string idusu = (e.CommandArgument.ToString());
-            //    Session["id_usu_act"] = idusu;
+            if (e.CommandName.Equals("traer"))
+            {
+                string idexam = (e.CommandArgument.ToString());
+                Session["id_examen"] = idexam;
 
-            //    Response.Redirect("~/Views/Administrador/Actualizar_usu_admin.aspx");
+                Response.Redirect("~/Views/Administrador/Actualizar_examen.aspx");
 
 
 
-            //}
+            }
+
+        }
+
+
+
+        public void enviar_a_preguntas(object sender, CommandEventArgs e)
+        {
+            //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('entro');", true);
+
+            if (e.CommandName.Equals("traer"))
+            {
+                string idexam = (e.CommandArgument.ToString());
+                Session["id_examen"] = idexam;
+
+                Response.Redirect("~/Views/Administrador/add_preguntas.aspx");
+
+
+
+            }
+
+        }
+        public void mostrar_preguntas(object sender, CommandEventArgs e)
+        {
+            //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('entro');", true);
+
+            if (e.CommandName.Equals("traer"))
+            {
+                string idexam = (e.CommandArgument.ToString());
+                Session["id_examen"] = idexam;
+
+                Response.Redirect("~/Views/Administrador/ver_preguntas.aspx");
+
+
+
+            }
 
         }
 
         public void Registrar(object sender, EventArgs e)
         {
-
-          
-
-
-            try
+          try
             {
-                if (exa.insert_exam(txt_examname.Text.ToString(), txt_examdis.Text.ToString(), txt_examdate.Text.ToString(), txt_examtotalpreguntas.Text.ToString(), List_tipo.Text.ToString(), txt_exammapasa.Text.ToString()) ==true)
+
+                int numero = Int32.Parse(exa.existe(List_tipo.Text.ToString()));
+                if (numero==1)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
-                    Response.Redirect("~/Views/Administrador/examen.aspx");
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Esta tematica ya tiene examen');", true);
+
+
                 }
+                else
+                {
+
+                    if (exa.insert_exam(txt_examname.Text.ToString(), txt_examdis.Text.ToString(), txt_examdate.Text.ToString(), txt_examtotalpreguntas.Text.ToString(), List_tipo.Text.ToString(), txt_exammapasa.Text.ToString()) == true)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
+                        Response.Redirect("~/Views/Administrador/examen.aspx");
+                    }
+
+
+
+                }
+
+
+               
 
 
             }

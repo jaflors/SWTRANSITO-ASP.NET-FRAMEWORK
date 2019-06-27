@@ -10,42 +10,60 @@
 namespace swtransito.Views.Administrador {
     
     
-    public partial class Agregar_Contenido_Imagen {
+    public partial class info_pregunta {
         
         /// <summary>
-        /// Control file_contenido.
+        /// Control txt_questionname.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file_contenido;
+        protected global::System.Web.UI.WebControls.TextBox txt_questionname;
         
         /// <summary>
-        /// Control list_imagen.
+        /// Control txt_optionone.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView list_imagen;
+        protected global::System.Web.UI.WebControls.TextBox txt_optionone;
         
         /// <summary>
-        /// Control file_PDF.
+        /// Control txt_optiontwo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload file_PDF;
+        protected global::System.Web.UI.WebControls.TextBox txt_optiontwo;
         
         /// <summary>
-        /// Control subir2.
+        /// Control TextBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton subir2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        
+        /// <summary>
+        /// Control txt_optionfourt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_optionfourt;
+        
+        /// <summary>
+        /// Control rdo_correctanswer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox rdo_correctanswer;
     }
 }
