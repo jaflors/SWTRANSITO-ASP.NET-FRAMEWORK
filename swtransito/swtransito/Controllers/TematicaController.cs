@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.IO;
+using System.Web.Http;
 
 namespace swtransito.Controllers
 {
@@ -35,6 +36,11 @@ namespace swtransito.Controllers
             return tem.traer_tipo();
             
 
+        }
+        [HttpPost]
+        public string Consultar_Seguimiento(string x)
+        {
+            return "entra";
         }
 
 

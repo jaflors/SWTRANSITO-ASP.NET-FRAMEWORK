@@ -115,7 +115,7 @@ namespace swtransito.Conexion
                     Desconectar();
                     state = true;
                 }
-                catch
+                catch(Exception e)
                 {
                     Transa.Rollback();
                     conexion.Close();

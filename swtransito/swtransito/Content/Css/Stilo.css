@@ -142,3 +142,8 @@ a#prev_page_button:hover {
     -webkit-align-items: center;
     align-items: center;
 }
+
+.err {
+    border: 1px solid #ed5565;
+    box-shadow: none;
+}
