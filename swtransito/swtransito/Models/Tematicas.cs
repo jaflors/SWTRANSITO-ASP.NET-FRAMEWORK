@@ -62,6 +62,13 @@ namespace swtransito.Models
             return data.Rows[0]["Nombre"].ToString();
         }
 
+        public DataTable consultar_act_tematica(string id)
+        {
+            string sql = @"select Nombre,Numero  from tematica where idTematica='"+id+"'; ";
+
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
 
         public DataTable consultar_tematicas_estudiante()
         {
@@ -190,7 +197,7 @@ namespace swtransito.Models
         }
 
 
-        public DataTable traer_video_admin(string id_tematica)
+        public DataTable consultar_info_tematica(string id_tematica)
         {
 
             string sql = @"select idvideo,ubicacion from video where video.tematica_idTematica='" + id_tematica + "'; ";

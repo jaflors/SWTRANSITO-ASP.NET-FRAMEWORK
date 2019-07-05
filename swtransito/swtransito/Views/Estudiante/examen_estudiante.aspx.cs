@@ -13,13 +13,24 @@ namespace swtransito.Views.Estudiante
     public partial class examen_estudiante : System.Web.UI.Page
     {
         DataTable aux;
+        public DataRow dr;
         ExamenController ex = new ExamenController();
         Resultado resul = new Resultado();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
 
-                aux = ex.preguntas_estudiante(Session["id_examen_estu"].ToString());
+
+                string aux2 = ex.traer_descripcion(Session["id_examen_estu"].ToString());
+                if (aux2!= null)
+                {
+                  
+                    lb_instru.Text = aux2.ToString();
+
+                }
+
+
+                    aux = ex.preguntas_estudiante(Session["id_examen_estu"].ToString());
 
                 if (aux.Rows.Count > 0)
                 {
@@ -150,9 +161,10 @@ namespace swtransito.Views.Estudiante
                 {
                 if (resul.insertar_resultado(status,score,malas,tquestion, DateTime.Now.ToString(), Session["id_examen_estu"].ToString(), Session["login"].ToString()))
                 {
-                    Response.Write("<script> alert(' Examen guardado' ); </script>");
+                    //Response.Write("<script> alert(' Examen guardado' ); </script>");
+                    ScriptManager.RegisterStartupScript(this.Page, GetType(), "script", "resultado();", true);
                 }
-                  
+             
                 }
                 catch (Exception ex)
                 {

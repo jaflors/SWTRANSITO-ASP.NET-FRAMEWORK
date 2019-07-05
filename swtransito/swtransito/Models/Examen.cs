@@ -58,6 +58,17 @@ namespace swtransito.Models
             return conn.EjecutarConsulta(sql, CommandType.Text);
         }
 
+
+        /// traer examen descripcion
+        public string traer_descripcion_ex(string id)
+        {
+            string sql = @"select examen.descripcion from examen where idexamen='"+id+"';";
+
+            DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
+            return data.Rows[0]["descripcion"].ToString();
+
+        }
+
         public bool eliminar_examen(string pk)
         {
             string[] sql = new string[1];
@@ -118,6 +129,11 @@ namespace swtransito.Models
             return conn.EjecutarConsulta(sql, CommandType.Text);
 
         }
+
+       
+
+
+
 
         //traer la pregunta correcta con ingreso de id de la pregunta 
         public string traer_respuesta_correcta(string id_pregunta)

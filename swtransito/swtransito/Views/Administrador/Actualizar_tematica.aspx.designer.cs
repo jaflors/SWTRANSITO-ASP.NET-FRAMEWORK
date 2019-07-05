@@ -7,45 +7,45 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace swtransito.Views.Estudiante {
+namespace swtransito.Views.Administrador {
     
     
-    public partial class examen_estudiante {
+    public partial class Actualizar_tematica {
         
         /// <summary>
-        /// Control lb_instru.
+        /// Control List_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_instru;
+        protected global::System.Web.UI.WebControls.DropDownList List_tipo;
         
         /// <summary>
-        /// Control getstringuser.
+        /// Control txt_Nombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox getstringuser;
+        protected global::System.Web.UI.WebControls.TextBox txt_Nombres;
         
         /// <summary>
-        /// Control gridview_examquestion.
+        /// Control txt_Numero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridview_examquestion;
+        protected global::System.Web.UI.WebControls.TextBox txt_Numero;
         
         /// <summary>
-        /// Control btn_submit.
+        /// Control ColorList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
+        protected global::System.Web.UI.WebControls.DropDownList ColorList;
     }
 }

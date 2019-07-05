@@ -120,39 +120,50 @@
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper">
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
 
-              <div class="row">
-                  
-                  
-                     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                        </asp:ContentPlaceHolder>
-   
-              </div><! --/row -->
-          </section>
-      </section>
+            <div class="row">
 
-      <!--main content end-->
-      <!--footer start-->
-     <%-- <footer class="site-footer">
-          <div class="text-center">
-              2014 - Alvarez.is
-              <a href="index.html#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
-          </div>
-      </footer>--%>
-      <!--footer end-->
-  </section>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+            <! --/row -->
+         
+        </section>
+    </section>
+    <!--main content end-->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            2014 - SWTRANSITO
+             
+            <a href="https://www.instagram.com/jaflors/?hl=es"  class="go-top">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+    </section>
+     
+
     <%--  <script src="../../carousel/jquery/jquery.min.js"></script>--%>
-      <!-- Minified JS library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Compiled and minified Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-   
-       
+    <!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="../../Admin/Theme/assets/js/jquery.js"></script>
     <script src="../../Admin/Theme/assets/js/jquery-1.8.3.min.js"></script>
@@ -166,7 +177,7 @@
 
     <!--common script for all pages-->
     <script src="../../Admin/Theme/assets/js/common-scripts.js"></script>
-    
+
     <script type="text/javascript" src="../../Admin/Theme/assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="../../Admin/Theme/assets/js/gritter-conf.js"></script>
 

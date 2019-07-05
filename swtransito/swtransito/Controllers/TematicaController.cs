@@ -45,9 +45,17 @@ namespace swtransito.Controllers
 
         }
 
+
+        public DataTable traer_info_tematica(string id)
+        {
+            return tem.consultar_act_tematica(id);
+
+
+        }
+
         public DataTable traer_video_admin(string id)
         {
-            return tem.traer_video_admin(id);
+            return tem.consultar_info_tematica(id);
 
 
         }

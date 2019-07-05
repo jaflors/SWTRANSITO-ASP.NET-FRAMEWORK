@@ -32,6 +32,10 @@ namespace swtransito.Controllers
             return ex.if_exist(id);
         }
 
+        public string traer_descripcion(string id)
+        {
+            return ex.traer_descripcion_ex(id);
+        }
 
         public bool eliminar_examen(string id)
         {

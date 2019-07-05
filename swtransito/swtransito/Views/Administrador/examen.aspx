@@ -113,7 +113,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row form-group">
-                                                    <label class="col-md-2 col-form-label ">Numero prpeguntas para aprobar</label>
+                                                    <label class="col-md-2 col-form-label ">No. preguntas para aprobar</label>
                                                     <div class="col-md-6">
                                                         <asp:TextBox ID="txt_exammapasa" runat="server" CssClass="form-control" TextMode="Number" required="required"></asp:TextBox>
                                                         <%--<asp:RequiredFieldValidator ID="require_exammatotal" runat="server" ErrorMessage="Enter total marks" ControlToValidate="txt_exammatotalmarks" ForeColor="red" Display="Dynamic"></asp:RequiredFieldValidator>--%>
@@ -143,7 +143,13 @@
             </div>
         </div>
     </form>
-
+     <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
