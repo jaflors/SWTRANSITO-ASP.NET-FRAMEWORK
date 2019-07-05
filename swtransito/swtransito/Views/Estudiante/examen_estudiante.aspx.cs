@@ -12,6 +12,7 @@ namespace swtransito.Views.Estudiante
 {
     public partial class examen_estudiante : System.Web.UI.Page
     {
+        public string buenas, erroneas, estado;
         DataTable aux;
         public DataRow dr;
         ExamenController ex = new ExamenController();
@@ -47,11 +48,14 @@ namespace swtransito.Views.Estudiante
 
 
         }
+        protected void Repetir (object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Estudiante/examen_estudiante.aspx");
+        }
 
 
-
-        //decalring some varibles to exam marking 
-        string result = string.Empty;
+            //decalring some varibles to exam marking 
+            string result = string.Empty;
         
         int select_number = 0;
         int correct_number = 0;
@@ -139,12 +143,12 @@ namespace swtransito.Views.Estudiante
                     if (correct_number >= pasa)
                     {
 
-                        result = result + "Pass";
+                        result = result + "APROBADO";
 
                     }
                     else
                     {
-                        result = result + "Fail";
+                        result = result + "REPROBADO";
                        
                     }
                 
@@ -161,7 +165,13 @@ namespace swtransito.Views.Estudiante
                 {
                 if (resul.insertar_resultado(status,score,malas,tquestion, DateTime.Now.ToString(), Session["id_examen_estu"].ToString(), Session["login"].ToString()))
                 {
-                    //Response.Write("<script> alert(' Examen guardado' ); </script>");
+
+
+
+                    buenas = score.ToString();
+                    erroneas = malas.ToString();
+                    estado = status.ToString();
+
                     ScriptManager.RegisterStartupScript(this.Page, GetType(), "script", "resultado();", true);
                 }
              

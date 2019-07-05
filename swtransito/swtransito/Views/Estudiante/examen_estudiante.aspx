@@ -7,7 +7,14 @@
     </style>
 
 
-    
+     <script type="text/javascript">
+        function resultado() {
+            $('#myModal').modal('show');
+           
+      
+        };
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <form runat="server" class="form-horizontal form-label-left">
@@ -28,13 +35,13 @@
                                     <asp:Label ID="lblid" runat="server" Text='<%# Eval("idpreguntas") %>' Visible="false"></asp:Label>
                                     <asp:Label ID="lbl_question" runat="server" Text='<%# Eval("enunciado") %>'></asp:Label>
                                     <br />
-                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc1") %>' ID="option_one" runat="server" />
+                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc1") %>' ID="option_one" runat="server"  required="required"/>
                                     <br />
-                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc2") %>' ID="option_two" runat="server" />
+                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc2") %>' ID="option_two" runat="server" requerid="requerid"/>
                                     <br />
-                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc3") %>' ID="option_three" runat="server" />
+                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc3") %>' ID="option_three" runat="server" requerid="requerid" />
                                     <br />
-                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc4") %>' ID="option_four" runat="server" />
+                                    <asp:RadioButton GroupName="a" Text='<%# Eval("opc4") %>' ID="option_four" runat="server" requerid="requerid" />
                                     <hr />
                                 </ItemTemplate>
                             </asp:TemplateField>
@@ -50,16 +57,27 @@
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog modal-sm info">
-                <div class="modal-content info">
+                <div class="modal-content info"
+                    style="width: 502px;">
                     <div class="modal-header info">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Mensaje</h4>
+                        <h4 class="modal-title">Resultado de la evaluación</h4>
                     </div>
                     <div class="modal-body">
-                        <p><%--<%=msj %>--%></p>
+
+                        <div class="col-md-12">
+                            <h3>La evaluación ha finalizado</h3>
+                            <h4>Tu resultado fue de :</h4>
+                            <p><%=buenas %>  preguntas buenas</p>
+                            <p><%=erroneas %>  preguntas Malas</p>
+                            <p>El  estado del examen  : <%=estado %> </p>
+
+                        </div>
+
                     </div>
                     <div class="modal-footer">
-                       <%-- <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>--%>
+                        <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Repetir Examen</button>--%>
+                         <asp:Button ID="guardar" class="btn btn-primary"  runat="server" OnClick="Repetir" Text="Repetir Examen" />
                     </div>
                 </div>
             </div>
@@ -77,18 +95,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     
     
-    
-    
    
 
-      <script type="text/javascript">
-        function resultado() {
-            $('#myModal').modal('show');
-           
-      
-        };
-
-    </script>
+    
+   
 
 
 
