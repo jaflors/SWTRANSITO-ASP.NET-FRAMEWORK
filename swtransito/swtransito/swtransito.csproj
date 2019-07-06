@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -666,6 +667,118 @@
     <Content Include="carousel\lib\jquery\dist\jquery.js" />
     <Content Include="carousel\lib\jquery\dist\jquery.min.js" />
     <Content Include="carousel\lib\jquery\LICENSE.txt" />
+    <Content Include="Content\Css\Stilo.css" />
+    <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Css\swiper.css" />
+    <Content Include="Content\Css\swiper.min.css" />
+    <Content Include="Content\Imagen.js" />
+    <Content Include="Content\IMG\1.jpg" />
+    <Content Include="Content\IMG\10.jpg" />
+    <Content Include="Content\IMG\11.jpg" />
+    <Content Include="Content\IMG\12.jpg" />
+    <Content Include="Content\IMG\13.jpg" />
+    <Content Include="Content\IMG\14.jpg" />
+    <Content Include="Content\IMG\15.jpg" />
+    <Content Include="Content\IMG\16.jpg" />
+    <Content Include="Content\IMG\17.jpg" />
+    <Content Include="Content\IMG\18.jpg" />
+    <Content Include="Content\IMG\2.1.jpg" />
+    <Content Include="Content\IMG\2.10.jpg" />
+    <Content Include="Content\IMG\2.11.jpg" />
+    <Content Include="Content\IMG\2.12.jpg" />
+    <Content Include="Content\IMG\2.13.jpg" />
+    <Content Include="Content\IMG\2.14.jpg" />
+    <Content Include="Content\IMG\2.15.jpg" />
+    <Content Include="Content\IMG\2.16.jpg" />
+    <Content Include="Content\IMG\2.17.jpg" />
+    <Content Include="Content\IMG\2.18.jpg" />
+    <Content Include="Content\IMG\2.2.jpg" />
+    <Content Include="Content\IMG\2.3.jpg" />
+    <Content Include="Content\IMG\2.4.jpg" />
+    <Content Include="Content\IMG\2.5.jpg" />
+    <Content Include="Content\IMG\2.6.jpg" />
+    <Content Include="Content\IMG\2.7.jpg" />
+    <Content Include="Content\IMG\2.8.jpg" />
+    <Content Include="Content\IMG\2.9.jpg" />
+    <Content Include="Content\IMG\2.jpg" />
+    <Content Include="Content\IMG\3.jpg" />
+    <Content Include="Content\IMG\4.jpg" />
+    <Content Include="Content\IMG\5.jpg" />
+    <Content Include="Content\IMG\6.jpg" />
+    <Content Include="Content\IMG\7.jpg" />
+    <Content Include="Content\IMG\8.jpg" />
+    <Content Include="Content\IMG\9.jpg" />
+    <Content Include="Content\IMG\ajax-loader.gif" />
+    <Content Include="Content\IMG\bg.png" />
+    <Content Include="Content\IMG\buttons.png" />
+    <Content Include="Content\IMG\circle.png" />
+    <Content Include="Content\IMG\Ejercicio\Aeropuerto.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Altura_maxima.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Ancho_maximo.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Angostamiento_ambos_lados.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Angostamiento_derecha.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Animales_via.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Baden.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Ceda_paso.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Circulacion_ambos.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Control.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Croquis.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Cruce.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Cruce_T.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Curva_cerrada_derecha.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Curva_contra_derecha.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Curva_derecha.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Descripcion_grios.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Desnivel_severo.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Direccion_obligada.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Dos_sentidos_transito.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Empalme_lateral.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Estacionamiento_permitido.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Estacionamiento_taxis.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Estacion_servicio.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Largo_maximo.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Mantenga_derecha.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Montallantas.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Nomenclatura_Geografica.jpg" />
+    <Content Include="Content\IMG\Ejercicio\No_adelantar.jpg" />
+    <Content Include="Content\IMG\Ejercicio\No_bloquear_cruce.jpg" />
+    <Content Include="Content\IMG\Ejercicio\No_cambiar_pista.jpg" />
+    <Content Include="Content\IMG\Ejercicio\No_girar _izquierda.jpg" />
+    <Content Include="Content\IMG\Ejercicio\No_girar_derecha.jpg" />
+    <Content Include="Content\IMG\Ejercicio\No_girar_u.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Paradero_bus.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Pare.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Polideportivo.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Poste_referencia.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Ruta_panamericana.jpg" />
+    <Content Include="Content\IMG\Ejercicio\Seguridad_vial.jpg" />
+    <Content Include="Content\IMG\h1.png" />
+    <Content Include="Content\IMG\left_bg.jpg" />
+    <Content Include="Content\IMG\right_bg.jpg" />
+    <Content Include="Content\IMG\r_1.jpg" />
+    <Content Include="Content\IMG\r_2.jpg" />
+    <Content Include="Content\IMG\r_3.jpg" />
+    <Content Include="Content\IMG\r_4.jpg" />
+    <Content Include="Content\IMG\r_5.jpg" />
+    <Content Include="Content\IMG\wood.jpg" />
+    <Content Include="Content\Propio.js" />
+    <Content Include="Content\src\images\arrow-next.png" />
+    <Content Include="Content\src\images\arrow-prev.png" />
+    <Content Include="Content\src\images\closedhand.cur" />
+    <Content Include="Content\src\images\openhand.cur" />
+    <Content Include="Content\src\images\shadow-top-back.png" />
+    <Content Include="Content\src\images\shadow-top-forward.png" />
+    <Content Include="Content\src\images\shadow.png" />
+    <Content Include="Content\src\jquery-2.1.0.min.js" />
+    <Content Include="Content\src\jquery-ui-1.10.4.min.js" />
+    <Content Include="Content\src\jquery.booklet.latest.css" />
+    <Content Include="Content\src\jquery.booklet.latest.js" />
+    <Content Include="Content\src\jquery.booklet.latest.min.js" />
+    <Content Include="Content\src\jquery.easing.1.3.js" />
+    <Content Include="Content\js\swiper.esm.bundle.js" />
+    <Content Include="Content\js\swiper.esm.js" />
+    <Content Include="Content\js\swiper.js" />
+    <Content Include="Content\js\swiper.min.js" />
     <Content Include="Global.asax" />
     <Content Include="imagenes\f.png" />
     <Content Include="imagenes\g.jpg" />
@@ -749,9 +862,14 @@
     <Content Include="Views\Administrador\Agregar_Contenido_video.aspx" />
     <Content Include="Views\Administrador\Agregar_preguntas.aspx" />
     <Content Include="Views\Administrador\Agregar_tematica.aspx" />
+    <Content Include="Views\Administrador\Ejercicio.aspx" />
     <Content Include="Views\Administrador\examen.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
+    <Content Include="Views\Administrador\Referente.aspx" />
+    <Content Include="Views\Administrador\Tecnica.aspx" />
     <Content Include="Views\Administrador\Ver_tematica_admin.aspx" />
+    <Content Include="Views\Administrador\Vista1.aspx" />
+    <Content Include="Views\Administrador\vista2.aspx" />
     <Content Include="Views\Estudiante\contenido_video.aspx" />
     <Content Include="Views\Estudiante\Imagen.aspx" />
     <Content Include="Views\Estudiante\Tematicas_estudiantes.aspx" />
@@ -774,6 +892,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ejercicio_mod.cs" />
     <Compile Include="Models\Examen.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Tematicas.cs" />
@@ -820,6 +939,13 @@
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.designer.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\Ejercicio.aspx.cs">
+      <DependentUpon>Ejercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Ejercicio.aspx.designer.cs">
+      <DependentUpon>Ejercicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\examen.aspx.cs">
       <DependentUpon>examen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -834,12 +960,40 @@
     <Compile Include="Views\Administrador\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\Referente.aspx.cs">
+      <DependentUpon>Referente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Referente.aspx.designer.cs">
+      <DependentUpon>Referente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Tecnica.aspx.cs">
+      <DependentUpon>Tecnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Tecnica.aspx.designer.cs">
+      <DependentUpon>Tecnica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\Ver_tematica_admin.aspx.cs">
       <DependentUpon>Ver_tematica_admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Administrador\Ver_tematica_admin.aspx.designer.cs">
       <DependentUpon>Ver_tematica_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Vista1.aspx.cs">
+      <DependentUpon>Vista1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Vista1.aspx.designer.cs">
+      <DependentUpon>Vista1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\vista2.aspx.cs">
+      <DependentUpon>vista2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\vista2.aspx.designer.cs">
+      <DependentUpon>vista2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Estudiante\contenido_video.aspx.cs">
       <DependentUpon>contenido_video.aspx</DependentUpon>
@@ -1253,6 +1407,7 @@
     <Content Include="carousel\lib\jquery-validation\LICENSE.md" />
     <Content Include="carousel\lib\jquery\.bower.json" />
     <Content Include="carousel\lib\jquery\dist\jquery.min.map" />
+    <Content Include="Content\js\swiper.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
