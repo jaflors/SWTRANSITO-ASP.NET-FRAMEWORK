@@ -37,11 +37,6 @@ namespace swtransito.Controllers
             
 
         }
-        [HttpPost]
-        public string Consultar_Seguimiento(string x)
-        {
-            return "entra";
-        }
 
 
         public string traer_url(string id)
