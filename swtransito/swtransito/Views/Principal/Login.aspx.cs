@@ -77,8 +77,6 @@ namespace swtransito.Views.Principal
             }
             catch (Exception x)
             {
-
-
             }
 
 

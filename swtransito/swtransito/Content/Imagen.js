@@ -36,8 +36,11 @@ function validar(x) {
 
 }
 function validar_final() {
-    if (acer < 40) {
-        alert("Por favor");
+  
+    if (acer < 0) {
+        alert("Por favor termine todo");
+    } else {
+        generar();
     }
 }
 
@@ -99,6 +102,7 @@ const getRemaintime = deadline => {
     }
 };
 
+
 const countdown = (deadline, elem, finalmensaje) => {
     const el = document.getElementById(elem);
     const actu = setInterval(() => {
@@ -107,20 +111,17 @@ const countdown = (deadline, elem, finalmensaje) => {
         if (t.remaintime <= 1) {
             clearInterval(actu);
             $('input').attr("readonly", "readonly");
-
-            var n = (acer * 100) / 40;
-            var nota = (n * 100) / 5;
-            alert("acerto " + acer + " no" + erro + "nota" + nota);
-            Ingresar_dato(acer, erro, nota);
-
+            generar();
         }
     }, 1000)
 };
+function fecha_segui() {
+    var cau = new Date();
+    cau.setMinutes(cau.getMinutes() + 1);
+    return cau;
+}
 
-var cau = new Date();
-cau.setMinutes(cau.getMinutes() + 1);
-console.log(cau);
-countdown(cau, 'reloj', 'terminar');
+countdown(fecha_segui(), 'reloj', 'terminar');
 
 function Ingresar_dato(acer, erro, not) {
 
@@ -141,8 +142,7 @@ function Ingresar_dato(acer, erro, not) {
         cache: false,
         success: function (response) {
             try {
-                var DT = $.parseJSON(response);
-                alert(DT);
+                
 
             } catch{
                 alert("noesta");
@@ -154,4 +154,22 @@ function Ingresar_dato(acer, erro, not) {
         }
     });
 
+}
+
+function generar() {
+
+    var n = (acer * 100) / 40;
+    var nota = (n * 100) / 5;
+    var arc = "<h3> Correctas: <span class='badge bg-success'>" + acer + "</span></h3>";
+    arc += "<h3> Incorrectas: <span class='badge bg-danger'>" + erro + "</span></h3>";
+    arc += "<h3> Nota: <span class='badge bg-success'>" + erro + "</span></h3>";
+    $("#aqui").empty();
+    $("#aqui").append(arc);
+    $("#myModal").modal();
+    Ingresar_dato(acer, erro, nota);
+}
+function Reinicio() {
+    acer = 0;
+    erro = 0;
+    location.reload();
 }

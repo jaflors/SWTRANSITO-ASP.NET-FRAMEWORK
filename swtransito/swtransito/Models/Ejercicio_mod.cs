@@ -1,6 +1,7 @@
 ﻿using swtransito.Conexion;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -29,6 +30,13 @@ namespace swtransito.Models
             return conn.Transaction(trans);
 
 
+        }
+        public DataTable Consultar_all()
+        {
+
+            string sql = "select persona.Nombres, ejercicio.Erro, ejercicio.Acierto, ejercicio.Nota, ejercicio.Fecha from ejercicio";
+            sql += "inner join persona on ejercicio.Persona=persona.IdPersona;";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
         }
     }
 

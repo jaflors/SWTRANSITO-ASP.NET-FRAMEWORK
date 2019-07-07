@@ -865,6 +865,7 @@
     <Content Include="Views\Administrador\Ejercicio.aspx" />
     <Content Include="Views\Administrador\examen.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
+    <Content Include="Views\Administrador\MostrarRespuesta.aspx" />
     <Content Include="Views\Administrador\Referente.aspx" />
     <Content Include="Views\Administrador\Tecnica.aspx" />
     <Content Include="Views\Administrador\Ver_tematica_admin.aspx" />
@@ -959,6 +960,13 @@
     </Compile>
     <Compile Include="Views\Administrador\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\MostrarRespuesta.aspx.cs">
+      <DependentUpon>MostrarRespuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\MostrarRespuesta.aspx.designer.cs">
+      <DependentUpon>MostrarRespuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Referente.aspx.cs">
       <DependentUpon>Referente.aspx</DependentUpon>
