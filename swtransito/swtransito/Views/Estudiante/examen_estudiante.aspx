@@ -10,24 +10,28 @@
      <script type="text/javascript">
         function resultado() {
             $('#myModal').modal('show');
-           
-      
         };
+    </script>
 
+    <script type="text/javascript">
+        function pregunta() {
+            $('#myModalpregunta').modal('show');
+        };
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <form runat="server" class="form-horizontal form-label-left">
         <br />
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="container">
-                    <h2>Instrucciones</h2>
-                   
-                    <asp:Label ID="lb_instru" style="line-height: 15pt;" runat="server" ></asp:Label>
-                    <hr />
-                    <asp:TextBox ID="getstringuser" runat="server" Visible="false"></asp:TextBox>
-                    <asp:GridView ID="gridview_examquestion" runat="server" AutoGenerateColumns="False" GridLines="None" CssClass="auto-style1" Width="793px">
+        
+    <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+        <div class="container">
+            <h2>Instrucciones</h2>
+
+            <asp:Label ID="lb_instru" Style="line-height: 15pt;" runat="server"></asp:Label>
+            <hr style="width: 800px; margin-left: 20px;" />
+            <asp:TextBox ID="getstringuser" runat="server" Visible="false"></asp:TextBox>
+            <asp:GridView ID="gridview_examquestion" runat="server" AutoGenerateColumns="False" GridLines="None" CssClass="auto-style1" Width="793px">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -49,6 +53,7 @@
                     </asp:GridView>
 
                     <asp:Button ID="btn_submit" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btn_submit_Click" />
+                    <br />
                     <br />
                 </div>
             </div>
@@ -76,8 +81,39 @@
 
                     </div>
                     <div class="modal-footer">
-                        <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Repetir Examen</button>--%>
+                        
+                         <a class="btn btn-default" href="../../Views/Estudiante/ver_examenes.aspx">Volver a exámenes</a>
                          <asp:Button ID="guardar" class="btn btn-primary"  runat="server" OnClick="Repetir" Text="Repetir Examen" />
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Modal pregunta inicio-->
+        
+         <div class="modal fade" id="myModalpregunta" role="dialog">
+            <div class="modal-dialog modal-sm info">
+                <div class="modal-content info"
+                    style="width: 502px;">
+                    <div class="modal-header info">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">¡Aviso !!!</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="col-md-12">
+                            <h3>Ya has realizado este examen  </h3>
+                            <h4>¿desea repetirlo?</h4>
+                            
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        
+                         <a class="btn btn-default" href="../../Views/Estudiante/ver_examenes.aspx">Volver a exámenes</a>
+                        
+                       
+                             <a href="../../Views/Estudiante/examen_estudiante.aspx?tipo=1" class="btn btn-success">Repetir Examen</a>
                     </div>
                 </div>
             </div>

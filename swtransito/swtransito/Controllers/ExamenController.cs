@@ -47,6 +47,14 @@ namespace swtransito.Controllers
         {
             return ex.traer_examen_id(a);
         }
+        // traer exmen para mostrar resultado
+        public DataTable traer_examen_show_result()
+        {
+            return ex.traer_examen_show_resul();
+        }
+
+
+
 
         public bool insert_preguntas(string a, int b, string c, string d, string e, string f, string g, string h)
         {

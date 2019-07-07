@@ -59,6 +59,14 @@ namespace swtransito.Models
         }
 
 
+        //traer examen para mostrar los resultados de cada examen 
+
+        public DataTable traer_examen_show_resul()
+        {
+            string sql = @"SELECT idexamen,nombre FROM transito.examen;";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+        }
+
         /// traer examen descripcion
         public string traer_descripcion_ex(string id)
         {
@@ -68,6 +76,7 @@ namespace swtransito.Models
             return data.Rows[0]["descripcion"].ToString();
 
         }
+
 
         public bool eliminar_examen(string pk)
         {

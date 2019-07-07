@@ -12,38 +12,85 @@ namespace swtransito.Views.Estudiante
 {
     public partial class examen_estudiante : System.Web.UI.Page
     {
-        public string buenas, erroneas, estado;
+        public string buenas, erroneas, estado, tipo;
+        int existe;
         DataTable aux;
         public DataRow dr;
         ExamenController ex = new ExamenController();
         Resultado resul = new Resultado();
         protected void Page_Load(object sender, EventArgs e)
         {
+            tipo = Request.QueryString["tipo"];
             if (!IsPostBack) {
 
-
-                string aux2 = ex.traer_descripcion(Session["id_examen_estu"].ToString());
-                if (aux2!= null)
+                if (tipo != null)
                 {
-                  
-                    lb_instru.Text = aux2.ToString();
+                    string aux2 = ex.traer_descripcion(Session["id_examen_estu"].ToString());
+                    if (aux2 != null)
+                    {
 
-                }
+                        lb_instru.Text = aux2.ToString();
 
-
+                    }
                     aux = ex.preguntas_estudiante(Session["id_examen_estu"].ToString());
 
-                if (aux.Rows.Count > 0)
+                    if (aux.Rows.Count > 0)
+                    {
+                        gridview_examquestion.DataSource = aux;
+                        gridview_examquestion.DataBind();
+
+
+                    }
+                    else
+                    {
+                        Response.Write("<script> alert('el examen no tiene ppreguntas' ); </script>");
+                    }
+
+                }else
                 {
-                    gridview_examquestion.DataSource = aux;
-                    gridview_examquestion.DataBind();
+
+                    existe = Int32.Parse(resul.preguntar_ifex_resultado(Session["login"].ToString(), Session["id_examen_estu"].ToString()));
+
+                    if (existe == 1)
+                    {
+                        ScriptManager.RegisterStartupScript(this.Page, GetType(), "script", "pregunta();", true);
+                    }else
+                    {
+
+
+                        string aux2 = ex.traer_descripcion(Session["id_examen_estu"].ToString());
+                        if (aux2 != null)
+                        {
+                            lb_instru.Text = aux2.ToString();
+
+                        }
+
+
+                        aux = ex.preguntas_estudiante(Session["id_examen_estu"].ToString());
+
+                        if (aux.Rows.Count > 0)
+                        {
+                            gridview_examquestion.DataSource = aux;
+                            gridview_examquestion.DataBind();
+
+
+                        }
+                        else
+                        {
+                            Response.Write("<script> alert('el examen no tiene ppreguntas' ); </script>");
+                        }
+
+
+
+                    }
+
 
 
                 }
-                else
-                {
-                    Response.Write("<script> alert('el examen no tiene ppreguntas' ); </script>");
-                }
+
+             
+
+
             }
 
 
@@ -93,8 +140,16 @@ namespace swtransito.Views.Estudiante
                 checkanwer(li.Text);
 
             }
-            saveinresult(passfail(), correct_number, wrong_number,gridview_examquestion.Rows.Count);
 
+
+            if (tipo != null)
+            {
+                updateresult(passfail(), correct_number, wrong_number, gridview_examquestion.Rows.Count);
+            }
+            else
+            {
+                saveinresult(passfail(), correct_number, wrong_number, gridview_examquestion.Rows.Count);
+            }
         }
 
 
@@ -181,6 +236,32 @@ namespace swtransito.Views.Estudiante
                 Response.Write("<script> alert('" + ex.Message + "' ); </script>");
             }
             
+        }
+
+        // method for update register of base of date the resultd
+        public void updateresult(string status, int score, int malas, int tquestion)
+        {
+
+            try
+            {
+                if (resul.actualizar_resultado(status, score, malas, tquestion, DateTime.Now.ToString(), Session["id_examen_estu"].ToString(), Session["login"].ToString()))
+                {
+
+
+
+                    buenas = score.ToString();
+                    erroneas = malas.ToString();
+                    estado = status.ToString();
+
+                    ScriptManager.RegisterStartupScript(this.Page, GetType(), "script", "resultado();", true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script> alert('" + ex.Message + "' ); </script>");
+            }
+
         }
 
 
