@@ -39,10 +39,10 @@ namespace swtransito.Controllers
         }
 
 
-        //public bool update_participante(string a, string b, string c, string d, string e)
-        //{
-        //    return usu.RealizarUpdate_Participante(a, b, c, d, e);
-        //}
+        public bool update_participante(string a, string b, string c, string d, string e, string f)
+        {
+            return usu.RealizarUpdate_Participante(a, b, c, d, e,f);
+        }
 
         public DataTable consular_participante(string pk)
         {

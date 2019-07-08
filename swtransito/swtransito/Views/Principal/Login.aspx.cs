@@ -63,20 +63,23 @@ namespace swtransito.Views.Principal
                     }
                     else
                     {
-                        mjs = "VERIFIQUE SUS DATOS";
-                        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
+
+
+                        Response.Write("<script> alert('VERIFIQUE SUS DATOS')</script> ");
                     }
                 }
                 else
                 {
-                    mjs = "CAMPOS NO PUEDEN SER VACIOS";
-                    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
+                   
+                    Response.Write("<script> alert('CAMPOS NO PUEDEN SER VACIOS')</script> ");
                 }
 
 
             }
             catch (Exception x)
             {
+                Response.Write("<script> alert('"+x+"')</script> ");
+
             }
 
 

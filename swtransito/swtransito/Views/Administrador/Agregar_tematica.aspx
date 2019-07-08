@@ -44,7 +44,7 @@
                                         </td>
 
 
-                                       
+
                                     </tr>
 
                                 </ItemTemplate>
@@ -63,8 +63,6 @@
                                 <div class="modal-body">
                                     <!-- Modal- body-->
                                     <div class="row">
-
-
                                         <div class="col-lg-12">
                                             <br />
                                             <div class="panel panel-default">
@@ -78,12 +76,6 @@
                                                                 <asp:DropDownList ID="List_tipo" class="form-control round-form " runat="server" required="required"></asp:DropDownList>
                                                             </div>
                                                         </div>
-
-
-
-
-
-
                                                         <div class="col-md-12 ">
                                                             <div class="form-group">
                                                                 <label>Nombre</label>
@@ -98,12 +90,6 @@
 
                                                             </div>
                                                         </div>
-
-
-
-
-
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,11 +110,16 @@
             </div>
             <!-- /content-panel -->
         </div>
-        <!-- /col-md-12 -->
-    </div>
+         <!-- /col-md-12 -->
+     </div>
     <!-- /row -->
 
-  
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
 
 
 

@@ -78,14 +78,20 @@ namespace swtransito.Views.Administrador
         }
 
 
+        
 
-        public void Guardar_imagen(object sender, EventArgs e)
+
+
+
+
+
+        public void Guardar_imagen(object sender, CommandEventArgs e)
         {
-            try
+            if (e.CommandName.Equals("guardar"))
             {
 
 
-                if (file_contenido != null)
+                if (file_contenido.HasFile)
                 {
                     if (ModelState.IsValid)
                     {
@@ -98,7 +104,7 @@ namespace swtransito.Views.Administrador
                         {
                             file_contenido.SaveAs(carpeta);
 
-                          
+
 
                             Response.Write("<script> alert('imagen guardada' ); </script>");
                             Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
@@ -109,7 +115,7 @@ namespace swtransito.Views.Administrador
                         {
                             Response.Write("<script> alert('No se guardo en la base de datos' ); </script>");
 
-                          
+
                         }
 
                     }
@@ -118,25 +124,16 @@ namespace swtransito.Views.Administrador
 
                         Response.Redirect("~/Views/Administrador/Registrar_barberia.aspx");
                     }
-
-
                 }
                 else
                 {
-
-                    Response.Write("<script> alert('No se ha cargado imagen' ); </script>");
+                    Response.Write("<script> alert('igresa un archivo' ); </script>");
                 }
 
 
-            }
-            catch (Exception)
-            {
-                Response.Write("<script> alert('ERROR INESPERADO' ); </script>");
-            }
 
 
-
-
+        }
 
 
         }

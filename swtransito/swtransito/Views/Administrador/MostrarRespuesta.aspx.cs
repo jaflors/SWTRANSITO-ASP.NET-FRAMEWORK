@@ -15,10 +15,10 @@ namespace swtransito.Views.Administrador
 
         }
 
-        [WebMethod]
-        public static object consult_all()
-        {
+        //[WebMethod]
+        //public static object consult_all()
+        //{
 
-        }
+        //}
     }
 }

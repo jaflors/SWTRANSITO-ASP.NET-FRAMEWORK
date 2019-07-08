@@ -100,14 +100,20 @@ namespace swtransito.Models
 
         public DataTable ConsultarParticipante(string pk)
         {
-            string sql = @"SELECT nombres,apellidos,correo,contrasena,recontrasena FROM usuario WHERE idusuario='" + pk + "'";
+            string sql = @"SELECT Nombres,Apellidos,cedula,correol,contrasena FROM persona where idPersona='" + pk +"';";
             return conn.EjecutarConsulta(sql, CommandType.Text);
         }
 
 
 
-      
-       
+
+        public bool RealizarUpdate_Participante(string a, string b, string c, string d, string e, string f)
+        {
+            string[] sql = new string[1];
+            sql[0] = "UPDATE persona SET Nombres='" +a +"',Apellidos='" +b + "',cedula='"+c+"',correol='" + d+ "',contrasena=md5('" + e+ "'),recontrasena=md5('" +e+"') where idPersona='" +f+"'; ";
+            return conn.RealizarTransaccion(sql);
+        }
+
 
 
 

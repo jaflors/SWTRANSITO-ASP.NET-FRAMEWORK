@@ -34,11 +34,16 @@
                                         <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idexamen")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
                                                     Eliminar</asp:LinkButton>
 
-                                        <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
-                                                    Actualizar</asp:LinkButton>
+                                        <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_examen" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
+                                                    Modificar</asp:LinkButton>
 
-                                           <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-success btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-info-circle"></i>
+                                        <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-warning btn-xs" OnCommand="enviar_a_preguntas" runat="server" CommandName="traer"><i class="fa fa-plus"></i>
+                                                    Add preguntas</asp:LinkButton>
+
+                                        <asp:LinkButton CommandArgument='<%#Eval("idexamen")%>' CssClass="btn btn-success btn-xs" OnCommand="mostrar_preguntas" runat="server" CommandName="traer" Style="margin-left: 65px; margin-top: 3px;"><i class="fa fa-info-circle"></i>
                                                     Ver preguntas</asp:LinkButton>
+
+
 
                                     </td>
 
@@ -108,7 +113,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row form-group">
-                                                    <label class="col-md-2 col-form-label ">Numero prpeguntas para aprobar</label>
+                                                    <label class="col-md-2 col-form-label ">No. preguntas para aprobar</label>
                                                     <div class="col-md-6">
                                                         <asp:TextBox ID="txt_exammapasa" runat="server" CssClass="form-control" TextMode="Number" required="required"></asp:TextBox>
                                                         <%--<asp:RequiredFieldValidator ID="require_exammatotal" runat="server" ErrorMessage="Enter total marks" ControlToValidate="txt_exammatotalmarks" ForeColor="red" Display="Dynamic"></asp:RequiredFieldValidator>--%>
@@ -138,7 +143,13 @@
             </div>
         </div>
     </form>
-
+     <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">

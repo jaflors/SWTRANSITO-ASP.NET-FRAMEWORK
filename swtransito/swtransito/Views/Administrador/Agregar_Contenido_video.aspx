@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Administrador/Administrador.Master" AutoEventWireup="true" CodeBehind="Agregar_Contenido_video.aspx.cs" Inherits="swtransito.Views.Administrador.Agregar_Contenido_video" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
@@ -48,30 +49,30 @@
 
                             </tr>
                         </thead>
-                        
+
                         <tbody>
                             <asp:ListView runat="server" ID="list_imagen">
                                 <ItemTemplate>
-                                    
+
                                     <tr>
 
-                                        
+
                                         <td><%#Eval("ubicacion")%> </td>
                                         <td style="width: 216px">
 
 
-                                         <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idvideo")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
+                                            <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idvideo")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
                                                     Eliminar </asp:LinkButton>
 
                                             <asp:LinkButton CommandArgument='<%#Eval("idvideo")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
                                                     Actualizar</asp:LinkButton>
-                                           
+
                                         </td>
 
 
 
                                     </tr>
-                                    
+
 
                                 </ItemTemplate>
                             </asp:ListView>
@@ -79,7 +80,11 @@
                         </tbody>
                     </table>
 
-                     <!-- Modal -->
+                   
+
+                    <a class="btn btn-default"  href="../../Views/Administrador/Ver_tematica_admin.aspx" Style="border-left-width: 1px; margin-left: 5px;" >Volver</a>
+
+                    <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -98,15 +103,15 @@
                                                 <div class="panel-body">
 
                                                     <div class="row">
-                                                       
+
                                                         <div class="col-md-12 ">
                                                             <div class="form-group">
                                                                 <label>Ingresa PDF</label>
 
-                                                                 <asp:FileUpload ID="file_PDF" class="form-control round-form " runat="server" required="required" />
+                                                                <asp:FileUpload ID="file_PDF" class="form-control round-form " runat="server" required="required" />
                                                             </div>
                                                         </div>
-                                                        
+
 
 
 
@@ -142,7 +147,11 @@
 
 
 
-
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
 
 

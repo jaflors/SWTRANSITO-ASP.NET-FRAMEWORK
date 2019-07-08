@@ -59,18 +59,20 @@ namespace swtransito.Views.Administrador
 
         public void traer_usuario(object sender, CommandEventArgs e)
         {
-            //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('entro');", true);
-
-            //if (e.CommandName.Equals("traer"))
-            //{
-            //    string idusu = (e.CommandArgument.ToString());
-            //    Session["id_usu_act"] = idusu;
-
-            //    Response.Redirect("~/Views/Administrador/Actualizar_usu_admin.aspx");
+           
+            if (e.CommandName.Equals("traer"))
+            {
 
 
 
-            //}
+                string idtematica = (e.CommandArgument.ToString());
+                Session["id_tematica"] = idtematica;
+
+                Response.Redirect("~/Views/Administrador/Actualizar_tematica.aspx");
+
+
+
+            }
 
         }
 
