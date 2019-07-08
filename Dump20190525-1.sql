@@ -40,7 +40,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (3,'Examen convivencia vial ciclistas','responda las preguntas de selección múltiple ','2019-06-19',5,1,3);
+INSERT INTO `examen` VALUES (3,'Examen convivencia vial ciclistas','responda las preguntas de selección múltiple ','2019-07-07',5,1,3);
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `imagen` (
   PRIMARY KEY (`idImagen`),
   KEY `fk_imagen_tematica_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_imagen_tematica` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -297,7 +297,7 @@ CREATE TABLE `rol_vista` (
 
 LOCK TABLES `rol_vista` WRITE;
 /*!40000 ALTER TABLE `rol_vista` DISABLE KEYS */;
-INSERT INTO `rol_vista` VALUES (1,2,10),(5,1,5),(6,1,6),(8,1,8),(11,2,11),(12,2,12),(13,2,13),(14,2,14),(15,2,15),(16,2,16),(17,2,17),(18,2,18),(19,2,19),(20,1,20);
+INSERT INTO `rol_vista` VALUES (5,1,5),(6,1,6),(8,1,8),(11,2,11),(12,2,12),(13,2,13),(14,2,14),(15,2,15),(16,2,16),(17,2,17),(18,2,18),(19,2,19),(20,1,20);
 /*!40000 ALTER TABLE `rol_vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -326,7 +326,7 @@ CREATE TABLE `tematica` (
 
 LOCK TABLES `tematica` WRITE;
 /*!40000 ALTER TABLE `tematica` DISABLE KEYS */;
-INSERT INTO `tematica` VALUES (1,'Convivencia Vial Ciclistas ','1','A',1),(2,'tipos de señales','2','I',2),(3,'Señalamientos viales ','3','A',1);
+INSERT INTO `tematica` VALUES (1,'Convivencia Vial Ciclistas ','1','A',1),(2,'tipos de señales','2','A',2),(3,'Señalamientos viales ','3','A',1);
 /*!40000 ALTER TABLE `tematica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -405,7 +405,7 @@ CREATE TABLE `vista` (
 
 LOCK TABLES `vista` WRITE;
 /*!40000 ALTER TABLE `vista` DISABLE KEYS */;
-INSERT INTO `vista` VALUES (1,'Registrar Usuario','../Usuario/RegistrarU.aspx','fa fa-pencil',1),(3,'Actualizar Usuario','../Usuario/ActualizarU.aspx','fa fa-edit',1),(5,'Registrar Tematica','../Administrador/Agregar_tematica.aspx','fa fa-pencil',3),(6,'Agregar Contenido','../Administrador/Ver_tematica_admin.aspx','fa fa-edit',3),(8,'Añadir  Evaluacion ','../Administrador/examen.aspx','fa fa-line-chart',4),(10,'Eliminar Evaluacion ','e','fa fa-times',4),(11,'Actualizar Datos','a','fa fa-pencil',5),(12,'Ver  temáticas ','../Estudiante/Tematicas_estudiantes.aspx','fa fa-gamepad',2),(13,'Ver Resultados','../Estudiante/mis_resulltados.aspx','fa fa-check-square-o',6),(14,'Evaluación','../Estudiante/ver_examenes.aspx','fa fa-pencil',2),(15,'Documentación vehículos ','../Estudiante/Referente.aspx','fa fa-file-o',7),(16,'El cuerpo y la moto','../Estudiante/Tecnica.aspx','fa fa-male',7),(17,'Seguridad en el vehículo','../Estudiante/Vista1.aspx','fa fa-shield',7),(18,'Seguridad al viajar','../Estudiante/vista2.aspx','fa fa-shield',7),(19,'Ejercicio','../Administrador/Ejercicio.aspx','fa fa-gamepad',2),(20,'Resultados','../Administrador/Result.aspx','fa fa-trophy',4);
+INSERT INTO `vista` VALUES (1,'Registrar Usuario','../Usuario/RegistrarU.aspx','fa fa-pencil',1),(3,'Actualizar Usuario','../Usuario/ActualizarU.aspx','fa fa-edit',1),(5,'Registrar Tematica','../Administrador/Agregar_tematica.aspx','fa fa-pencil',3),(6,'Agregar Contenido','../Administrador/Ver_tematica_admin.aspx','fa fa-edit',3),(8,'Añadir  Evaluacion ','../Administrador/examen.aspx','fa fa-plus',4),(10,'Eliminar Evaluacion ','e','fa fa-times',4),(11,'Actualizar Datos','../Estudiante/Actualizar_datos.aspx','fa fa-pencil',5),(12,'Ver  temáticas ','../Estudiante/Tematicas_estudiantes.aspx','fa fa-gamepad',2),(13,'Ver Resultados','../Estudiante/mis_resulltados.aspx','fa fa-check-square-o',6),(14,'Evaluación','../Estudiante/ver_examenes.aspx','fa fa-pencil',2),(15,'Documentación vehículos ','../Administrador/Referente.aspx','fa fa-file-o',7),(16,'El cuerpo y la moto','../Administrador/Tecnica.aspx','fa fa-male',7),(17,'Seguridad en el vehículo','../Administrador/Vista1.aspx','fa fa-shield',7),(18,'Seguridad al viajar','../Administrador/vista2.aspx','fa fa-shield',7),(19,'Ejercicio','../Administrador/Ejercicio.aspx','fa fa-gamepad',2),(20,'Resultados','../Administrador/Result.aspx','fa fa-trophy',4);
 /*!40000 ALTER TABLE `vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -551,4 +551,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-06 23:31:53
+-- Dump completed on 2019-07-07 19:23:33
