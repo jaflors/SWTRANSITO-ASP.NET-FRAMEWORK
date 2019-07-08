@@ -13,6 +13,9 @@ namespace swtransito.Models
         public string acerto { get; set; }
         public string error { get; set; }
         public string nota { get; set; }
+        public DateTime fecha { get; set; }
+        public string nombre { get; set; }
+        public string id_pe { get; set; }
 
         public bool insert_ejercicio(Ejercicio_mod obj, string user)
         {
@@ -34,10 +37,16 @@ namespace swtransito.Models
         public DataTable Consultar_all()
         {
 
-            string sql = "select persona.Nombres, ejercicio.Erro, ejercicio.Acierto, ejercicio.Nota, ejercicio.Fecha from ejercicio";
-            sql += "inner join persona on ejercicio.Persona=persona.IdPersona;";
+            string sql = "call con_ejer_all()";
             return conn.EjecutarConsulta(sql, CommandType.Text);
         }
+        public DataTable Consultar_id(string obj)
+        {
+
+            string sql = "call con_ejer_per(" + obj + ")";
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+        }
+
     }
 
 }

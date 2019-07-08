@@ -19,6 +19,7 @@ $(document).ready(function () {
     }
     $("#insertar").append(ins);
 
+
 });
 function validar(x) {
 
@@ -117,7 +118,7 @@ const countdown = (deadline, elem, finalmensaje) => {
 };
 function fecha_segui() {
     var cau = new Date();
-    cau.setMinutes(cau.getMinutes() + 1);
+    cau.setMinutes(cau.getMinutes() + 5);
     return cau;
 }
 
@@ -173,3 +174,4 @@ function Reinicio() {
     erro = 0;
     location.reload();
 }
+

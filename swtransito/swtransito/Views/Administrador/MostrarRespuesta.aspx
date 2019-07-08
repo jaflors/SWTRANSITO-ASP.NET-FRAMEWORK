@@ -1,40 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Administrador/Administrador.Master" AutoEventWireup="true" CodeBehind="MostrarRespuesta.aspx.cs" Inherits="swtransito.Views.Administrador.MostrarRespuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="container">
         <div class="form-panel">
-            <h1 class="title">Test de Ejercicios</h1>
-            <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-            </tbody>
-        </table>
+            <h1 class="title" id="taq">Test de Ejercicios</h1>
         </div>
-        
+
+    </div>
+      <div class="modal fade" id="ModalModModificar" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" >
+
+                <div class="modal-body text-justify" id="aqui_">
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <script src="../../Content/Resp.js"></script>
+    
 </asp:Content>
