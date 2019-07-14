@@ -4,8 +4,16 @@
     <link href="../../Content/Css/Stilo.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div class="header" style="left:15%">
+        <div class="col-md-10">
+            <span class="badge bg-success fa-2x" id="reloj" style="display: grid"></span>
+        </div>
+        <div class="col-md-2 right" onclick="ayuda()">
+            <button class="btn btn-success">Ayuda</button>
+        </div>
+    </div>
 
-    <span class="badge bg-success fa-2x" id="reloj" style="display: grid"></span>
+
     <div class="container mt">
         <div class="form-panel">
             <form role="form" class="form-horizontal style-form">
@@ -23,10 +31,9 @@
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content" >
+            <div class="modal-content">
 
                 <div class="modal-body text-justify" id="aqui">
-                    
                 </div>
             </div>
             <div class="modal-footer">
@@ -34,6 +41,18 @@
                 <button type="button" class="btn btn-round btn-warning" onclick="Reinicio()">Reiniciar</button>
             </div>
 
+        </div>
+    </div>
+    <div class="modal fade" id="myayuda" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-body text-justify" id="mostrar_resp">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

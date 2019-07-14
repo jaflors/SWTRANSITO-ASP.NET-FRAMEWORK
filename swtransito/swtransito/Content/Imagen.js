@@ -18,6 +18,9 @@ $(document).ready(function () {
         ins += "</div></div></div>";
     }
     $("#insertar").append(ins);
+    Generar_ayuda();
+
+   
 
 
 });
@@ -33,11 +36,12 @@ function validar(x) {
     } else {
         acer++;
         $("#" + x).attr("readonly", "readonly");
+        $("#" + x + "a").toggle();
     }
 
 }
 function validar_final() {
-  
+
     if (acer < 0) {
         alert("Por favor termine todo");
     } else {
@@ -143,7 +147,7 @@ function Ingresar_dato(acer, erro, not) {
         cache: false,
         success: function (response) {
             try {
-                
+
 
             } catch{
                 alert("noesta");
@@ -173,5 +177,15 @@ function Reinicio() {
     acer = 0;
     erro = 0;
     location.reload();
+}
+function ayuda() {
+    $("#myayuda").modal();
+}
+function Generar_ayuda() {
+    let mostra = "";
+    $.each(nombre, function (i, val) {
+        mostra += "<p id='" + i + "a'>" + val + "</p>"
+    });
+    $("#mostrar_resp").append(mostra);
 }
 
