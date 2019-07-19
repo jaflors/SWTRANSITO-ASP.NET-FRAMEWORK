@@ -47,7 +47,7 @@ namespace swtransito.Views.Administrador
 
         public void traer_tematica()
         {
-           
+
             List_tipo.DataSource = tem.Traer_tematica_admin();
             List_tipo.DataTextField = "Nombre";
             List_tipo.DataValueField = "idTematica";
@@ -64,17 +64,20 @@ namespace swtransito.Views.Administrador
 
             try
             {
-                if ( numero ==-1)
+                if (numero == -1)
                 {
                     Response.Write("<script> alert('Selecione una Tematica')</script> ");
-                } else {
+                }
+                else
+                {
 
                     if (ex.Actualizar_examen(txt_examname.Text, txt_examdis.Text, txt_examdate.Text, txt_examtotalpreguntas.Text, List_tipo.Text, txt_exammapasa.Text, Session["id_examen"].ToString()) == true)
                     {
                         Response.Write("<script> alert('Actualización correcta')</script> ");
 
 
-                    } else
+                    }
+                    else
                     {
                         Response.Write("<script> alert('No se pudo actualizar')</script> ");
                     }

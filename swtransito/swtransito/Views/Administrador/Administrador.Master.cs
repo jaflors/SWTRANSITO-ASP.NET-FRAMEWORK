@@ -12,7 +12,7 @@ namespace swtransito.Views.Administrador
     public partial class Administrador : System.Web.UI.MasterPage
     {
         DataTable aux, DatRol;
-        DataRow dato, Dr;
+        DataRow Dr;
 
         protected void Page_Load(object sender, EventArgs e)
         {

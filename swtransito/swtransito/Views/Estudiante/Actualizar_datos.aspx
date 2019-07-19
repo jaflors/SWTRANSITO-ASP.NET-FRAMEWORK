@@ -52,7 +52,7 @@
 
                     <div class="row form-group">
                         <div class="col-md-6">
-                            <a class="btn btn-default" href="../../Views/Administrador/examen.aspx">Volver</a>
+                            <a class="btn btn-default" href="../../Views/Estudiante/inicio.aspx">Volver</a>
                             <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Actualizar" Text="Modificar" />
                         </div>
                     </div>

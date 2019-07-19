@@ -1,6 +1,7 @@
 ﻿var nombre = ["AEROPUERTO", "ALTURA MAXIMA", "ANCHO MAXIMO", "ANGOSTAMIENTO HA AMBOS LADOS", "ANGOSTAMIENTO A LA DERECHA", "ANIMALES EN LA VIA", "BADEN", "CEDA EL PASO", "CIRCULACION EN AMBOS SENTIDOS", "CONTROL", "CROQUIS", "CRUCE", "CRUCE EN T", "CURVA CERRADA A LA DERECHA", "CURVA Y CONTRA CURVA A LA DERECHA", "CURVA A LA DERECHA", "DESCRIPCION DE GIROS", "DESNIVEL SEVERO", "DIRECCION OBLIGADA", "DOS SENTIDOS DE TRANSITO", "EMPALME LATERAL", "ESTACION DE SERVICIO", "ESTACIONAMIENTO PERMITIDO", "ESTACIONAMIENTO DE TAXI", "LARGO MAXIMO", "MANTENGA SU DERECHA", "MONTALLANTAS", "NO ADELANTAR", "NO BLOQUEAR CRUCE", "NO CAMBIAR DE PISTA", "NO GIRAR A LA IZQUIERDA", "NO GIRAR A LA DERECHA", "NO GIRAR EN U", "NOMENCLATURA GRAFICA", "PARADERO DE BUS", "PARE", "POLIDEPORTIVO", "POSTE DE REFERENCIA", "RUTA PANAMERICANA", "SEGURIDAD VIAL"];
 var inten = 1;
 var acer = 0;
+var erro = 0;
 var er = [];
 //revisar facebook por que hace falta algunas cosas.
 $(document).ready(function () {
@@ -17,6 +18,10 @@ $(document).ready(function () {
         ins += "</div></div></div>";
     }
     $("#insertar").append(ins);
+    Generar_ayuda();
+
+   
+
 
 });
 function validar(x) {
@@ -24,18 +29,23 @@ function validar(x) {
     var comp = $("#" + x).val().toUpperCase();
     inten++;
     if (nombre[x] !== comp) {
+        erro++;
         $("#" + x).val("");
         $("#" + x).addClass('err');
         encuentra(x);
     } else {
         acer++;
         $("#" + x).attr("readonly", "readonly");
+        $("#" + x + "a").toggle();
     }
 
 }
 function validar_final() {
-    if (acer < 40) {
-        alert("Por favor");
+
+    if (acer < 0) {
+        alert("Por favor termine todo");
+    } else {
+        generar();
     }
 }
 
@@ -97,6 +107,7 @@ const getRemaintime = deadline => {
     }
 };
 
+
 const countdown = (deadline, elem, finalmensaje) => {
     const el = document.getElementById(elem);
     const actu = setInterval(() => {
@@ -105,31 +116,38 @@ const countdown = (deadline, elem, finalmensaje) => {
         if (t.remaintime <= 1) {
             clearInterval(actu);
             $('input').attr("readonly", "readonly");
-            Ingresar_dato("dos");
+            generar();
         }
     }, 1000)
 };
+function fecha_segui() {
+    var cau = new Date();
+    cau.setMinutes(cau.getMinutes() + 5);
+    return cau;
+}
 
-var cau = new Date();
-cau.setMinutes(cau.getMinutes() + 1);
-console.log(cau);
-countdown(cau, 'reloj', 'terminar');
+countdown(fecha_segui(), 'reloj', 'terminar');
 
-function Ingresar_dato(y) {
+function Ingresar_dato(acer, erro, not) {
 
     var datos = {
-        "x": y
+        obj_eje: {
+            acerto: acer,
+            error: erro,
+            nota: not
+        }
     }
     datos = JSON.stringify(datos);
     $.ajax({
         type: "post",
-        url: '@Url.Action("Consultar_Seguimiento", "Tematica")',
+        url: 'Ejercicio.aspx/Ingreso',
         data: datos,
+        contentType: "application/json; charset=utf-8",
         datatype: "json",
         cache: false,
         success: function (response) {
             try {
-                alert("entra");
+
 
             } catch{
                 alert("noesta");
@@ -142,3 +160,32 @@ function Ingresar_dato(y) {
     });
 
 }
+
+function generar() {
+
+    var n = (acer * 100) / 40;
+    var nota = (n * 100) / 5;
+    var arc = "<h3> Correctas: <span class='badge bg-success'>" + acer + "</span></h3>";
+    arc += "<h3> Incorrectas: <span class='badge bg-danger'>" + erro + "</span></h3>";
+    arc += "<h3> Nota: <span class='badge bg-success'>" + erro + "</span></h3>";
+    $("#aqui").empty();
+    $("#aqui").append(arc);
+    $("#myModal").modal();
+    Ingresar_dato(acer, erro, nota);
+}
+function Reinicio() {
+    acer = 0;
+    erro = 0;
+    location.reload();
+}
+function ayuda() {
+    $("#myayuda").modal();
+}
+function Generar_ayuda() {
+    let mostra = "";
+    $.each(nombre, function (i, val) {
+        mostra += "<p id='" + i + "a'>" + val + "</p>"
+    });
+    $("#mostrar_resp").append(mostra);
+}
+

@@ -16,6 +16,19 @@ namespace swtransito.Models
         public string p_numero { get; set; }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         //tematicas
         public bool insert_tematica(Tematicas obj, string tipo)
         {
@@ -34,6 +47,21 @@ namespace swtransito.Models
 
         }
 
+        public DataTable consultar_act_tematica(string id)
+        {
+            string sql = @"select Nombre,Numero  from tematica where idTematica='" + id + "'; ";
+
+            return conn.EjecutarConsulta(sql, CommandType.Text);
+
+        }
+        /// actualizar tematica
+        public bool actulaizar_tematica(string a, string b, string c, string d, string e)
+        {
+            string[] sql = new string[1];
+            sql[0] = "UPDATE tematica SET Nombre='" + a + "' , Numero='" + b + "',estado='" + c + "',tipo_idTipo='" + d + "' where idTematica='" + e + "'; ";
+            return conn.RealizarTransaccion(sql);
+        }
+
         public DataTable consultar_tematica_admin()
         {
             string sql = @" select Nombre,Numero,idTematica from tematica where tematica.estado='A' ; ";
@@ -49,13 +77,6 @@ namespace swtransito.Models
             return data.Rows[0]["Nombre"].ToString();
         }
 
-        public DataTable consultar_act_tematica(string id)
-        {
-            string sql = @"select Nombre,Numero  from tematica where idTematica='"+id+"'; ";
-
-            return conn.EjecutarConsulta(sql, CommandType.Text);
-
-        }
 
         public DataTable consultar_tematicas_estudiante()
         {
@@ -79,14 +100,6 @@ namespace swtransito.Models
         {
             string[] sql = new string[1];
             sql[0] = "UPDATE tematica SET estado='I' WHERE idTematica='" + pk + "'; ";
-            return conn.RealizarTransaccion(sql);
-        }
-
-        /// actualizar tematica
-        public bool actulaizar_tematica(string a, string b, string c, string d, string e)
-        {
-            string[] sql = new string[1];
-            sql[0] = "UPDATE tematica SET Nombre='"+a+"' , Numero='"+b+"',estado='"+c+"',tipo_idTipo='"+d+"' where idTematica='"+e+"'; ";
             return conn.RealizarTransaccion(sql);
         }
 
@@ -192,7 +205,7 @@ namespace swtransito.Models
         }
 
 
-        public DataTable consultar_info_tematica(string id_tematica)
+        public DataTable traer_video_admin(string id_tematica)
         {
 
             string sql = @"select idvideo,ubicacion from video where video.tematica_idTematica='" + id_tematica + "'; ";

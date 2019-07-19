@@ -111,11 +111,11 @@ namespace swtransito.Views.Administrador
 
         public void Registrar(object sender, EventArgs e)
         {
-          try
+            try
             {
 
                 int numero = Int32.Parse(exa.existe(List_tipo.Text.ToString()));
-                if (numero==1)
+                if (numero == 1)
                 {
 
                     ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Esta tematica ya tiene examen');", true);
@@ -136,7 +136,7 @@ namespace swtransito.Views.Administrador
                 }
 
 
-               
+
 
 
             }
@@ -149,10 +149,9 @@ namespace swtransito.Views.Administrador
 
 
 
-           
+
 
 
         }
-
     }
 }

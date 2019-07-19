@@ -17,7 +17,7 @@ namespace swtransito.Views.Administrador
             if (!IsPostBack)
             {
 
-                
+
                 list_preguntas.DataSource = exa.traer_preguntas_id(Session["id_examen"].ToString());
                 list_preguntas.DataBind();
 
@@ -38,29 +38,31 @@ namespace swtransito.Views.Administrador
             }
 
 
-            }
+        }
 
 
 
-      
+
 
         public void traer_examen(object sender, CommandEventArgs e)
         {
-            
-
-            //if (e.CommandName.Equals("traer"))
-            //{
-            //    string idexam = (e.CommandArgument.ToString());
-            //    Session["id_examen"] = idexam;
-
-            //    Response.Redirect("~/Views/Administrador/Actualizar_examen.aspx");
 
 
+            if (e.CommandName.Equals("traer"))
+            {
+                string idexam = (e.CommandArgument.ToString());
+                Session["id_pregunta"] = idexam;
 
+                Response.Redirect("~/Views/Administrador/actualizar_preguntas.aspx");
             }
 
 
 
 
         }
+
+
+
+
+    }
 }

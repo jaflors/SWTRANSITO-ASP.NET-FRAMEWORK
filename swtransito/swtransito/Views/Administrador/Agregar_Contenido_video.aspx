@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Administrador/Administrador.Master" AutoEventWireup="true" CodeBehind="Agregar_Contenido_video.aspx.cs" Inherits="swtransito.Views.Administrador.Agregar_Contenido_video" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+
 
 
     <div class="row ">
@@ -64,8 +64,8 @@
                                             <asp:LinkButton runat="server" OnCommand="Unnamed_Command" CssClass="btn btn-danger btn-xs" CommandArgument='<%#Eval("idvideo")%>' CommandName="eliminar"><i class="fa fa-trash-o"></i>
                                                     Eliminar </asp:LinkButton>
 
-                                            <asp:LinkButton CommandArgument='<%#Eval("idvideo")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
-                                                    Actualizar</asp:LinkButton>
+                                           <%-- <asp:LinkButton CommandArgument='<%#Eval("idvideo")%>' CssClass="btn btn-primary btn-xs" OnCommand="traer_usuario" runat="server" CommandName="traer"><i class="fa fa-pencil"></i>
+                                                    Actualizar</asp:LinkButton>--%>
 
                                         </td>
 
@@ -152,6 +152,7 @@
     <br />
     <br />
     <br />
+
 
 
 

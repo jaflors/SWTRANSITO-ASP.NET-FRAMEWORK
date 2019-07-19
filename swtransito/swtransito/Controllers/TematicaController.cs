@@ -37,11 +37,6 @@ namespace swtransito.Controllers
             
 
         }
-        [HttpPost]
-        public string Consultar_Seguimiento(string x)
-        {
-            return "entra";
-        }
 
 
         public string traer_url(string id)
@@ -51,17 +46,9 @@ namespace swtransito.Controllers
 
         }
 
-
-        public DataTable traer_info_tematica(string id)
-        {
-            return tem.consultar_act_tematica(id);
-
-
-        }
-
         public DataTable traer_video_admin(string id)
         {
-            return tem.consultar_info_tematica(id);
+            return tem.traer_video_admin(id);
 
 
         }
@@ -91,13 +78,6 @@ namespace swtransito.Controllers
         public bool cambiar_estado_tem(string pk)
         {
             return tem.Cambiar_estado_tematica(pk);
-
-        }
-
-
-        public bool Actualizar_tematica(string a, string b, string c, string d, string e)
-        {
-            return tem.actulaizar_tematica(a, b, c, d, e);
 
         }
         //eliminar imagen 
@@ -136,8 +116,17 @@ namespace swtransito.Controllers
             return tem.insert_pdf(ruta, id_tematica);
         }
 
+        public DataTable traer_info_tematica(string id)
+        {
+            return tem.consultar_act_tematica(id);
 
-      
+
+        }
+        public bool Actualizar_tematica(string a, string b, string c, string d, string e)
+        {
+            return tem.actulaizar_tematica(a, b, c, d, e);
+
+        }
         public DataTable Traer_nombrepdf(string id)
         {
             return tem.consultar_nombre_pdf(id);

@@ -9,7 +9,6 @@ namespace swtransito.Controllers
 {
     public class ExamenController
     {
-
         Examen ex = new Examen();
 
         public bool insert_exam(string a, string b, string c, string d, string e, string f)
@@ -56,7 +55,7 @@ namespace swtransito.Controllers
         // actualizar examen 
         public bool Actualizar_examen(string a, string b, string c, string d, string e, string f, string g)
         {
-            return ex.actulaizar_exmen(a, b, c, d, e,f,g);
+            return ex.actulaizar_exmen(a, b, c, d, e, f, g);
 
         }
 
@@ -108,7 +107,12 @@ namespace swtransito.Controllers
             return ex.traer_numero_para_pasar(id);
         }
 
+        // actualizar  preguntas 
+        public bool Actualizar_preguntas(string a, string b, string c, string d, string e, string f, string g, string h)
+        {
+            return ex.actulaizar_pregunta(a, b, c, d, e, f, g,h);
 
+        }
 
     }
 }

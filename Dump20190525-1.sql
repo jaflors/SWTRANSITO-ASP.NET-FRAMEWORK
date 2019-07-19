@@ -15,6 +15,27 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+DROP TABLE IF EXISTS `encuesta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `encuesta` (
+  `ID` int(11) NOT NULL,
+  `Valor` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `encuesta`
+--
+
+LOCK TABLES `encuesta` WRITE;
+/*!40000 ALTER TABLE `encuesta` DISABLE KEYS */;
+INSERT INTO `encuesta` VALUES (1,2);
+/*!40000 ALTER TABLE `encuesta` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `examen`
 --
@@ -31,7 +52,7 @@ CREATE TABLE `examen` (
   `tematica` int(11) DEFAULT NULL,
   `aprueba_con` int(11) DEFAULT NULL,
   PRIMARY KEY (`idexamen`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +61,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (3,'Examen convivencia vial ciclistas','responda las preguntas de selección múltiple ','2019-07-07',5,1,3);
+INSERT INTO `examen` VALUES (3,'Examen convivencia vial ciclistas','responda las preguntas de selección múltiple ','2019-07-07',5,1,3),(4,'Examen Señales de información','Según el enunciado responda el nombre de la señal  ','2019-07-09',6,3,4);
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +79,7 @@ CREATE TABLE `imagen` (
   PRIMARY KEY (`idImagen`),
   KEY `fk_imagen_tematica_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_imagen_tematica` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +88,7 @@ CREATE TABLE `imagen` (
 
 LOCK TABLES `imagen` WRITE;
 /*!40000 ALTER TABLE `imagen` DISABLE KEYS */;
-INSERT INTO `imagen` VALUES (1,'../../imagenes/1.PNG',1),(2,'../../imagenes/2.PNG',1),(3,'../../imagenes/3.PNG',1),(16,'../../imagenes/4.PNG',1),(20,'../../imagenes/img 35.jpg',3);
+INSERT INTO `imagen` VALUES (1,'../../imagenes/1.PNG',1),(2,'../../imagenes/2.PNG',1),(3,'../../imagenes/3.PNG',1),(16,'../../imagenes/4.PNG',1),(20,'../../imagenes/img 35.jpg',3),(21,'../../imagenes/5.PNG',1),(22,'../../imagenes/6.PNG',1),(23,'../../imagenes/7.PNG',1),(24,'../../imagenes/img 36.jpg',3),(25,'../../imagenes/img 37.jpg',3),(26,'../../imagenes/img 38.jpg',3),(27,'../../imagenes/img 39.jpg',3),(29,'../../imagenes/img 40.jpg',3),(30,'../../imagenes/img 41.jpg',3);
 /*!40000 ALTER TABLE `imagen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +131,7 @@ CREATE TABLE `pdf` (
   PRIMARY KEY (`idpdf`),
   KEY `fk_pdf_tematica_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_pdf_tematica` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,8 +140,39 @@ CREATE TABLE `pdf` (
 
 LOCK TABLES `pdf` WRITE;
 /*!40000 ALTER TABLE `pdf` DISABLE KEYS */;
-INSERT INTO `pdf` VALUES (2,'../../pdf/03_Capitulo_2A-señales_preventivas.pdf',2);
+INSERT INTO `pdf` VALUES (2,'../../pdf/03_Capitulo_2A-señales_preventivas.pdf',2),(3,'../../pdf/04_Capitulo_2B-señales_reglamentarias.pdf',2),(5,'../../pdf/05_Capitulo_2C-se_ales_inf.pdf',3),(6,'../../pdf/el-ciclista.pdf',1);
 /*!40000 ALTER TABLE `pdf` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pers_encuesta`
+--
+
+DROP TABLE IF EXISTS `pers_encuesta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pers_encuesta` (
+  `id` int(11) NOT NULL,
+  `Persona` int(11) NOT NULL,
+  `Encuesta` int(11) NOT NULL,
+  `Estado` enum('Activo','Inactivo') NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Fk_person_encusta_idx` (`Persona`),
+  KEY `fk_person_encuesta_idx` (`Encuesta`),
+  CONSTRAINT `fk_person_encuesta` FOREIGN KEY (`Encuesta`) REFERENCES `encuesta` (`ID`),
+  CONSTRAINT `Fk_person_personencu` FOREIGN KEY (`Persona`) REFERENCES `persona` (`idPersona`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pers_encuesta`
+--
+
+LOCK TABLES `pers_encuesta` WRITE;
+/*!40000 ALTER TABLE `pers_encuesta` DISABLE KEYS */;
+INSERT INTO `pers_encuesta` VALUES (4,7,1,'Activo','2019-07-07 15:23:28');
+/*!40000 ALTER TABLE `pers_encuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -139,7 +191,7 @@ CREATE TABLE `persona` (
   `contrasena` varchar(45) NOT NULL,
   `recontrasena` varchar(45) NOT NULL,
   PRIMARY KEY (`idPersona`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,9 +200,46 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (1,'','',0,'','',''),(2,'m','m',1,'eee@hotmail.es','1','1'),(3,'mateo','m',1,'s@hotmail.com','1','1'),(4,'fafo','ll',123,'w@hotmail.com','12','12'),(5,'Jaime Andres','Florez Ospitia',1083882135,'jaflors2010@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','81dc9bdb52d04dc20036dbd8313ed055'),(6,'David  Hernando','Florez Ospitia',10847234123,'david@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','81dc9bdb52d04dc20036dbd8313ed055'),(7,'Rous ','Duran',1083882137,'rous@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','2fc4a68635c26db1019047965180ce1b');
+INSERT INTO `persona` VALUES (1,'','',0,'','',''),(2,'m','m',1,'eee@hotmail.es','1','1'),(3,'mateo','m',1,'s@hotmail.com','1','1'),(4,'fafo','ll',123,'w@hotmail.com','12','12'),(5,'Jaime Andres','Florez Ospitia',1083882135,'jaflors2010@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','81dc9bdb52d04dc20036dbd8313ed055'),(6,'David  Hernando','Florez Ospitia',10847234123,'david@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','81dc9bdb52d04dc20036dbd8313ed055'),(7,'Rous ','Duran',1083882137,'rous@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','2fc4a68635c26db1019047965180ce1b'),(8,'Carlos Javier','Ramirez',1083882137,'carlos@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','81dc9bdb52d04dc20036dbd8313ed055'),(9,'Alejandra florez ','Florez Ospitia',1083884763,'aleja@hotmail.com','81dc9bdb52d04dc20036dbd8313ed055','81dc9bdb52d04dc20036dbd8313ed055');
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+
+--
+-- Table structure for table `ejercicio`
+--
+
+DROP TABLE IF EXISTS `ejercicio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ejercicio` (
+  `Id` int(11) NOT NULL,
+  `Erro` varchar(45) NOT NULL,
+  `Acierto` varchar(45) NOT NULL,
+  `Nota` varchar(45) NOT NULL,
+  `Fecha` datetime NOT NULL,
+  `Persona` int(11) NOT NULL,
+  `Estado` enum('activo','inactivo') NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `FK_persona_idx` (`Persona`),
+  CONSTRAINT `FK_persona_ejercicio` FOREIGN KEY (`Persona`) REFERENCES `persona` (`idPersona`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ejercicio`
+--
+
+LOCK TABLES `ejercicio` WRITE;
+/*!40000 ALTER TABLE `ejercicio` DISABLE KEYS */;
+INSERT INTO `ejercicio` VALUES (1,'0','1','50','2019-07-08 09:11:51',6,'activo'),(2,'1','1','50','2019-07-08 15:24:44',6,'activo'),(3,'0','1','50','2019-07-15 17:31:57',6,'activo'),(4,'0','0','0','2019-07-15 17:37:02',6,'activo'),(5,'0','0','0','2019-07-17 17:25:42',6,'activo'),(6,'0','1','50','2019-07-17 17:25:58',6,'inactivo'),(7,'1','1','50','2019-07-17 17:26:10',6,'inactivo');
+/*!40000 ALTER TABLE `ejercicio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `encuesta`
+--
 
 --
 -- Table structure for table `persona_rol`
@@ -168,7 +257,7 @@ CREATE TABLE `persona_rol` (
   KEY `fk_rol_idx` (`rol_idrol`),
   CONSTRAINT `fk_persona` FOREIGN KEY (`Persona_idpersona`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_rol` FOREIGN KEY (`rol_idrol`) REFERENCES `rol` (`idRol`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +266,7 @@ CREATE TABLE `persona_rol` (
 
 LOCK TABLES `persona_rol` WRITE;
 /*!40000 ALTER TABLE `persona_rol` DISABLE KEYS */;
-INSERT INTO `persona_rol` VALUES (1,3,1),(2,4,2),(3,5,1),(4,6,2),(5,7,2);
+INSERT INTO `persona_rol` VALUES (1,3,1),(2,4,2),(3,5,1),(4,6,2),(5,7,2),(6,8,2),(7,9,2);
 /*!40000 ALTER TABLE `persona_rol` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +290,7 @@ CREATE TABLE `preguntas` (
   PRIMARY KEY (`idpreguntas`),
   KEY `fk_preguntas_examen_idx` (`examen_idexamen`),
   CONSTRAINT `fk_preguntas_examen` FOREIGN KEY (`examen_idexamen`) REFERENCES `examen` (`idexamen`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,7 +299,7 @@ CREATE TABLE `preguntas` (
 
 LOCK TABLES `preguntas` WRITE;
 /*!40000 ALTER TABLE `preguntas` DISABLE KEYS */;
-INSERT INTO `preguntas` VALUES (1,1,'rerr','ert','e3tr','ert','ert',2,3),(2,2,'rterert','etrer','ertert','ert','ert',3,3),(3,3,'jhhjhhgjhghgjh','uuyy','bnbnb','nbnbn','jhjhhj',3,3),(4,4,'hgfhgfhgfgh','dfgggfdg','dfgdfg','gfdg','gfdgd',3,3),(5,5,'jkjkknjjkjjnn','hjjjh','hjj','jkk','lklk',3,3);
+INSERT INTO `preguntas` VALUES (1,1,'¿Que distancia   adecuada se debe mantener  a la hora de sobrepasar a  un ciclista ??','1,5 mts','2 mts','3,5 mts','1 mts',1,3),(2,2,'¿cual es la indumentaria que deber llevar un ciclista a la hora de transitar en la vía? ','casco bien abrochado ','ropa clara ','ropa refractante','todas las anteriores ',4,3),(3,3,'¿ cual no es un consejo para mayor seguridad  de un ciclista ??','transitar por la derecha ','utilizar casco ','respetar el sentido del transito ','no respetar el sentido del transito ',4,3),(4,4,'¿Los ciclistas no deben transitar por la acera a menos que ? ','sea menor de 14   y años   este acompañado por una adulto ','sea una persona con discapacidad','sea un adulto mayor','todas las anteriores ',4,3),(5,5,'¿a cuantos centímetros de la acera puede transitar un ciclista ? ','30 cm','30 cm ','1 mts','15 cm',1,3),(6,1,'\r\nEsta señal indica la prohibición para circular en bicicleta. Como por ejemplo en autopistas, autovías y túneles.\r\n','Prohibida Circulación de Bicicletas','Prohibida Circulación de Maquinaria','Prohibida Circulación  de Motocicletas','No peatones ',1,4),(7,2,'Esta señal Sirve para indicar la proximidad de una calle que cruza en forma perpendicular la vía por la cual un conductor transita, de tal forma de disminuir la velocidad, estando atento para evitar algún accidente','Cruce en T','Cruce','Cruce Ferroviario','Empalme Lateral',2,4),(8,3,'Esta señal se emplea para indicar a los conductores, antes del paso por una intersección, la dirección correcta a seguir para llegar a una población, sitio de interés, o destino de viaje, mediante el uso de mensajes escritos y flechas','Información previa de destino ','Informativa de decisión de destino','Poste de referencia','SEGURIDAD VIAL',1,4),(9,4,'Tienen por objetivo guiar al usuario de la vía, suministrándole información de localidades, destinos, direcciones, sitios especiales, distancias y prestación de servicios','señales reglamentarias ','señales informativas','señales de advertencia ','señales de advertencia ',1,4),(10,5,'Tienen por objetivo guiar al usuario de la vía, suministrándole información de localidades, destinos, direcciones, sitios especiales, distancias y prestación de servicios.','señales reglamentarias ','señales informativas ','señales de advertencia','señales reglamentarias ',2,4),(11,6,'Con lluvia, el ciclomotor se adhiere mejor a la calzada si:','Se aumenta la presión de inflado del neumático','El neumático conserva el dibujo en toda la superficie.','Se baja la presión de inflado del neumático','Cualquier casco que cubra bien la cabeza.',2,4);
 /*!40000 ALTER TABLE `preguntas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +324,7 @@ CREATE TABLE `resultado` (
   KEY `fk_resultado_persona1_idx` (`persona_idPersona`),
   CONSTRAINT `fk_resultado_examen` FOREIGN KEY (`examen_idexamen`) REFERENCES `examen` (`idexamen`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_resultado_persona1` FOREIGN KEY (`persona_idPersona`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,7 +333,7 @@ CREATE TABLE `resultado` (
 
 LOCK TABLES `resultado` WRITE;
 /*!40000 ALTER TABLE `resultado` DISABLE KEYS */;
-INSERT INTO `resultado` VALUES (1,'APROBADO',5,0,5,'6/07/2019 8:17:19 p. m.',3,6),(2,'APROBADO',4,1,5,'6/07/2019 8:20:02 p. m.',3,7);
+INSERT INTO `resultado` VALUES (1,'REPROBADO',2,3,5,'8/07/2019 9:12:44 a. m.',3,6),(2,'APROBADO',4,2,6,'8/07/2019 8:45:42 a. m.',4,6),(3,'APROBADO',5,0,5,'8/07/2019 8:55:13 a. m.',3,7);
 /*!40000 ALTER TABLE `resultado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -288,7 +377,7 @@ CREATE TABLE `rol_vista` (
   KEY `fk_idVista_idx` (`Vista_idvista`),
   CONSTRAINT `fk_idRol` FOREIGN KEY (`rol_idrol`) REFERENCES `rol` (`idRol`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_idVista` FOREIGN KEY (`Vista_idvista`) REFERENCES `vista` (`idVista`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -297,7 +386,7 @@ CREATE TABLE `rol_vista` (
 
 LOCK TABLES `rol_vista` WRITE;
 /*!40000 ALTER TABLE `rol_vista` DISABLE KEYS */;
-INSERT INTO `rol_vista` VALUES (5,1,5),(6,1,6),(8,1,8),(11,2,11),(12,2,12),(13,2,13),(14,2,14),(15,2,15),(16,2,16),(17,2,17),(18,2,18),(19,2,19),(20,1,20);
+INSERT INTO `rol_vista` VALUES (5,1,5),(6,1,6),(8,1,8),(11,2,11),(12,2,12),(13,2,13),(14,2,14),(15,2,15),(16,2,16),(17,2,17),(18,2,18),(19,2,19),(20,1,20),(21,1,21);
 /*!40000 ALTER TABLE `rol_vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -326,7 +415,7 @@ CREATE TABLE `tematica` (
 
 LOCK TABLES `tematica` WRITE;
 /*!40000 ALTER TABLE `tematica` DISABLE KEYS */;
-INSERT INTO `tematica` VALUES (1,'Convivencia Vial Ciclistas ','1','A',1),(2,'tipos de señales','2','A',2),(3,'Señalamientos viales ','3','A',1);
+INSERT INTO `tematica` VALUES (1,'Convivencia Vial Ciclistas ','1','A',1),(2,'tipos de señales','2','A',2),(3,'Señales de Información ','3','A',1);
 /*!40000 ALTER TABLE `tematica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -368,7 +457,7 @@ CREATE TABLE `video` (
   PRIMARY KEY (`idvideo`),
   KEY `fk_video_tematica1_idx` (`tematica_idTematica`),
   CONSTRAINT `fk_video_tematica1` FOREIGN KEY (`tematica_idTematica`) REFERENCES `tematica` (`idTematica`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -377,6 +466,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
+INSERT INTO `video` VALUES (6,'https://www.youtube.com/embed/qYBHeRMwxiE',2);
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,7 +486,7 @@ CREATE TABLE `vista` (
   PRIMARY KEY (`idVista`),
   KEY `fk_menu_idx` (`menu_idmenu`),
   CONSTRAINT `fk_menu` FOREIGN KEY (`menu_idmenu`) REFERENCES `menu` (`idMenu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,7 +495,7 @@ CREATE TABLE `vista` (
 
 LOCK TABLES `vista` WRITE;
 /*!40000 ALTER TABLE `vista` DISABLE KEYS */;
-INSERT INTO `vista` VALUES (1,'Registrar Usuario','../Usuario/RegistrarU.aspx','fa fa-pencil',1),(3,'Actualizar Usuario','../Usuario/ActualizarU.aspx','fa fa-edit',1),(5,'Registrar Tematica','../Administrador/Agregar_tematica.aspx','fa fa-pencil',3),(6,'Agregar Contenido','../Administrador/Ver_tematica_admin.aspx','fa fa-edit',3),(8,'Añadir  Evaluacion ','../Administrador/examen.aspx','fa fa-plus',4),(10,'Eliminar Evaluacion ','e','fa fa-times',4),(11,'Actualizar Datos','../Estudiante/Actualizar_datos.aspx','fa fa-pencil',5),(12,'Ver  temáticas ','../Estudiante/Tematicas_estudiantes.aspx','fa fa-gamepad',2),(13,'Ver Resultados','../Estudiante/mis_resulltados.aspx','fa fa-check-square-o',6),(14,'Evaluación','../Estudiante/ver_examenes.aspx','fa fa-pencil',2),(15,'Documentación vehículos ','../Administrador/Referente.aspx','fa fa-file-o',7),(16,'El cuerpo y la moto','../Administrador/Tecnica.aspx','fa fa-male',7),(17,'Seguridad en el vehículo','../Administrador/Vista1.aspx','fa fa-shield',7),(18,'Seguridad al viajar','../Administrador/vista2.aspx','fa fa-shield',7),(19,'Ejercicio','../Administrador/Ejercicio.aspx','fa fa-gamepad',2),(20,'Resultados','../Administrador/Result.aspx','fa fa-trophy',4);
+INSERT INTO `vista` VALUES (1,'Registrar Usuario','../Usuario/RegistrarU.aspx','fa fa-pencil',1),(3,'Actualizar Usuario','../Usuario/ActualizarU.aspx','fa fa-edit',1),(5,'Registrar Tematica','../Administrador/Agregar_tematica.aspx','fa fa-pencil',3),(6,'Agregar Contenido','../Administrador/Ver_tematica_admin.aspx','fa fa-edit',3),(8,'Añadir  Evaluacion ','../Administrador/examen.aspx','fa fa-plus',4),(10,'Eliminar Evaluacion ','e','fa fa-times',4),(11,'Actualizar Datos','../Estudiante/Actualizar_datos.aspx','fa fa-pencil',5),(12,'Ver  temáticas ','../Estudiante/Tematicas_estudiantes.aspx','fa fa-gamepad',2),(13,'Ver Resultados','../Estudiante/mis_resulltados.aspx','fa fa-check-square-o',6),(14,'Evaluación','../Estudiante/ver_examenes.aspx','fa fa-pencil',2),(15,'Documentación vehículos ','../Estudiante/Referente.aspx','fa fa-file-o',7),(16,'El cuerpo y la moto','../Estudiante/Tecnica.aspx','fa fa-male',7),(17,'Seguridad en el vehículo','../Estudiante/Vista1.aspx','fa fa-shield',7),(18,'Seguridad al viajar','../Estudiante/vista2.aspx','fa fa-shield',7),(19,'Ejercicio','../Estudiante/Ejercicio.aspx','fa fa-gamepad',2),(20,'Resultados','../Administrador/Result.aspx','fa fa-trophy',4),(21,'Resultado Ejercicio','../Administrador/MostrarRespuesta.aspx','fa fa-pencil',4);
 /*!40000 ALTER TABLE `vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -416,6 +506,52 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'transito'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `con_ejer_all` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `con_ejer_all`()
+BEGIN
+select persona.IdPersona, persona.Nombres from ejercicio 
+inner join persona on ejercicio.Persona=persona.IdPersona
+where ejercicio.Estado='activo'
+group by persona.IdPersona;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `con_ejer_per` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `con_ejer_per`(
+in idt int
+)
+BEGIN
+select ejercicio.Erro, ejercicio.Acierto, ejercicio.Nota, ejercicio.Fecha from ejercicio 
+inner join persona on ejercicio.Persona=persona.IdPersona
+where persona.IdPersona=idt;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `InsertarPersona` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -440,6 +576,31 @@ set cont=(select max(idPersona)+1 from persona);
 insert into persona values(cont,p_nombre,p_apellidos,p_cedula,p_correo,md5(p_contrasena),md5(p_recontrasena));
 insert into persona_rol (persona_idpersona,rol_idrol) values((select max(idPersona)from persona),2);
 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Insert_encuesta` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Insert_encuesta`(
+in id int,
+in valor int,
+in id_perso int
+)
+BEGIN
+insert into encuesta value(id,valor);
+set @est =(select count(*) from ejercicio);
+insert into pers_encuesta value(@est+1,id_perso,id,1,now());
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -516,6 +677,38 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `insert_test` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_test`(
+in erro varchar(45),
+in acert varchar(45),
+in nota float,
+in usuario int(11)
+)
+BEGIN
+declare ent int;
+
+set @est =(select count(*) from ejercicio where ejercicio.Persona=usuario);
+set @est_v=(select if(@est < 5,1,2));
+SET @num =(select IFNULL(MAX(ejercicio.id),0) FROM ejercicio);
+
+insert into ejercicio values(@num+1,erro,acert,nota,now(), usuario,@est_v);
+
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `insert_video` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -551,4 +744,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-07 19:14:00
+-- Dump completed on 2019-07-17 22:22:29

@@ -128,28 +128,32 @@
                                 </div>
 
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Registrar" Text="Registrar" />
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Registrar" Text="Registrar" />
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+    </div>
+    </div>
+    </div>
+    </div>
 
 
-            </div>
-        </div>
-    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
      <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+
+    </div>
+
+
+    </div>
+    </form>
+
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">

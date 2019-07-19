@@ -1,4 +1,5 @@
-﻿using swtransito.Models;
+﻿using swtransito.Controllers;
+using swtransito.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,7 @@ namespace swtransito.Views.Principal
     public partial class Login : System.Web.UI.Page
     {
         Persona usu = new Persona();
+        PersonaController per = new PersonaController();
         DataRow dato;
         DataTable aux;
         public String mjs = "";
@@ -22,7 +24,10 @@ namespace swtransito.Views.Principal
 
             if (Session["login"] != null)
             {
+
                 Response.Redirect("~/Views/Administrador/inicio.aspx");
+
+
             }
             else
             {
@@ -57,29 +62,38 @@ namespace swtransito.Views.Principal
 
                         Session["nombre"] = dato["Nombres"].ToString() + "  " + dato["Apellidos"];
                         Session["login"] = dato["idPersona"].ToString();
-                        Response.Redirect("../Administrador/Inicio.aspx");
+                      
+                        int rol = Int32.Parse(per.consultar_id_rol(Session["login"].ToString()));
+
+                        if (rol == 1)
+                        {
+                            Response.Redirect("~/Views/Administrador/inicio.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("~/Views/Estudiante/inicio.aspx");
+                        }
+
 
 
                     }
                     else
                     {
-
-
+                       
                         Response.Write("<script> alert('VERIFIQUE SUS DATOS')</script> ");
                     }
                 }
                 else
                 {
-                   
+                  
                     Response.Write("<script> alert('CAMPOS NO PUEDEN SER VACIOS')</script> ");
+                
                 }
 
 
             }
             catch (Exception x)
             {
-                Response.Write("<script> alert('"+x+"')</script> ");
-
             }
 
 

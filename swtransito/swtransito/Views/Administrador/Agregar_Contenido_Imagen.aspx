@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
+    
     <div class="row ">
         <br />
         <br />
@@ -125,7 +126,18 @@
                     </div>
 
                 </form>
+
+
+                 <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          
             </div>
+           
 
 
             <!-- /content-panel -->
@@ -134,11 +146,10 @@
     </div>
     <!-- /row -->
 
-    <br />
-    <br />
-    <br />
-    <br />
+    
    
+
+
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
