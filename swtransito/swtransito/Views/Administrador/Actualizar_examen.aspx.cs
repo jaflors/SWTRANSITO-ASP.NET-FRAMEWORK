@@ -47,7 +47,7 @@ namespace swtransito.Views.Administrador
 
         public void traer_tematica()
         {
-           
+
             List_tipo.DataSource = tem.Traer_tematica_admin();
             List_tipo.DataTextField = "Nombre";
             List_tipo.DataValueField = "idTematica";
@@ -58,32 +58,38 @@ namespace swtransito.Views.Administrador
 
 
 
-        public void Registrar(object sender, EventArgs e)
+        public void Actualizar(object sender, EventArgs e)
         {
+            int numero = int.Parse(List_tipo.Text);
 
-          
+            try
+            {
+                if (numero == -1)
+                {
+                    Response.Write("<script> alert('Selecione una Tematica')</script> ");
+                }
+                else
+                {
 
-
-            //try
-            //{
-            //    if (exa.insert_exam(txt_examname.Text.ToString(), txt_examdis.Text.ToString(), txt_examdate.Text.ToString(), txt_examtotalpreguntas.Text.ToString(), List_tipo.Text.ToString(), txt_exammapasa.Text.ToString()) ==true)
-            //    {
-            //        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Registro Correcto');", true);
-            //        Response.Redirect("~/Views/Administrador/examen.aspx");
-            //    }
-
-
-            //}
-            //catch
-            //{
+                    if (ex.Actualizar_examen(txt_examname.Text, txt_examdis.Text, txt_examdate.Text, txt_examtotalpreguntas.Text, List_tipo.Text, txt_exammapasa.Text, Session["id_examen"].ToString()) == true)
+                    {
+                        Response.Write("<script> alert('Actualización correcta')</script> ");
 
 
-            //}
+                    }
+                    else
+                    {
+                        Response.Write("<script> alert('No se pudo actualizar')</script> ");
+                    }
+                }
 
+            }
+            catch (Exception ex)
+            {
 
+                Response.Write("<script> alert('" + ex.Message + "' ); </script>");
+            }
 
-
-           
 
 
         }

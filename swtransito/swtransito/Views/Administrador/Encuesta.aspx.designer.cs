@@ -10,6 +10,6 @@
 namespace swtransito.Views.Administrador {
     
     
-    public partial class Tecnica {
+    public partial class Encuesta {
     }
 }

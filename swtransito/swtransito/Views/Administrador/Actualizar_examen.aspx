@@ -6,6 +6,8 @@
 
 
 
+
+
     <form runat="server" class="form-horizontal form-label-left">
 
         <div class="col-md-10 col-sm-10 col-xs-10 col-md-offset-1">
@@ -64,7 +66,7 @@
                      <div class="row form-group">
                          <div class="col-md-6">
                          <a class="btn btn-default" href="../../Views/Administrador/examen.aspx">Volver</a>
-                         <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Registrar" Text="Modificar" />
+                         <asp:Button ID="guardar" class="btn btn-primary" AutoPostBack="true" runat="server" OnClick="Actualizar" Text="Modificar" />
                         </div>
                          </div>
 
@@ -80,6 +82,9 @@
     <br />
     <br />
     <br />
+
+
+
 
 
 

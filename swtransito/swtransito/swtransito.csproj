@@ -667,10 +667,25 @@
     <Content Include="carousel\lib\jquery\dist\jquery.js" />
     <Content Include="carousel\lib\jquery\dist\jquery.min.js" />
     <Content Include="carousel\lib\jquery\LICENSE.txt" />
+    <Content Include="Content\Css\fontawesome\all.css" />
+    <Content Include="Content\Css\fontawesome\all.min.css" />
+    <Content Include="Content\Css\fontawesome\brands.css" />
+    <Content Include="Content\Css\fontawesome\brands.min.css" />
+    <Content Include="Content\Css\fontawesome\fontawesome.css" />
+    <Content Include="Content\Css\fontawesome\fontawesome.min.css" />
+    <Content Include="Content\Css\fontawesome\regular.css" />
+    <Content Include="Content\Css\fontawesome\regular.min.css" />
+    <Content Include="Content\Css\fontawesome\solid.css" />
+    <Content Include="Content\Css\fontawesome\solid.min.css" />
+    <Content Include="Content\Css\fontawesome\svg-with-js.css" />
+    <Content Include="Content\Css\fontawesome\svg-with-js.min.css" />
+    <Content Include="Content\Css\fontawesome\v4-shims.css" />
+    <Content Include="Content\Css\fontawesome\v4-shims.min.css" />
     <Content Include="Content\Css\Stilo.css" />
     <Content Include="Content\Css\style.css" />
     <Content Include="Content\Css\swiper.css" />
     <Content Include="Content\Css\swiper.min.css" />
+    <Content Include="Content\encu.js" />
     <Content Include="Content\Imagen.js" />
     <Content Include="Content\IMG\1.jpg" />
     <Content Include="Content\IMG\10.jpg" />
@@ -760,12 +775,27 @@
     <Content Include="Content\IMG\r_3.jpg" />
     <Content Include="Content\IMG\r_4.jpg" />
     <Content Include="Content\IMG\r_5.jpg" />
+    <Content Include="Content\IMG\Tam.pptx" />
     <Content Include="Content\IMG\wood.jpg" />
+    <Content Include="Content\js\fontawesome\all.js" />
+    <Content Include="Content\js\fontawesome\all.min.js" />
+    <Content Include="Content\js\fontawesome\brands.js" />
+    <Content Include="Content\js\fontawesome\brands.min.js" />
+    <Content Include="Content\js\fontawesome\fontawesome.js" />
+    <Content Include="Content\js\fontawesome\fontawesome.min.js" />
+    <Content Include="Content\js\fontawesome\regular.js" />
+    <Content Include="Content\js\fontawesome\regular.min.js" />
+    <Content Include="Content\js\fontawesome\solid.js" />
+    <Content Include="Content\js\fontawesome\solid.min.js" />
+    <Content Include="Content\js\fontawesome\v4-shims.js" />
+    <Content Include="Content\js\fontawesome\v4-shims.min.js" />
     <Content Include="Content\js\swiper.esm.bundle.js" />
     <Content Include="Content\js\swiper.esm.js" />
     <Content Include="Content\js\swiper.js" />
     <Content Include="Content\js\swiper.min.js" />
+    <Content Include="Content\js\swiper.min.js.map" />
     <Content Include="Content\Propio.js" />
+    <Content Include="Content\Resp.js" />
     <Content Include="Content\src\images\arrow-next.png" />
     <Content Include="Content\src\images\arrow-prev.png" />
     <Content Include="Content\src\images\closedhand.cur" />
@@ -779,6 +809,7 @@
     <Content Include="Content\src\jquery.booklet.latest.js" />
     <Content Include="Content\src\jquery.booklet.latest.min.js" />
     <Content Include="Content\src\jquery.easing.1.3.js" />
+    <Content Include="Content\wizard.js" />
     <Content Include="Global.asax" />
     <Content Include="imagenes\f.png" />
     <Content Include="imagenes\g.jpg" />
@@ -858,34 +889,41 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Administrador\Actualizar_examen.aspx" />
+    <Content Include="Views\Administrador\actualizar_preguntas.aspx" />
     <Content Include="Views\Administrador\Actualizar_tematica.aspx" />
     <Content Include="Views\Administrador\add_preguntas.aspx" />
     <Content Include="Views\Administrador\Administrador.Master" />
     <Content Include="Views\Administrador\Agregar_Contenido_Imagen.aspx" />
     <Content Include="Views\Administrador\Agregar_Contenido_video.aspx" />
+    <Content Include="Views\Administrador\Agregar_preguntas.aspx" />
     <Content Include="Views\Administrador\Agregar_tematica.aspx" />
-    <Content Include="Views\Administrador\Ejercicio.aspx" />
+    <Content Include="Views\Administrador\Encuesta.aspx" />
     <Content Include="Views\Administrador\examen.aspx" />
     <Content Include="Views\Administrador\info_pregunta.aspx" />
     <Content Include="Views\Administrador\inicio.aspx" />
+    <Content Include="Views\Administrador\MostrarRespuesta.aspx" />
     <Content Include="Views\Administrador\Result.aspx" />
-    <Content Include="Views\Estudiante\Referente.aspx" />
-    <Content Include="Views\Estudiante\Tecnica.aspx" />
     <Content Include="Views\Administrador\ver_preguntas.aspx" />
     <Content Include="Views\Administrador\Ver_tematica_admin.aspx" />
-    <Content Include="Views\Estudiante\Vista1.aspx" />
-    <Content Include="Views\Estudiante\vista2.aspx" />
+    <Content Include="Views\Estudiante\Actualizar_datos.aspx" />
     <Content Include="Views\Estudiante\contenido_video.aspx" />
+    <Content Include="Views\Estudiante\Ejercicio.aspx" />
     <Content Include="Views\Estudiante\examen_estudiante.aspx" />
     <Content Include="Views\Estudiante\Imagen.aspx" />
+    <Content Include="Views\Estudiante\inicio.aspx" />
     <Content Include="Views\Estudiante\mis_resulltados.aspx" />
+    <Content Include="Views\Estudiante\Referente.aspx" />
+    <Content Include="Views\Estudiante\Tecnica.aspx" />
     <Content Include="Views\Estudiante\Tematicas_estudiantes.aspx" />
     <Content Include="Views\Estudiante\ver_examenes.aspx" />
+    <Content Include="Views\Estudiante\Vista1.aspx" />
+    <Content Include="Views\Estudiante\vista2.aspx" />
     <Content Include="Views\Principal\Acerca_de.aspx" />
     <Content Include="Views\Principal\Contacto.aspx" />
     <Content Include="Views\Principal\Inicio.aspx" />
     <Content Include="Views\Principal\Login.aspx" />
     <Content Include="Views\Principal\Registro.aspx" />
+    <Content Include="Views\Principal\Site1.Master" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -901,7 +939,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ejercicio_mod.cs" />
+    <Compile Include="Models\EncuestaModel.cs" />
+    <Compile Include="Models\events.cs" />
     <Compile Include="Models\Examen.cs" />
+    <Compile Include="Models\InicioModel.cs" />
+    <Compile Include="Models\Objeto_Consumir.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Resultado.cs" />
     <Compile Include="Models\Tematicas.cs" />
@@ -912,6 +955,13 @@
     </Compile>
     <Compile Include="Views\Administrador\Actualizar_examen.aspx.designer.cs">
       <DependentUpon>Actualizar_examen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\actualizar_preguntas.aspx.cs">
+      <DependentUpon>actualizar_preguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\actualizar_preguntas.aspx.designer.cs">
+      <DependentUpon>actualizar_preguntas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Actualizar_tematica.aspx.cs">
       <DependentUpon>Actualizar_tematica.aspx</DependentUpon>
@@ -948,6 +998,13 @@
     <Compile Include="Views\Administrador\Agregar_Contenido_video.aspx.designer.cs">
       <DependentUpon>Agregar_Contenido_video.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\Agregar_preguntas.aspx.cs">
+      <DependentUpon>Agregar_preguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Agregar_preguntas.aspx.designer.cs">
+      <DependentUpon>Agregar_preguntas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -955,12 +1012,12 @@
     <Compile Include="Views\Administrador\Agregar_tematica.aspx.designer.cs">
       <DependentUpon>Agregar_tematica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administrador\Ejercicio.aspx.cs">
-      <DependentUpon>Ejercicio.aspx</DependentUpon>
+    <Compile Include="Views\Administrador\Encuesta.aspx.cs">
+      <DependentUpon>Encuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Administrador\Ejercicio.aspx.designer.cs">
-      <DependentUpon>Ejercicio.aspx</DependentUpon>
+    <Compile Include="Views\Administrador\Encuesta.aspx.designer.cs">
+      <DependentUpon>Encuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\examen.aspx.cs">
       <DependentUpon>examen.aspx</DependentUpon>
@@ -983,26 +1040,19 @@
     <Compile Include="Views\Administrador\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrador\MostrarRespuesta.aspx.cs">
+      <DependentUpon>MostrarRespuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\MostrarRespuesta.aspx.designer.cs">
+      <DependentUpon>MostrarRespuesta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrador\Result.aspx.cs">
       <DependentUpon>Result.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Administrador\Result.aspx.designer.cs">
       <DependentUpon>Result.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Estudiante\Referente.aspx.cs">
-      <DependentUpon>Referente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Estudiante\Referente.aspx.designer.cs">
-      <DependentUpon>Referente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Estudiante\Tecnica.aspx.cs">
-      <DependentUpon>Tecnica.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Estudiante\Tecnica.aspx.designer.cs">
-      <DependentUpon>Tecnica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\ver_preguntas.aspx.cs">
       <DependentUpon>ver_preguntas.aspx</DependentUpon>
@@ -1018,19 +1068,12 @@
     <Compile Include="Views\Administrador\Ver_tematica_admin.aspx.designer.cs">
       <DependentUpon>Ver_tematica_admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Estudiante\Vista1.aspx.cs">
-      <DependentUpon>Vista1.aspx</DependentUpon>
+    <Compile Include="Views\Estudiante\Actualizar_datos.aspx.cs">
+      <DependentUpon>Actualizar_datos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Estudiante\Vista1.aspx.designer.cs">
-      <DependentUpon>Vista1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Estudiante\vista2.aspx.cs">
-      <DependentUpon>vista2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Estudiante\vista2.aspx.designer.cs">
-      <DependentUpon>vista2.aspx</DependentUpon>
+    <Compile Include="Views\Estudiante\Actualizar_datos.aspx.designer.cs">
+      <DependentUpon>Actualizar_datos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Estudiante\contenido_video.aspx.cs">
       <DependentUpon>contenido_video.aspx</DependentUpon>
@@ -1038,6 +1081,13 @@
     </Compile>
     <Compile Include="Views\Estudiante\contenido_video.aspx.designer.cs">
       <DependentUpon>contenido_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\Ejercicio.aspx.cs">
+      <DependentUpon>Ejercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\Ejercicio.aspx.designer.cs">
+      <DependentUpon>Ejercicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Estudiante\examen_estudiante.aspx.cs">
       <DependentUpon>examen_estudiante.aspx</DependentUpon>
@@ -1053,12 +1103,33 @@
     <Compile Include="Views\Estudiante\Imagen.aspx.designer.cs">
       <DependentUpon>Imagen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Estudiante\inicio.aspx.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\inicio.aspx.designer.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Estudiante\mis_resulltados.aspx.cs">
       <DependentUpon>mis_resulltados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Estudiante\mis_resulltados.aspx.designer.cs">
       <DependentUpon>mis_resulltados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\Referente.aspx.cs">
+      <DependentUpon>Referente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\Referente.aspx.designer.cs">
+      <DependentUpon>Referente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\Tecnica.aspx.cs">
+      <DependentUpon>Tecnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\Tecnica.aspx.designer.cs">
+      <DependentUpon>Tecnica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Estudiante\Tematicas_estudiantes.aspx.cs">
       <DependentUpon>Tematicas_estudiantes.aspx</DependentUpon>
@@ -1073,6 +1144,20 @@
     </Compile>
     <Compile Include="Views\Estudiante\ver_examenes.aspx.designer.cs">
       <DependentUpon>ver_examenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\Vista1.aspx.cs">
+      <DependentUpon>Vista1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\Vista1.aspx.designer.cs">
+      <DependentUpon>Vista1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estudiante\vista2.aspx.cs">
+      <DependentUpon>vista2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Estudiante\vista2.aspx.designer.cs">
+      <DependentUpon>vista2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Principal\Acerca_de.aspx.cs">
       <DependentUpon>Acerca_de.aspx</DependentUpon>
@@ -1140,7 +1225,6 @@
     <Content Include="brandy\__MACOSX\fonts\._glyphicons-halflings-regular.ttf" />
     <Content Include="brandy\__MACOSX\fonts\._glyphicons-halflings-regular.woff" />
     <Content Include="brandy\__MACOSX\images\._Thumbs.db" />
-    <Content Include="Views\Principal\Site1.Master" />
     <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <Content Include="lesser\fonts\bootstrap\glyphicons-halflings-regular.woff" />
@@ -1464,8 +1548,6 @@
     <Content Include="carousel\lib\jquery-validation\LICENSE.md" />
     <Content Include="carousel\lib\jquery\.bower.json" />
     <Content Include="carousel\lib\jquery\dist\jquery.min.map" />
-    <Content Include="Content\js\swiper.min.js.map" />
-    <Content Include="Content\IMG\Tam.pptx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

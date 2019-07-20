@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
+using swtransito.Models;
+using System.Data;
+using Construccion2.Models.Clase;
+using System.Web.Http;
 
 namespace swtransito.Views.Administrador
 {
@@ -16,9 +20,18 @@ namespace swtransito.Views.Administrador
         }
 
         [WebMethod]
-        public static object consult_all()
+        public static string consult_all()
         {
-
+            Ejercicio_mod ej = new Ejercicio_mod();
+            Objeto_Consumir obj = new Objeto_Consumir();
+            return obj.convertirJsontoString(ej.Consultar_all());
+        }
+        [WebMethod]
+        public static string consult_id(Ejercicio_mod obj_eje)
+        {
+            Ejercicio_mod ej = new Ejercicio_mod();
+            Objeto_Consumir obj = new Objeto_Consumir();
+            return obj.convertirJsontoString(ej.Consultar_id(obj_eje.id_pe));
         }
     }
 }

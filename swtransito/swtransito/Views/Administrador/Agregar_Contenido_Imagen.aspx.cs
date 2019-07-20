@@ -13,26 +13,27 @@ namespace swtransito.Views.Administrador
 {
     public partial class Agregar_Contenido_Imagen : System.Web.UI.Page
     {
+
         TematicaController tem = new TematicaController();
 
-        DataTable  DatRol;
+        DataTable DatRol;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             list_imagen.DataSource = tem.Traer_imagen_admin(Session["id_tematica_admin"].ToString());
             DatRol = tem.Traer_imagen_admin(Session["id_tematica_admin"].ToString());
             list_imagen.DataBind();
-            if (DatRol.Rows.Count ==0)
+            if (DatRol.Rows.Count == 0)
             {
                 string frase = "No  hay contenido ";
 
-                HtmlGenericControl tr= new HtmlGenericControl("tr");
+                HtmlGenericControl tr = new HtmlGenericControl("tr");
                 HtmlGenericControl td = new HtmlGenericControl("td");
                 td.InnerHtml = frase;
                 tr.Controls.Add(td);
                 list_imagen.Controls.Add(tr);
 
-                
+
 
             }
 
@@ -78,7 +79,7 @@ namespace swtransito.Views.Administrador
         }
 
 
-        
+
 
 
 
@@ -133,7 +134,7 @@ namespace swtransito.Views.Administrador
 
 
 
-        }
+            }
 
 
         }

@@ -39,6 +39,7 @@
                                     <asp:Label ID="lblid" runat="server" Text='<%# Eval("idpreguntas") %>' Visible="false"></asp:Label>
                                     <asp:Label ID="lbl_question" runat="server" Text='<%# Eval("enunciado") %>'></asp:Label>
                                     <br />
+                                    <br />
                                     <asp:RadioButton GroupName="a" Text='<%# Eval("opc1") %>' ID="option_one" runat="server"  required="required"/>
                                     <br />
                                     <asp:RadioButton GroupName="a" Text='<%# Eval("opc2") %>' ID="option_two" runat="server" requerid="requerid"/>
@@ -117,6 +118,12 @@
                     </div>
                 </div>
             </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         </div>
 
 
@@ -124,7 +131,7 @@
 
 
 
-
+      
 
     </form>
 </asp:Content>

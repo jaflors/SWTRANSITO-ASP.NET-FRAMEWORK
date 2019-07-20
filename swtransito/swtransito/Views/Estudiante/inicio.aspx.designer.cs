@@ -7,9 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace swtransito.Views.Administrador {
+namespace swtransito.Views.Estudiante {
     
     
-    public partial class Referente {
+    public partial class inicio {
     }
 }

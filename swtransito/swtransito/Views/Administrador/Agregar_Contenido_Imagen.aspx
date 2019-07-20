@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
+    
     <div class="row ">
         <br />
         <br />
@@ -72,7 +73,7 @@
 
                         </tbody>
                     </table>
-
+                      <a class="btn btn-default"  href="../../Views/Administrador/Ver_tematica_admin.aspx" Style="border-left-width: 1px; margin-left: 5px;" >Volver</a>
 
                     <!-- Modal -->
                     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -125,7 +126,18 @@
                     </div>
 
                 </form>
+
+
+                 <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          
             </div>
+           
 
 
             <!-- /content-panel -->
@@ -134,11 +146,10 @@
     </div>
     <!-- /row -->
 
-    <br />
-    <br />
-    <br />
-    <br />
+    
    
+
+
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">

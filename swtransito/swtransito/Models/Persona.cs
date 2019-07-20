@@ -97,17 +97,24 @@ namespace swtransito.Models
         }
 
 
+        public bool RealizarUpdate_Participante(string a, string b, string c, string d, string e, string f)
+        {
+            string[] sql = new string[1];
+            sql[0] = "UPDATE persona SET Nombres='" + a + "',Apellidos='" + b + "',cedula='" + c + "',correol='" + d + "',contrasena=md5('" + e + "'),recontrasena=md5('" + e + "') where idPersona='" + f + "'; ";
+            return conn.RealizarTransaccion(sql);
+        }
+
+       
+
+
 
         public DataTable ConsultarParticipante(string pk)
         {
-            string sql = @"SELECT nombres,apellidos,correo,contrasena,recontrasena FROM usuario WHERE idusuario='" + pk + "'";
+            string sql = @"SELECT Nombres,Apellidos,cedula,correol,contrasena FROM persona where idPersona='" + pk + "';";
             return conn.EjecutarConsulta(sql, CommandType.Text);
         }
 
 
-
-      
-       
 
 
 
@@ -172,6 +179,17 @@ namespace swtransito.Models
             return conn.EjecutarConsulta(sql, CommandType.Text);
         }
 
+
+        public string Consul_id_Rol(string pk_usuario)
+        {
+            string sql = @"select rol.idRol from rol
+	        inner join persona_rol as ur on ur.rol_idrol= rol.idRol
+	        inner join persona on persona.idPersona= ur.Persona_idpersona
+	        where  persona.idPersona= '"+pk_usuario+"';";
+            DataTable data = conn.EjecutarConsulta(sql, CommandType.Text);
+            return data.Rows[0]["idRol"].ToString();
+        }
+       
 
 
 

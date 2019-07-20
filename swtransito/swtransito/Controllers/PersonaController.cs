@@ -61,8 +61,12 @@ namespace swtransito.Controllers
             return usu.insertusu_Admin(obj, pk_Rol, ruta);
         }
 
-       
 
+
+        public bool update_participante(string a, string b, string c, string d, string e, string f)
+        {
+            return usu.RealizarUpdate_Participante(a, b, c, d, e, f);
+        }
 
         //public DataTable mis_eventos_inscrito(string pk_usuario)
         //{
@@ -78,6 +82,12 @@ namespace swtransito.Controllers
         public DataTable consultarNombreRol(string pk_usuario)
         {
             return usu.ConsulNombreRol(pk_usuario);
+        }
+
+
+        public string consultar_id_rol(string pk_usuario)
+        {
+            return usu.Consul_id_Rol(pk_usuario);
         }
 
         public bool cambiar_estado_usu(string pk)

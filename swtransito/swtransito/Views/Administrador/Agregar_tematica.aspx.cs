@@ -59,7 +59,7 @@ namespace swtransito.Views.Administrador
 
         public void traer_usuario(object sender, CommandEventArgs e)
         {
-           
+
             if (e.CommandName.Equals("traer"))
             {
 

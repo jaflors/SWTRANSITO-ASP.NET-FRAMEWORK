@@ -49,7 +49,7 @@ namespace swtransito.Views.Administrador
                 if (tem.eliminar_video_admin(idusu) == true)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('seguro de eliminar ');", true);
-                    Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
+                    Response.Redirect("~/Views/Administrador/Agregar_Contenido_video.aspx");
 
                 }
 
@@ -129,7 +129,7 @@ namespace swtransito.Views.Administrador
                                     file_PDF.SaveAs(carpeta);
 
                                     Response.Write("<script> alert('pdf guardado' ); </script>");
-                                    Response.Redirect("~/Views/Administrador/Agregar_Contenido_Imagen.aspx");
+                                    Response.Redirect("~/Views/Administrador/Agregar_Contenido_video.aspx");
 
                                 }
                                 else

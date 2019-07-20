@@ -57,6 +57,38 @@ namespace swtransito.Views.Administrador
 
         }
 
+        public void Modificar(object sender, EventArgs e)
+        {
+
+
+
+
+            try
+            {
+                if (tem.Actualizar_tematica(txt_Nombres.Text, txt_Numero.Text,ColorList.Text,List_tipo.Text, Session["id_tematica"].ToString()) == true)
+                {
+                    Response.Write("<script> alert('Actualización correcta')</script> ");
+                 
+                    
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write("<script> alert('" + ex.Message + "' ); </script>");
+            }
+
+
+
+
+
+
+
+        }
+
+
 
 
 
